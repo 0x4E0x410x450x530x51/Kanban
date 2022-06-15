@@ -27,24 +27,22 @@
       <main>
         <!-- button to open the sidebar-->
          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-         <div class="kanbanboard">
-            <div class="backLog">
-                <div class="titleBacklog">
-
+         <div class="container">
+            <div class="kanban-heading">
+                <strong class="kanban-heading-text">Kanban Board</strong>
+            </div>
+            <div class="kanban-board">
+                <div class="kanban-block" id="todo">
+                    <strong>To Do</strong>
+                </div>
+                <div class="kanban-block" id="inprogress">
+                    <strong>In Progress</strong>
+                </div>
+                <div class="kanban-block" id="done">
+                    <strong>Done</strong>
                 </div>
             </div>
-            <div class="inProgress">
-                <div class="titleInProgress">
-                    
-                </div>
-            </div>
-            <div class="done">
-                <div class="titleDone">
-                    
-                </div>
-            </div>
-
-         </div>
+        </div>
       </main>
 
     <!-- Kanbanboard-->

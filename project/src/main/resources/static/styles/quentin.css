@@ -45,27 +45,52 @@
     }
 
     /* Styles for the kanbanboard */
-    .kanbanboard {
-        border: solid black 5px;
-        padding: 100px;
-        margin: 20px; 
-    }
+    .container {
+        width: 70%;
+        min-width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .kanban-heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-family: sans-serif;
+      }
+      
+      .kanban-heading-text {
+        font-size: 1.8rem;
+        background-color: tomato;
+        padding: 0.8rem 1.7rem;
+        border-radius: 0.5rem;
+        margin: 1rem;
+      }
 
-    .backLog, .inProgress, .done {
-        padding: 100px;
-        padding-top:48px;
-        border-radius: 1em;
-        display: inline ;
-        background-color: #CCCCCC;
-        padding-bottom: 300px;
-        text-align: center;
-    }
-
-    .titleDone, .titleInProgress, .titleBacklog {
-        border: solid black 2px; 
-        padding-top: 50px; 
-        padding-right: 100px;
-        padding-left: 100px;
-        margin: 5px;
-        display: inline-block;
-    }
+      .kanban-board {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: sans-serif;
+      }
+      
+      .kanban-block {
+        padding: 0.6rem;
+        width: 30.5%;
+        min-width: 14rem;
+        min-height: 4.5rem;
+        border-radius: 0.3rem;
+      }
+      
+      #todo {
+        background-color: #fec6d1;
+      }
+      
+      #inprogress {
+        background-color: #ffaf00;
+      }
+      
+      #done {
+        background-color: #018b01;
+      }
