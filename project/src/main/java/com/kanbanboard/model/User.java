@@ -12,10 +12,11 @@ public class User {
     private Integer id;
 
     @Column(name = "username")
-    @NotBlank
+
     private String username;
 
     @Column(name = "email")
+    @NotBlank
     private String email;
 
     @Column(name = "password")
@@ -53,5 +54,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+
 
 }
