@@ -1,13 +1,13 @@
-package com.kanbansim.kanbanboard;
+package com.kanbanboard.kanbansim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KanbanBoardApplication {
+public class KanbansimApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(KanbanBoardApplication.class, args);
+        SpringApplication.run(KanbansimApplication.class, args);
     }
 
 }

@@ -1,10 +1,10 @@
-package com.kanbansim.kanbanboard;
+package com.kanbanboard.kanbansim;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KanbanBoardApplicationTests {
+class KanbansimApplicationTests {
 
     @Test
     void contextLoads() {
