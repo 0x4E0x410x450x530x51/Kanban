@@ -10,7 +10,7 @@
 
 /* Styles for the sidebar navigation */
 #tlines{
-
+    float: left;
 }
 .sidenav {
     height: 100%;
@@ -54,4 +54,40 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+/*Gallery*/
+.fields{
+    font-weight: 900;
+}
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+  
+.gallery:hover {
+    border: 1px solid #777;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/*ADD*/
+#rowAdder {
+    margin-left: 17px;
+}
+#addwhole{
+    margin-left: 40%;
+    width: 16%;
+}
+
+.fields, desc{
+    margin: 5px;
+    float: left;
+    width: 180px;
 }
