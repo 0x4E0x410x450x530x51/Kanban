@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS KanbanSimulationDatabase;
-
 CREATE DATABASE IF NOT EXISTS KanbanSimulationDatabase;
 USE KanbanSimulationDatabase;
 
