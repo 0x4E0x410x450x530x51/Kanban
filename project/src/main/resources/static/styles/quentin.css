@@ -95,9 +95,14 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   /* Makes a shadow along the border*/
   border-radius: 0.2rem;
-  padding: 0.5rem 0.2rem 3rem 2rem;
+  padding: 0.5rem 0.2rem 1rem 2rem;
   border-left: solid #E60000 0.3em;
   cursor: pointer;
+  word-break: break-word; 
+}
+
+.storyTitle {
+  font-size: large;
 }
 
 #task-button {
@@ -105,6 +110,11 @@
   border: none;
   font-size: 35px;
   margin-left: 0.3em;
+  border-radius: 1em;
+}
+
+#task-button:hover {
+  background-color: rgba(0, 0, 0, 0.19);
 }
 
 h2 {
@@ -131,9 +141,9 @@ h2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   /* Makes a shadow along the border*/
   border-radius: 0.2rem;
-  padding-bottom: 120px;
   border-left: solid #E60000 0.3em;
   cursor: pointer;
+  height: auto;
   display: none;
 }
 
@@ -145,18 +155,10 @@ h2 {
   background-color: #E60000;
 }
 
-.form-row-input {
-  border: 0.1rem solid black;
-  border-radius: 0rem 0.2rem 0.2rem 0rem;
-  width: 85%;
-}
-
-#descritptionForm {
-  padding: 0 !important;
-}
-
 #storyNameForm {
-  background-color: red; 
+  border-radius: 0.2em;
+  border: solid 0.1em rgba(0, 0, 0, 0.2);
+  padding: 0;
 }
 
 
@@ -167,6 +169,3 @@ h2 {
 .story-border{
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-
-

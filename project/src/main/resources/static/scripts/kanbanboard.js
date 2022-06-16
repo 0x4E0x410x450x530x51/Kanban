@@ -87,7 +87,7 @@ function saveTask() {
   else {
     todo.innerHTML += `
   <div class="task" id="${taskName.toLowerCase().split(" ").join("")}" draggable="true" ondragstart="drag(event)"">
-      <span>${taskName}</span>
+      <span  class="storyTitle">${taskName}</span><br>
       <small>${description}</small>
   </div>
   `
