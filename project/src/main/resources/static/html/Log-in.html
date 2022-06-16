@@ -8,12 +8,47 @@
         <div class="hero">
             <div class="form-box">
                 <div class="button-box">
+                    <div id="btn"></div> <!--Top Buttons Color and Transition-->
                     <!--Top Buttons to switch-->
-                    <button type="button" class="toggle-btn">Log In</button>
-                    <button type="button" class="toggle-btn">Register</button>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
                 </div>
             </div>
+
+            <!-- Input Login-->
+            <form id="login" class="input-group">
+                <input type="email" class="input-field" placeholder="E-Mail" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <button type="submit" class="submit-btn">Log in</button>
+            </form>
+
+            <!--Input Register-->
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="Full Name" required>
+                <input type="email" class="input-field" placeholder="Enter E-Mail" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
         </div>
 
+
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+                x.style.left = "150px";
+                y.style.left = "600px";
+                z.style.left = "110px";
+            }
+            
+            function login(){
+                x.style.left = "600px";
+                y.style.left = "1000px";
+                z.style.left = "0px";
+            }
+
+        </script>
     </body>
 </html>
