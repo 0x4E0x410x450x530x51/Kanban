@@ -187,3 +187,14 @@ h2 {
 .taskName-box {
   /*justify-content: ;*/
 }
+
+.story-table{
+  min-height: 85%;
+  width: 95%;
+}
+
+.story-border{
+  border-style: dotted;
+  border-width: 2px;
+  border-color: black;
+}

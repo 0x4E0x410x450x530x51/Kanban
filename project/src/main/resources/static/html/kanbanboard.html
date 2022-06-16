@@ -30,50 +30,56 @@
         <div class="container">
             <div class="kanban-board">
                 <!-- Backlog-->
-                <div class="kanban-block" id="todo" class="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="kanban-block" id="todo" class="backlog">
                     <strong>
                         <h2>
                             <div class="backlogTitle">Backlog</div>
                         </h2>
                     </strong>
-                    <div class="task-button-block">
-                        <button id="task-button" onclick="createTask()">&#x2b;</button>
-                    </div>
-                    <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                        <span>Task 1</span>
-                    </div>
-                    <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-                        <span>Task 2</span>
-                    </div>
-                    <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
-                        <span>Task 3</span>
-                    </div>
-                    <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
-                        <span>Task 4</span>
-                    </div>
-                    <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
-                        <span>Task 5</span>
-                    </div>
-                    <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
-                        <span>Task 6</span>
+                    <div class="story-table" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="task-button-block">
+                            <button id="task-button" onclick="createTask()">&#x2b;</button>
+                        </div>
+                        <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
+                            <span>Task 1</span>
+                        </div>
+                        <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
+                            <span>Task 2</span>
+                        </div>
+                        <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
+                            <span>Task 3</span>
+                        </div>
+                        <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
+                            <span>Task 4</span>
+                        </div>
+                        <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
+                            <span>Task 5</span>
+                        </div>
+                        <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
+                            <span>Task 6</span>
+                        </div>
                     </div>
                 </div>
                 <!-- In Progress-->
-                <div class="kanban-block" id="inprogress" class="inProgress" ondrop="drop(event)"
-                    ondragover="allowDrop(event)">
+                <div class="kanban-block" id="inprogress" class="inProgress" 
+                    >
                     <strong>
                         <h2>
                             <div class="inProgressTitle">In Progress</div>
                         </h2>
                     </strong>
+                    <div class="story-table"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <!-- Done-->
-                <div class="kanban-block" id="done" class="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="kanban-block" id="done" class="done" >
                     <strong>
                         <h2>
                             <div class="doneTitle">Done</div>
                         </h2>
                     </strong>
+                    <div class="story-table" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        
+                    </div>
                 </div>
                 <div class="create-new-task-block" id="create-new-task-block">
                     <strong>Add a new Story</strong>
