@@ -36,29 +36,37 @@
                             <div class="backlogTitle">Backlog</div>
                         </h2>
                     </strong>
-                    <div class="story-table" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <div class="task-button-block">
-                            <button id="task-button" onclick="createTask()">&#x2b;</button>
-                        </div>
-                        <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                            <span>Task 1</span>
-                        </div>
-                        <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-                            <span>Task 2</span>
-                        </div>
-                        <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
-                            <span>Task 3</span>
-                        </div>
-                        <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
-                            <span>Task 4</span>
-                        </div>
-                        <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
-                            <span>Task 5</span>
-                        </div>
-                        <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
-                            <span>Task 6</span>
-                        </div>
+
+                    <!-- Create a new Story -->
+                    <div class="create-new-task-block" id="create-new-task-block">
+                        <input type="text" id="storyNameForm" placeholder="Enter the story name">
+                        <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
+                        <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
+                        <button type="button" class="btn btn-danger" id="cancel-button"onclick="createTask()">Cancel</button>
                     </div>
+                  <div class="story-table" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="task-button-block">
+                        <button id="task-button" onclick="createTask()">&#x2b;</button>
+                    </div>
+                    <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
+                        <span>Task 1</span>
+                    </div>
+                    <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
+                        <span>Task 2</span>
+                    </div>
+                    <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
+                        <span>Task 3</span>
+                    </div>
+                    <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
+                        <span>Task 4</span>
+                    </div>
+                    <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
+                        <span>Task 5</span>
+                    </div>
+                    <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
+                        <span>Task 6</span>
+                    </div>
+                  </div>
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block" id="inprogress" class="inProgress" 
@@ -80,23 +88,6 @@
                     <div class="story-table" ondrop="drop(event)" ondragover="allowDrop(event)">
                         
                     </div>
-                </div>
-                <div class="create-new-task-block" id="create-new-task-block">
-                    <strong>Add a new Story</strong>
-                    <span class="form-row">
-                        <div class="taskName-box">
-                            <input class="form-row-input" type="text" name="task-name" id="task-name" required placeholder="Story name">
-                        </div>
-                    </span>
-                    <span class="form-row">
-                        <textarea class="form-row-input" name="task-description" id="task-description" cols="70"
-                            rows="10" placeholder="Description"></textarea>
-                    </span>
-                    <span class="form-row-buttons">
-                        <button id="edit-button" onclick="editTask()">Edit</span>
-                    <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</span>
-                        <button type="button" class="btn btn-danger" id="cancel-button" onclick="createTask()">Cancel</span>
-                            </span>
                 </div>
             </div>
     </main>

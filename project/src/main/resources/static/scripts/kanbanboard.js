@@ -27,8 +27,12 @@ function manageSidebar() {
   if (width == 250) closeNav()
 }
 
+// ---------------------------------------------------------------------------------------
 
 /* Drag and drop storys in the Kanban Board */
+
+// First drag and drop version
+
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
   console.log(1)
@@ -55,6 +59,13 @@ function drop(ev) {
   }
 }
 
+
+
+// Drag and drop version 2
+// im working on it
+
+// ---------------------------------------------------------------------------------------
+
 /* Creates a new Story */
 function createTask() {
   var x = document.getElementById("inprogress");
@@ -62,14 +73,14 @@ function createTask() {
   var z = document.getElementById("create-new-task-block");
 
   if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "block";
     z.style.display = "none";
   } else {
-    x.style.display = "none";
-    y.style.display = "none";
     z.style.display = "flex";
   }
+}
+
+function cancelCreateTask() {
+
 }
 
 /* Saves the story in the Backlog */
@@ -80,7 +91,7 @@ function saveTask() {
   if (taskName == 0) alert('You have to name the story.') // checks if the story is named
   else {
     todo.innerHTML += `
-  <div class="task" id="${taskName.toLowerCase().split(" ").join("")}" draggable="true" ondragstart="drag(event)">
+  <div class="task" id="${taskName.toLowerCase().split(" ").join("")}" draggable="true" ondragstart="dragStart(event)">
       <span>${taskName}</span>
   </div>
   `
@@ -101,3 +112,5 @@ function editTask(){
       editButton.style.display = "block";
   }
 }*/
+
+// ---------------------------------------------------------------------------------------
