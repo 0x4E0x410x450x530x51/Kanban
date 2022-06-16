@@ -7,7 +7,6 @@
 .hero{
    height: 100%;
    width: 100%;
-   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))/*, url(ubs_norm.png)*/;
    background-position: center;
    background-size: cover;
    position: absolute;
@@ -24,10 +23,11 @@
     width: 400px;
     height: 500px;
     position: relative;
-    margin:  6% auto;
+    margin:  8% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0;
 }
 
 /*Top Buttons + Shadow*/
@@ -46,6 +46,7 @@
     outline: none;
     position: relative;
 }
+
 
 /*Top Button Colour Transition*/
 #btn{
@@ -76,6 +77,7 @@
     outline: none;
     background: transparent;
 }
+
 .submit-btn{
     width: 85%;
     padding: 10px 30px;
@@ -88,8 +90,10 @@
     border: 0;
     outline: none;
     border-radius: 10px;
+    color: white;
 
 }
+
 
 /*The 2 Forms*/
 #login{
@@ -98,4 +102,26 @@
 }
 #register{
     left: 450px;
+}
+
+/*Set Login Button to white at the beginning*/
+#loginbtn {
+    color: white;
+}
+
+@-webkit-keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
+}
+@keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
 }
