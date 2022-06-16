@@ -23,13 +23,13 @@
     width: 400px;
     height: 500px;
     position: relative;
-    margin:  8% auto;
+    margin: 8% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0;
-}
-
+    box-shadow: 0px 0px 3px 0.1px;
+    border-radius: 12px;
+  }
 /*Top Buttons + Shadow*/
 .button-box{
     width: 220px;
@@ -66,17 +66,24 @@
     width: 280px;
     transition: .5s;
 }
-.input-field{
+.input-field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
     border-left: 0;
     border-right: 0;
     border-top: 0;
-    border-bottom: 1px solid #b0b0b0;
     outline: none;
-    background: transparent;
+    background: linear-gradient(to right, #ffffff00, rgba(230, 0, 0, 0)), linear-gradient(to right, #e60000, #e60000, #e60000);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
 }
+.input-field:focus {
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
 
 .submit-btn{
     width: 85%;
