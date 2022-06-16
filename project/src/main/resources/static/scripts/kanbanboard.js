@@ -35,7 +35,7 @@ function manageSidebar() {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  console.log(1)
+  // console.log(1)
   var elements = document.getElementsByClassName("story-table")
   for (i = 0; i < elements.length; i++) {
     elements[i].classList.add("story-border")
