@@ -198,14 +198,11 @@ In progress...
 */
 
 .story-table{
-  min-height: 85%;
-  width: 95%;
+  
 }
 
 .story-border{
-  border-style: dotted;
-  border-width: 2px;
-  border-color: black;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
