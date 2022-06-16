@@ -151,13 +151,12 @@ textarea {
 #save-button,
 #cancel-button {
   margin: 0.2rem 0rem 0.1rem 0rem;
-  background-color: white;
   border-radius: 0.2rem;
   width: 49.2%;
-  border: 0.25rem solid black;
   padding: 0.5rem 2.7rem;
   border-radius: 0.3rem;
   font-size: 1rem;
+  background-color: #E60000;
 }
 
 #edit-button {
@@ -186,5 +185,5 @@ h2 {
 }
 
 .taskName-box {
-  justify-content: center;
+  /*justify-content: ;*/
 }

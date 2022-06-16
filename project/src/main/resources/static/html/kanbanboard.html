@@ -83,14 +83,13 @@
                         </div>
                     </span>
                     <span class="form-row">
-                        <label class="form-row-label" for="task-name">Description</label>
                         <textarea class="form-row-input" name="task-description" id="task-description" cols="70"
-                            rows="10"></textarea>
+                            rows="10" placeholder="Description"></textarea>
                     </span>
                     <span class="form-row-buttons">
                         <button id="edit-button" onclick="editTask()">Edit</span>
-                    <button id="save-button" onclick="saveTask()">Save</span>
-                        <button id="cancel-button" onclick="createTask()">Cancel</span>
+                    <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</span>
+                        <button type="button" class="btn btn-danger" id="cancel-button" onclick="createTask()">Cancel</span>
                             </span>
                 </div>
             </div>
