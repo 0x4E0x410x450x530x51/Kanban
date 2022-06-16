@@ -7,30 +7,33 @@
     <body>
         <div class="hero">
             <div class="form-box">
-                <div class="button-box">
-                    <div id="btn"></div> <!--Top Buttons Color and Transition-->
-                    <!--Top Buttons to switch-->
-                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
-                </div>
+
+                <img id="logo" src="..\Pics\ubs_logo.png" alt="Girl in a jacket">
+
+                    <div class="button-box">
+                        <div id="btn"></div> <!--Top Buttons Color and Transition-->
+                        <!--Top Buttons to switch-->
+                        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                    </div>
+                
+
+                <!-- Input Login-->
+                <form id="login" class="input-group">
+                    <input type="email" class="input-field" placeholder="E-Mail" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+
+                <!--Input Register-->
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="Full Name" required>
+                    <input type="email" class="input-field" placeholder="Enter E-Mail" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
             </div>
-
-            <!-- Input Login-->
-            <form id="login" class="input-group">
-                <input type="email" class="input-field" placeholder="E-Mail" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
-                <button type="submit" class="submit-btn">Log in</button>
-            </form>
-
-            <!--Input Register-->
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Full Name" required>
-                <input type="email" class="input-field" placeholder="Enter E-Mail" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
-                <button type="submit" class="submit-btn">Register</button>
-            </form>
         </div>
-
 
         <script>
             var x = document.getElementById("login");
@@ -38,15 +41,15 @@
             var z = document.getElementById("btn");
 
             function register(){
-                x.style.left = "150px";
-                y.style.left = "600px";
+                x.style.left = "-400px";
+                y.style.left = "50px";
                 z.style.left = "110px";
             }
             
             function login(){
-                x.style.left = "600px";
-                y.style.left = "1000px";
-                z.style.left = "0px";
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
             }
 
         </script>
