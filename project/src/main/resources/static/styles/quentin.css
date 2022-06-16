@@ -53,47 +53,42 @@
         flex-direction: column;
       }
       
-      .kanban-heading {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        font-family: sans-serif;
-      }
-      
       .kanban-board {
         display: flex;
         flex-direction: row;
-        /*justify-content: space-between;*/
+        justify-content: space-between;
         font-family: sans-serif;
       }
       
       .kanban-block,
       .create-new-task-block {
-        padding: 0.6rem;
+        padding: 0 0 1em 0;
         width: 30.5%;
         min-width: 14rem;
         min-height: 4.5rem;
         border-radius: 1rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Makes a shadow along the border*/
       }
       
       #todo {
-        background-color: #CCCCCC;
+        background-color: #FFFFFF;
       }
       
       #inprogress {
-        background-color: #CCCCCC;
+        background-color: #FFFFFF;
         /* display: none; */
       }
       
       #done {
-        background-color: #CCCCCC;
+        background-color: #FFFFFF;
         /* display: none; */
       }
       
       .task {
-        background-color: white;
-        margin: 0.2rem 0rem 0.3rem 0rem;
-        border: 0.1rem solid black;
+        background-color: #FFFFFF;
+        margin: 0.3em 0.8em 0.2em 0.8em;
+        /* border: 0.1rem solid black; */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Makes a shadow along the border*/
         border-radius: 0.2rem;
         padding: 0.5rem 0.2rem 3rem 2rem;
       }
@@ -102,6 +97,7 @@
         background:  transparent;
         border: none; 
         font-size:35px;
+        margin-left: 0.3em; 
       }
       
       .create-new-task-block {
@@ -161,8 +157,15 @@
         display: none;
       }
 
-
       h2 { 
-        color: #E60000 !important; 
-        text-align: center;
+        padding: 20px 20px 5px 5px; 
+        background-color: #E60000 !important; 
+        color: #FFFFFF !important; 
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        /* text-align: center; */
+    }
+
+    .backlogTitle, .inProgressTitle, .doneTitle {
+      margin-left: 1em;
     }

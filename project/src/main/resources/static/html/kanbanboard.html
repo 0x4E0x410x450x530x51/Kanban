@@ -31,7 +31,7 @@
             <div class="kanban-board">
                 <!-- Backlog-->
                 <div class="kanban-block" id="todo" class="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <strong><h2>To Do</h2></strong>
+                    <strong><h2><div class="backlogTitle">Backlog</div></h2></strong>
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
@@ -56,11 +56,11 @@
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block" id="inprogress" class="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <strong><h2>In Progress</h2></strong>
+                    <strong><h2><div class="inProgressTitle">In Progress</div></h2></strong>
                 </div>
                 <!-- Done-->
                 <div class="kanban-block" id="done" class="done" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <strong><h2>Done</h2></strong>
+                    <strong><h2><div class="doneTitle">Done</div></h2></strong>
                 </div>
                 <div class="create-new-task-block" id="create-new-task-block">
                     <strong>New Task</strong>
