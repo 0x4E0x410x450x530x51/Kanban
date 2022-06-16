@@ -145,6 +145,12 @@ h2 {
   cursor: pointer;
   height: auto;
   display: none;
+  z-index: 1000;
+  position: absolute;
+  height: 23%;
+  width: 26%;
+  transform: translate(78%, 60%);
+  padding-top: 15px;
 }
 
 #save-button,
@@ -153,14 +159,26 @@ h2 {
   border-radius: 0.3rem;
   font-size: 1rem;
   background-color: #E60000;
+  margin-left: 5px;
+  margin-top:5px;
 }
 
 #storyNameForm {
   border-radius: 0.2em;
   border: solid 0.1em rgba(0, 0, 0, 0.2);
   padding: 0;
+  margin-left: 5px;
+  width: 98%;
+  margin-top: 5px !important;
+  display: block;
 }
-
+#descritptionForm {
+  display: block;
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 98%;
+  resize: none;
+}
 
 /* Make the drag and drop look nice ----------------------------------*/
 /*In progress...*/

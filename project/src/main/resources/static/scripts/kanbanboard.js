@@ -69,7 +69,7 @@ function drop(ev) {
 /* Creates a new Story */
 function createTask() {
   var z = document.getElementById("create-new-task-block");
-  z.style.display = "flex";
+  z.style.display = "block";
 }
 
 function cancelCreateTask() {
