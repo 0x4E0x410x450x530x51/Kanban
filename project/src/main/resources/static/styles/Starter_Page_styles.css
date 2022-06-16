@@ -1,0 +1,35 @@
+.hero{
+   height: 100%;
+   width: 100%;
+   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(ubs_norm.png);
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+}
+
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin:  6% auto;
+    background: #fff;
+    padding: 5px;
+
+}
+
+/*Top Buttons + Shadow*/
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position:relative;
+    box-shadow: 0 0 20px 2px #E60000;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
