@@ -11,9 +11,9 @@ public class User {
     @Column(name = "userID", nullable = false)
     private Integer id;
 
-    @Column(name = "username")
+    @Column(name = "fullname")
 
-    private String username;
+    private String fullname;
 
     @Column(name = "email")
     @NotBlank
@@ -22,6 +22,12 @@ public class User {
     @Column(name = "password")
     @NotBlank
     private String password;
+
+    public User(String fullname, String email, String password) {
+        this.fullname = fullname;
+        this.email = email;
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;
@@ -32,11 +38,11 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return fullname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getEmail() {

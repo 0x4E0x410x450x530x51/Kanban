@@ -1,6 +1,5 @@
-package com.kanbanboard.application;
+package com.kanbanboard;
 
-import com.kanbanboard.controller.LoginController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

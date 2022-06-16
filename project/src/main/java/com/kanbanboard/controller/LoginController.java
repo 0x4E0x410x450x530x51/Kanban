@@ -2,14 +2,14 @@ package com.kanbanboard.controller;
 
 
 
-import com.kanbanboard.Payload.LoginRequest;
+import com.kanbanboard.model.User;
+import com.kanbanboard.payload.LoginRequest;
+import com.kanbanboard.payload.SignUpRequest;
 import com.kanbanboard.encryption.Encryption;
 import com.kanbanboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -18,30 +18,41 @@ import java.security.NoSuchAlgorithmException;
 @ResponseBody
 @RequestMapping("/api")
 public class LoginController {
-
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
+    Encryption encrypt = new Encryption();
 
-    @GetMapping(value = "/login")
-    public String login(LoginRequest payload) throws NoSuchAlgorithmException {
+    public LoginController (UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-        Encryption encrypt = new Encryption();
+    @PostMapping(value = "/login")
+    public Boolean login(@RequestBody LoginRequest payload) throws NoSuchAlgorithmException {
+
+        String encodedPassword = encrypt.toHexString(encrypt.getSHA(payload.getPassword()));
+        User userdata = userRepository.findByEmail(payload.getEmail());
+        Boolean correctPassword = encrypt.passwordEqual(encodedPassword, userdata.getPassword());
+
+        return correctPassword;
+    }
+
+    @PostMapping(value = "/signup")
+    public String signup(@RequestBody SignUpRequest payload) throws NoSuchAlgorithmException {
 
 
 
-        String password = payload.getPassword();
-
-        byte[] passwordByte = encrypt.getSHA(password);
-        
-        String encodedPassword = encrypt.toHexString(passwordByte);
-
-        userRepository.findByEmail();
+        if (userRepository.existsByEmail(payload.getEmail())) {
+            return "Mail schon gebraucht!";
+        } else {
 
 
+            Encryption encryption = new Encryption();
+            String encryptedPassword = encryption.toHexString(encryption.getSHA(payload.getPassword()));
 
-
-
-        return "Test";
+            User user = new User(payload.getFullname(), payload.getEmail(), encryptedPassword);
+            userRepository.save(user);
+            return "Success";
+        }
     }
 
 

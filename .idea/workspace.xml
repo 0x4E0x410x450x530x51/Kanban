@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="" />
+    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/payload/SignUpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kanban_Database_SQLFile_WITH_DROP.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Kanban_Database_SQLFile_WITH_DROP.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kanban_Database_SQLFile_WITH_OUT_DROP.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Kanban_Database_SQLFile_WITH_OUT_DROP.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/Payload/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/payload/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/application/KanbansimApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/KanbansimApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/KanbanboardStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/KanbanboardStory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/UserKanbanboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/UserKanbanboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/repository/UserRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +31,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />

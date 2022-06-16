@@ -1,3 +1,5 @@
+
+
 CREATE DATABASE IF NOT EXISTS KanbanSimulationDatabase;
 USE KanbanSimulationDatabase;
 
@@ -9,19 +11,21 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE User_KanbanBoard (
-  kanbanboardID INT,
-  userID INT,
-  owner BOOL
+    ID int,
+    kanbanboardID INT,
+    userID INT,
+    owner BOOL
 );
 
 CREATE TABLE KanbanBoard (
-  kanbanboardID INT,
-  created DATE,
-  completed INT,
-  inprogress INT
+    kanbanboardID INT,
+    created DATE,
+    completed INT,
+    inprogress INT
 );
 
 CREATE TABLE KanbanBoard_Story (
+    ID int,
     kanbanboardID INT,
     storyID INT
 );
@@ -39,6 +43,8 @@ CREATE TABLE Story (
 ALTER TABLE Users MODIFY userID INT PRIMARY KEY AUTO_INCREMENT;
 ALTER TABLE KanbanBoard MODIFY kanbanboardID INT PRIMARY KEY AUTO_INCREMENT;
 ALTER TABLE Story MODIFY storyID INT PRIMARY KEY AUTO_INCREMENT;
+ALTER TABLE User_KanbanBoard MODIFY ID INT PRIMARY KEY AUTO_INCREMENT;
+ALTER TABLE KanbanBoard_Story MODIFY ID INT PRIMARY KEY AUTO_INCREMENT;
 
 ALTER TABLE User_KanbanBoard ADD FOREIGN KEY (userID) REFERENCES Users (userID);
 ALTER TABLE User_KanbanBoard ADD FOREIGN KEY (kanbanboardID) REFERENCES KanbanBoard (kanbanboardID);
