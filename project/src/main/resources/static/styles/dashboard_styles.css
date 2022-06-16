@@ -174,3 +174,20 @@
     transform: scale(1.2);
   }
   
+  .row {
+    background-color: oldlace;
+    border-bottom: 1px black solid;
+    border-radius: 15px;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    margin-top: 5px;
+    width: 33.3%;
+    padding-left: 10px;
+    display: inline-grid;
+  }
+  .grid-container {
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-template-columns: auto auto auto;
+  }
