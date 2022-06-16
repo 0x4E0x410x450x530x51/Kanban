@@ -42,14 +42,15 @@
                         <input type="text" id="storyNameForm" placeholder="Enter the story name">
                         <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
                         <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
-                        <button type="button" class="btn btn-danger" id="cancel-button"onclick="createTask()">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="cancel-button"onclick="cancelCreateTask()">Cancel</button>
                     </div>
                   
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                        <span>Task 1</span>
+                        <span>Task 1</span><br>
+                        <small>Description</small>
                     </div>
                     <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
                         <span>Task 2</span>

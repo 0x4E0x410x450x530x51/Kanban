@@ -125,7 +125,6 @@ h2 {
 /* Add a new Story block ---------------------------------------------*/
 
 .create-new-task-block {
-  display: none;
   background-color: #FFFFFF;
   margin: 0.3em 0.8em 0.2em 0.8em;
   /* border: 0.1rem solid black; */
@@ -135,6 +134,7 @@ h2 {
   padding-bottom: 120px;
   border-left: solid #E60000 0.3em;
   cursor: pointer;
+  display: none;
 }
 
 #save-button,
@@ -161,45 +161,8 @@ h2 {
 
 
 /* Make the drag and drop look nice ----------------------------------*/
-/* 
+/*In progress...*/
 
-In progress...
-
-.example-parent {
-  border: 2px solid #DFA612;
-  color: black;
-  display: flex;
-  font-family: sans-serif;
-  font-weight: bold;
-}
-
-.example-origin {
-  flex-basis: 100%;
-  flex-grow: 1;
-  padding: 10px;
-}
-
-.example-draggable {
-  background-color: #4AAE9B;
-  font-weight: normal;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-.taskName-box {
-  /*justify-content: ;
-.example-dropzone {
-  background-color: #6DB65B;
-  flex-basis: 100%;
-  flex-grow: 1;
-  padding: 10px;
-}
-*/
-
-.story-table{
-  
-}
 
 .story-border{
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
