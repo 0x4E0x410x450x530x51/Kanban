@@ -137,9 +137,8 @@ h2 {
 .create-new-task-block {
   background-color: #FFFFFF;
   margin: 0.3em 0.8em 0.2em 0.8em;
-  /* border: 0.1rem solid black; */
+  border: 0.1rem solid black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* Makes a shadow along the border*/
   border-radius: 0.2rem;
   border-left: solid #E60000 0.3em;
   cursor: pointer;
@@ -151,8 +150,12 @@ h2 {
   width: 26%;
   transform: translate(78%, 60%);
   padding-top: 15px;
+  max-height: 23%;
+  min-height: 218px;
+  max-width: 26%;
+  min-width: 495px;
+  max-wdith: 172px;
 }
-
 #save-button,
 #cancel-button {
   border-radius: 0.2rem;
@@ -188,9 +191,10 @@ h2 {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.edit:after { 
+.edit::after { 
   content: '\2807';
   font-size: 20px; 
   float: right; 
   justify-items: top;
+  margin-top: -25px;
 }
