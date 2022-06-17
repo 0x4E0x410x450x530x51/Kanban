@@ -55,7 +55,7 @@ function drop(ev) {
   for (let i = 0; i < 100; i++) {
     setTimeout(function () {
       document.getElementById(data).style.opacity = i / 100
-    }, i * 5)
+    }, i * 2)
   }
   var elements = document.getElementsByClassName("story-table")
   for (i = 0; i < elements.length; i++) {
@@ -73,12 +73,12 @@ var tasks = []; // stores all task names
 function createTask() {
   clearInputs()
   for (let i = 0; i < 3; i++) {
-    setTimeout(function() {
-      document.getElementsByClassName("container")[0].style.filter = "blur("+i+"px)"      
+    setTimeout(function () {
+      document.getElementsByClassName("container")[0].style.filter = "blur(" + i + "px)"
     }, i * 2)
   }
 
-  let allConts =   document.getElementsByClassName("task")
+  let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
     allConts[i].style.webkitUserDrag = "none"
   }
@@ -104,11 +104,11 @@ function cancelCreateTask() {
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
   for (let i = 0; i < 4; i++) {
-    setTimeout(function() {
-      document.getElementsByClassName("container")[0].style.filter = "blur("+-(i)+"px)"      
+    setTimeout(function () {
+      document.getElementsByClassName("container")[0].style.filter = "blur(" + -(i) + "px)"
     }, i * 2)
   }
-    let allConts =   document.getElementsByClassName("task")
+  let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
     allConts[i].style.webkitUserDrag = "element"
   }
@@ -182,34 +182,34 @@ function updateTask(id) {
   // get the old name
   let oldTaskName = document.getElementById(taskNameID).innerText
 
-  // get the new values
-  var newTaskName = document.getElementById("storyNameForm").value
-  var newDescription = document.getElementById("descritptionForm").value
-  var newColor = document.getElementById("storyColorForm").value
 
-  if (newTaskName != 0) {
-    // delete old task-name
-    for (let i = 0; i < tasks.length; i++) {
-      if (tasks[i] == oldTaskName) {
-        tasks[i] = ''
-        break
+    // get the new values
+    var newTaskName = document.getElementById("storyNameForm").value
+    var newDescription = document.getElementById("descritptionForm").value
+    var newColor = document.getElementById("storyColorForm").value
+
+    if (newTaskName != 0) {
+      // delete old task-name
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i] == oldTaskName) {
+          tasks[i] = ''
+          break
+        }
       }
+
     }
 
-    validateTaskname(newTaskName)
-    tasks.push(newTaskName) // save name of the task in the array
+  tasks.push(newTaskName) // save name of the task in the array
 
-    // Update values
-    let storyTitle = document.getElementById(taskNameID)
-    storyTitle.innerHTML = newTaskName
+  // Update values
+  let storyTitle = document.getElementById(taskNameID)
+  storyTitle.innerHTML = newTaskName
 
-    let description = document.getElementById(descriptionID)
-    description.innerHTML = newDescription
+  let description = document.getElementById(descriptionID)
+  description.innerHTML = newDescription
 
-    var task = document.getElementById(id)
-    task.style.borderLeft = "solid " + newColor + " 0.5em"
-
-  }
+  var task = document.getElementById(id)
+  task.style.borderLeft = "solid " + newColor + " 0.5em"
 
 }
 
@@ -250,6 +250,7 @@ function saveTask() {
       <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
       <div class="edit" onclick="editTask('${id}')"></div>
       <small id="${id + "-description"}" >${description}</small>
+      <hr width="80%">
   </div>
   `
 

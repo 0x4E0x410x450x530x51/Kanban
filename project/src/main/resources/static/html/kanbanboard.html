@@ -60,7 +60,12 @@
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <!-- Demo Storys-->
-
+                    <div class="task" id="test" draggable="true" ondragstart="drag(event)" style="border-left: 0.5em solid green; -webkit-user-drag: element;">
+                        <span class="storyTitle" id="test-name">test</span>
+                        <div class="edit" onclick="editTask('test')"></div>
+                        <small id="test-description">test</small>
+                        <hr width="80%">
+                    </div>
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
