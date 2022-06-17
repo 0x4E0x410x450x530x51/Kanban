@@ -74,7 +74,6 @@ var index = 0;
 function createTask() {
   clearInputs()
 
-
   for (let i = 0; i < 2; i++) {
     setTimeout(function () {
       let background = document.getElementsByClassName("container")[0]
@@ -82,19 +81,20 @@ function createTask() {
     }, i * 2)
   }
 
-
+  // makes that the user can't select anything in the background
   let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
     allConts[i].style.webkitUserDrag = "none"
   }
 
-  document.getElementsByClassName("container")[0].style.userSelect = "none";
-  var z = document.getElementById("create-new-task-block");
-  z.style.display = "block";
+  document.getElementsByClassName("container")[0].style.userSelect = "none" 
 
-  // show save-button 
-  var z = document.getElementById("save-button");
-  z.style.display = "block";
+  var createNewTaskBlock = document.getElementById("create-new-task-block");
+  createNewTaskBlock.style.display = "block"; // shows the create-new-task-block"
+
+  // shows save-button 
+  var saveButton = document.getElementById("save-button");
+  saveButton.style.display = "block";
 
   // hide update and delete button
   var updateButton = document.getElementById("update-button")
@@ -133,8 +133,13 @@ function editTask(id) {
 
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
-  //var color = document.getElementById("storyColorForm").value
 
+  // get color of the story
+  let currentColorOfStory = document.getElementById(id).style.borderLeftColor
+
+  // set the color
+  var createNewTaskBlock = document.getElementById("create-new-task-block")
+  createNewTaskBlock.style.borderLeft = "solid " + currentColorOfStory + " 0.5em"
 
   // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName
@@ -184,25 +189,12 @@ function updateTask(id) {
   let taskNameID = id + '-name'
   let descriptionID = id + '-description'
 
-  // get the old name
-  let oldTaskName = document.getElementById(taskNameID).innerText
-
-
   // get the new values
   var newTaskName = document.getElementById("storyNameForm").value
   var newDescription = document.getElementById("descritptionForm").value
   var newColor = document.getElementById("storyColorForm").value
 
-  if (newTaskName != 0) {
-    // delete old task-name
-    for (let i = 0; i < tasks.length; i++) {
-      if (tasks[i] == oldTaskName) {
-        tasks[i] = ''
-        break
-      }
-    }
-
-  }
+  if (newTaskName != 0) deleteTaskInArray(id)
 
   tasks.push(newTaskName) // save name of the task in the array
 
@@ -223,15 +215,8 @@ function deleteTask(id) {
   var el = document.getElementById(id)
   el.parentNode.removeChild(el) // delete task
 
-  // delete the task name
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == id) {
-      tasks[i] = ''
-      return
-    }
-
-    cancelCreateTask() // close the create-new-task-block
-  }
+  deleteTaskInArray(id)
+  cancelCreateTask() // close the create-new-task-block
 }
 
 /* Saves the story in the Backlog */
@@ -272,4 +257,22 @@ function clearInputs() {
   document.getElementById('descritptionForm').value = ""
 }
 
+function deleteTaskInArray(taskName) {
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == taskName) {
+      tasks[i] = ''
+      return
+    }
+  }
+}
+
+/*
+class Story {
+  constructor (name, description, id) {
+    this.name = name;
+    this.description = description
+    this.id = id
+  }
+}
+*/
 // ---------------------------------------------------------------------------------------
