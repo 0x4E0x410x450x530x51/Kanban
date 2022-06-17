@@ -2,6 +2,11 @@ package com.kanbanboard.dto;
 
 public class MessageDto {
 
+    public MessageDto(String m, String e) {
+        this.email = e;
+        this.message = m;
+    }
+
     private String message;
 
     private String email;

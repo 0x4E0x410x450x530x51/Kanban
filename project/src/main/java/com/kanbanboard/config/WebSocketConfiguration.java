@@ -36,6 +36,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
                 .setAllowedOrigins("http://192.168.43.46:8080")
                 // Enable SockJS fallback options
                 .withSockJS();
+        registry.addEndpoint("/topic/messages").withSockJS();
 
     }
     @Override

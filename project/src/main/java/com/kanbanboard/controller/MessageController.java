@@ -1,21 +1,27 @@
 package com.kanbanboard.controller;
 
 import com.kanbanboard.dto.MessageDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.simp.annotation.SendToUser;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MessageController {
 
-    // Handles messages from /app/chat. (Note the Spring adds the /app prefix for us).
     @MessageMapping("/chat")
-    // Sends the return value of this method to /topic/messages
     @SendTo("/topic/messages")
     public MessageDto getMessages(MessageDto dto){
-        System.out.println(dto.getEmail()+": "+dto.getMessage());
         return dto;
-
     }
+
+
+
 
 }

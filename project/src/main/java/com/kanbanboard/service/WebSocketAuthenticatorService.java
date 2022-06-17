@@ -18,7 +18,9 @@ public class WebSocketAuthenticatorService {
     @Autowired
     private UserService userService;
 
-
+    public UserService getUS() {
+        return this.userService;
+    }
 
     @Autowired
     private AuthenticationManager authManager;
@@ -36,6 +38,7 @@ public class WebSocketAuthenticatorService {
         User user = userService.findbyEmail(email);
 
         if(user == null){
+
             throw new AuthenticationCredentialsNotFoundException("User not found");
         }
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
