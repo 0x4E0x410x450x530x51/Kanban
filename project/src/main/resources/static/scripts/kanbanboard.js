@@ -51,8 +51,14 @@ function drop(ev) {
   console.log(1)
 
   var data = ev.dataTransfer.getData("text");
+  document.getElementById(data).style.opacity = 0;
   ev.target.appendChild(document.getElementById(data));
   ev.currentTarget.appendChild(document.getElementById(data)); // prevents the storys from droping in an other story
+  for (let i = 0;i < 100; i++) {
+    setTimeout(function() {
+      document.getElementById(data).style.opacity = i / 100
+    }, i * 5)
+  }
   var elements = document.getElementsByClassName("story-table")
   for (i = 0; i < elements.length; i++) {
     elements[i].classList.remove("story-border")
@@ -69,7 +75,8 @@ function drop(ev) {
 /* Creates a new Story */
 function createTask() {
   var z = document.getElementById("create-new-task-block");
-  z.style.display = "flex";
+  z.style.display = "block";
+
 }
 
 function cancelCreateTask() {
@@ -91,6 +98,13 @@ function saveTask() {
       <small>${description}</small>
   </div>
   `
+  let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
+  z.style.opacity = 0
+  for (let i = 0;i < 100; i++) {
+    setTimeout(function() {
+      z.style.opacity = i / 100
+    }, i * 5)
+  }
 
     cancelCreateTask()
   }
