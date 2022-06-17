@@ -96,7 +96,7 @@
   /* Makes a shadow along the border*/
   border-radius: 0.2rem;
   padding: 0.5rem 0.2rem 1rem 2rem;
-  border-left: solid #E60000 0.3em;
+  border-left: solid #E60000 0.5em;
   cursor: pointer;
   word-break: break-word; 
 }
@@ -143,14 +143,14 @@ h2 {
   height: auto;
   display: none;
   z-index: 1000;
-  position: absolute;
-  height: 23%;
+  position: absolute; 
+  height: 50%;
   width: 26%;
   transform: translate(78%, 60%);
-  padding: 0.5rem 2rem 1rem 2rem;
-  max-height: 30%;
+  padding: 3rem 2rem 1rem 2rem;
+  max-height: 50%;
   min-height: 218px;
-  max-width: 26%;
+  max-width: 46%;
   min-width: 495px;
 }
 

@@ -72,6 +72,18 @@ var tasks = []; // stores all task names
 /* Creates a new Story */
 function createTask() {
   clearInputs()
+  for (let i = 0; i < 3; i++) {
+    setTimeout(function() {
+      document.getElementsByClassName("container")[0].style.filter = "blur("+i+"px)"      
+    }, i * 2)
+  }
+
+  let allConts =   document.getElementsByClassName("task")
+  for (let i = 0; i < allConts.length; i++) {
+    allConts[i].style.webkitUserDrag = "none"
+  }
+
+  document.getElementsByClassName("container")[0].style.userSelect = "none";
   var z = document.getElementById("create-new-task-block");
   z.style.display = "block";
 
@@ -91,6 +103,18 @@ function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
+  for (let i = 0; i < 4; i++) {
+    setTimeout(function() {
+      document.getElementsByClassName("container")[0].style.filter = "blur("+-(i)+"px)"      
+    }, i * 2)
+  }
+    let allConts =   document.getElementsByClassName("task")
+  for (let i = 0; i < allConts.length; i++) {
+    allConts[i].style.webkitUserDrag = "element"
+  }
+
+  document.getElementsByClassName("container")[0].style.userSelect = "auto";
+
   clearInputs()
 }
 
@@ -161,18 +185,17 @@ function updateTask(id) {
   // get the new values
   var newTaskName = document.getElementById("storyNameForm").value
   var newDescription = document.getElementById("descritptionForm").value
-  //var color = document.getElementById("storyColorForm").value
-
+  var newColor = document.getElementById("storyColorForm").value
 
   if (newTaskName != 0) {
-    // delete old task name
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == oldTaskName) {
-      tasks[i] = ''
-      return
+    // delete old task-name
+    for (let i = 0; i < tasks.length; i++) {
+      if (tasks[i] == oldTaskName) {
+        tasks[i] = ''
+        break
+      }
     }
-  }
-  
+
     validateTaskname(newTaskName)
     tasks.push(newTaskName) // save name of the task in the array
 
@@ -183,10 +206,9 @@ function updateTask(id) {
     let description = document.getElementById(descriptionID)
     description.innerHTML = newDescription
 
-    /*
     var task = document.getElementById(id)
-    task.style.borderLeft = "solid " + color + " 0.3em"
-    */
+    task.style.borderLeft = "solid " + newColor + " 0.5em"
+
   }
 
 }
@@ -232,7 +254,7 @@ function saveTask() {
   `
 
   var task = document.getElementById(id)
-  task.style.borderLeft = "solid " + color + " 0.3em"
+  task.style.borderLeft = "solid " + color + " 0.5em"
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array

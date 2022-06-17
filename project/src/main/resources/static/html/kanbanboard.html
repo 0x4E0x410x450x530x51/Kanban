@@ -24,6 +24,22 @@
     </div>
 
     <main id="main">
+        <!-- Create a new Story -->
+        <div class="create-new-task-block" id="create-new-task-block">
+            <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
+            <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
+            <select id="storyColorForm">
+                <option class="red" value="red">red</option>
+                <option class="yellow" value="yellow">yellow</option>
+                <option class="green" value="green">green</option>
+                <option class="blue" value="#284ff0">blue</option>
+                <option class="purple" value="#433966">purple</option>
+            </select>
+            <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
+            <button type="button" class="btn btn-danger" id="cancel-button" onclick="cancelCreateTask()">Cancel</button>
+            <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+            <button type="button" class="btn btn-danger" id="update-button">Update</button>
+        </div>
         <!-- button to open the sidebar-->
         <span style="font-size:30px;cursor:pointer" onclick="manageSidebar()">&#9776;</span>
         <!-- Kanban board -->
@@ -38,30 +54,13 @@
                         </h2>
                     </strong>
 
-                    <!-- Create a new Story -->
-                    <div class="create-new-task-block" id="create-new-task-block">
-                        <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
-                        <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
-                        <select id="storyColorForm">
-                            <option class="red" value="red">red</option>
-                            <option class="yellow" value="yellow">yellow</option>
-                            <option class="green" value="green">green</option>
-                            <option class="blue" value="#284ff0">blue</option>
-                            <option class="purple" value="#433966">purple</option>
-                            <option class="darkgreen" value="#145555">darkgreen</option>
-                        </select>
-                        <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
-                        <button type="button" class="btn btn-danger" id="cancel-button"
-                            onclick="cancelCreateTask()">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
-                        <button type="button" class="btn btn-danger" id="update-button">Update</button>
-                    </div>
+
 
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <!-- Demo Storys-->
-                    
+
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
