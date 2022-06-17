@@ -68,9 +68,11 @@ function drop(ev) {
 
 
 // Drag and drop version 2
-// im working on it
+// working on it
 
 // ---------------------------------------------------------------------------------------
+
+var tasks = [];
 
 /* Creates a new Story */
 function createTask() {
@@ -84,19 +86,52 @@ function cancelCreateTask() {
   z.style.display = "none";
 }
 
+/* edit the story */
+function editTask(id) {
+  createTask()
+  let taskName = id
+  alert(taskName)
+  
+  // put the name into the input field
+  document.getElementById('storyNameForm').value = fileName
+
+  // show the delete button 
+  var deleteButton = document.getElementById("delete-button")
+  deleteButton.style.display = "block"
+
+}
+
+/* deletes the story  */
+function deleteTask(id) {
+  var el = document.getElementById(id);
+  el.parentNode.removeChild( el );
+}
+
 /* Saves the story in the Backlog */
 function saveTask() {
   var todo = document.getElementById("todo");
   var taskName = document.getElementById("storyNameForm").value
   var description = document.getElementById("descritptionForm").value;
 
+  let id = taskName.toLowerCase().split(" ").join("")
+
+  // check if the task already exists
+  for (let i = 0; i < tasks.length; i++)
+  {
+    if (tasks[i] == id) 
+    {
+      alert("Please enter a different name.")
+      return 
+    }
+  }
+
   if (taskName == 0) alert('You have to name the story.') // checks if the story is named
   else {
     todo.innerHTML += `
-  <div class="task" id="${taskName.toLowerCase().split(" ").join("")}" draggable="true" ondragstart="drag(event)"">
-      <span  class="storyTitle">${taskName}</span><br>
-      <div class="edit"></div>
-      <small>${description}</small>
+  <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
+      <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
+      <div class="edit" onclick="editTask('${id}')"></div>
+      <small id="${id + "-description"}" >${description}</small>
   </div>
   `
   let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
@@ -108,6 +143,8 @@ function saveTask() {
   }
 
     cancelCreateTask()
+    // save name of the task in the array
+    tasks.push(id)
   }
 
 }

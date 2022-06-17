@@ -43,46 +43,13 @@
                         <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
                         <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
                         <button type="button" class="btn btn-danger" id="cancel-button"onclick="cancelCreateTask()">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="delete-button"onclick="deleteTask()">Delete</button>
                     </div>
                   
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
-                    <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">Home-/ Landingpage</span>
-                        <div class="edit"></div>
-                        <small>Create  and design the page where the user lands after logging in.</small>
-                    </div>
-                    <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">Induvidual Kanbanboard</span><br>
-                        <div class="edit"></div>
-
-                        <small>Create and design the Kanbanboard with the storys.</small>
-                    </div>
-                    <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">Backend Structure</span><br>
-                        <div class="edit"></div>
-
-                        <small>Program the whole structure</small>
-                    </div>
-                    <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">create Loginsite</span><br>
-                        <div class="edit"></div>
-
-                        <small>Design the Loginpage in the ubs theme</small>
-                    </div>
-                    <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">Login / Registration</span><br>
-                        <div class="edit"></div>
-
-                        <small>Backend with database</small>
-                    </div>
-                    <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
-                        <span class="storyTitle">Task 6</span><br>
-                        <div class="edit"></div>
-
-                        <small>Description</small>
-                    </div>
+                    
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">

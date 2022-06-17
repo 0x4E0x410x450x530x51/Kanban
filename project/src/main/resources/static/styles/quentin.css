@@ -154,16 +154,21 @@ h2 {
   min-height: 218px;
   max-width: 26%;
   min-width: 495px;
-  max-wdith: 172px;
 }
+
 #save-button,
-#cancel-button {
+#cancel-button,
+#delete-button {
   border-radius: 0.2rem;
   border-radius: 0.3rem;
   font-size: 1rem;
   background-color: #E60000;
   margin-left: 5px;
   margin-top:5px;
+}
+
+#delete-button {
+  display: none;
 }
 
 #storyNameForm {
