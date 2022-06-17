@@ -1,15 +1,11 @@
 package com.kanbanboard.model;
 
-import com.kanbanboard.dto.UserDto;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
-public class User {
-
+public class UserOld {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userID", nullable = false)
@@ -27,18 +23,11 @@ public class User {
     @NotBlank
     private String password;
 
-
-    public User(String fullname, String email, String password) {
+    public UserOld(String fullname, String email, String password) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
     }
-
-    @Column(name = "authority")
-    private String authority;
-
-    private String fullname;
-
 
     public Integer getId() {
         return id;
@@ -53,13 +42,6 @@ public class User {
     }
 
     public void setUsername(String fullname) {
-        this.fullname = fullname;
-    }
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
         this.fullname = fullname;
     }
 
@@ -80,39 +62,7 @@ public class User {
     }
 
 
-    public String getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
-
-
-    public User(){
-
-
-
-    }
-
-    public User(UserDto dto, PasswordEncoder encoder){
-
-        email = dto.getEmail();
-        password = encoder.encode(dto.getPassword());
-        authority = "ROLE_USER";
-
-    }
-
-    public User(String Fullname, String  Email, String password){
-        email = Email;
-        password = password;
-        authority = "ROLE_USER";
-        fullname = Fullname;
-
-    }
-
 
 
 
 }
-

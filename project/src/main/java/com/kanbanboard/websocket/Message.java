@@ -2,7 +2,6 @@ package com.kanbanboard.websocket;
 
 public class Message {
     private String from;
-    private String to;
     private String content;
 
 
@@ -10,24 +9,19 @@ public class Message {
     public void setFrom(String from) {
         this.from = from;
     }
-    public void setTo(String to) {
-        this.to = to;
-    }
-    public void setContent(String content) {
-        this.content = content;
-    }
+
 
     public String getFrom() {
         return this.from;
     }
-
-    public String getTo() {
-        return this.to;
+  
+    public String getMessage() {
+      return this.content;
+    }
+    public void setMessage(String m) {
+      this.content = m;
     }
 
-    public String getContent() {
-        return this.content;
-    }
 
 
 }

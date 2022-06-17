@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class KanbanboardStory implements Serializable {
     @Id
     private int ID;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "kanbanboardID")
     private Kanbanboard kanbanboardID;
