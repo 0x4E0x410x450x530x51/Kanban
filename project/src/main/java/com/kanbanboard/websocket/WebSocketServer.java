@@ -1,9 +1,5 @@
 package com.kanbanboard.websocket;
 
-
-
-
-import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -12,7 +8,7 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-@ApplicationScoped
+
 @ServerEndpoint(
         value="/events/{boardid}",
         decoders = MessageDecoder.class,
