@@ -33,11 +33,11 @@ function manageSidebar() {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-/*
-  var elements = document.getElementsByClassName("story-table")
-  for (i = 0; i < elements.length; i++) {
-    elements[i].classList.add("story-border")
-  }*/
+  /*
+    var elements = document.getElementsByClassName("story-table")
+    for (i = 0; i < elements.length; i++) {
+      elements[i].classList.add("story-border")
+    }*/
 }
 
 function allowDrop(ev) {
@@ -49,9 +49,9 @@ function drop(ev) {
   console.log(1)
 
   var data = ev.dataTransfer.getData("text");
-  document.getElementById(data).style.opacity = 0;
   ev.target.appendChild(document.getElementById(data));
   ev.currentTarget.appendChild(document.getElementById(data)); // prevents the storys from droping in an other story
+  document.getElementById(data).style.opacity = 0;
   for (let i = 0; i < 100; i++) {
     setTimeout(function () {
       document.getElementById(data).style.opacity = i / 100
@@ -105,7 +105,7 @@ function editTask(id) {
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
   var color = document.getElementById("storyColorForm").value
-  
+
 
   // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName
@@ -162,13 +162,14 @@ function updateTask(id) {
   var newTaskName = document.getElementById("storyNameForm").value
   var newDescription = document.getElementById("descritptionForm").value;
 
-  if (validateTaskname(newTaskName) != false) {
-    for (let i = 0; i < tasks.length; i++) {
-      if (tasks[i] == oldTaskName) {
-        tasks[i] = ''
-        return
-      }
+  // delete old task name
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == oldTaskName) {
+      tasks[i] = ''
+      return
     }
+
+    validateTaskname(newTaskName)
     tasks.push(newTaskName) // save name of the task in the array
 
     if (id == 0) {
@@ -190,7 +191,16 @@ function updateTask(id) {
 function deleteTask(id) {
   var el = document.getElementById(id)
   el.parentNode.removeChild(el) // delete task
-  cancelCreateTask() // close the create-new-task-block
+
+  // delete the task name
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == id) {
+      tasks[i] = ''
+      return
+    }
+
+    cancelCreateTask() // close the create-new-task-block
+  }
 }
 
 /* Saves the story in the Backlog */
@@ -218,7 +228,7 @@ function saveTask() {
   `
 
   var task = document.getElementById(id)
-  task.style.borderLeft = "solid " + color + " 0.3em" 
+  task.style.borderLeft = "solid " + color + " 0.3em"
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array

@@ -30,41 +30,65 @@
         <div class="container">
             <div class="kanban-board">
                 <!-- Backlog-->
-                <div class="kanban-block story-table" id="todo" class="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="kanban-block story-table" id="todo" class="backlog" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
                     <strong>
                         <h2>
                             <div class="backlogTitle">Backlog</div>
                         </h2>
                     </strong>
 
-                    <!-- Create a new Story -->             
+                    <!-- Create a new Story -->
                     <div class="create-new-task-block" id="create-new-task-block">
                         <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
                         <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
                         <select id="storyColorForm">
                             <option class="red" value="red">red</option>
+                            <option class="yellow" value="yellow">yellow</option>
                             <option class="green" value="green">green</option>
-                            <option class="blue" value="blue">blue</option>
-                            <option class="purple" value="purple">purple</option>
+                            <option class="blue" value="#284ff0">blue</option>
+                            <option class="purple" value="#433966">purple</option>
+                            <option class="darkgreen" value="#145555">darkgreen</option>
                         </select>
                         <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
-                        <button type="button" class="btn btn-danger" id="cancel-button"onclick="cancelCreateTask()">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="cancel-button"
+                            onclick="cancelCreateTask()">Cancel</button>
                         <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
                         <button type="button" class="btn btn-danger" id="update-button">Update</button>
                     </div>
-                  
+
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
-                    <!-- Demo Story-->
-                    <div class="task" id="DemoStory" draggable="true" ondragstart="drag(event)">
-                        <span  class="storyTitle" id="DemoStory-name">DemoStory</span>
-                        <div class="edit" onclick="editTask('DemoStory')"></div>
-                        <small id="DemoStory-description">Das ist eine Demo.</small>
+                    <!-- Demo Storys-->
+                    <div class="task" id="blue" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
+                        0.3em solid blue; opacity: 0.99;">
+                        <span class="storyTitle" id="blue-name">Blue</span>
+                        <div class="edit" onclick="editTask('blue')"></div>
+                        <small id="blue-description">This story is blue.</small>
+                    </div>
+                    <div class="task" id="red" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
+                        0.3em solid red; opacity: 0.99;">
+                        <span class="storyTitle" id="red-name">Red</span>
+                        <div class="edit" onclick="editTask('red')"></div>
+                        <small id="red-description">This story is red.</small>
+                    </div>
+                    <div class="task" id="purple" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
+                        0.3em solid purple; opacity: 0.99;">
+                        <span class="storyTitle" id="purple-name">Purple</span>
+                        <div class="edit" onclick="editTask('purple')"></div>
+                        <small id="purple-description">This story is purple.</small>
+                    </div>
+                    <div class="task" id="green" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
+                        0.3em solid green; opacity: 0.99;">
+                        <span class="storyTitle" id="green-name">Green</span>
+                        <div class="edit" onclick="editTask('green')"></div>
+                        <small id="green-description">This story is green.</small>
                     </div>
                 </div>
                 <!-- In Progress-->
-                <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
                     <strong>
                         <h2>
                             <div class="inProgressTitle">In Progress</div>
@@ -72,7 +96,8 @@
                     </strong>
                 </div>
                 <!-- Done-->
-                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
                     <strong>
                         <h2>
                             <div class="doneTitle">Done</div>
