@@ -76,6 +76,7 @@ var tasks = []; // stores all task names
 
 /* Creates a new Story */
 function createTask() {
+  clearInputs() 
   var z = document.getElementById("create-new-task-block");
   z.style.display = "block";
 
@@ -95,18 +96,19 @@ function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
-
+  clearInputs() 
 }
 
 /* edit the story */
 function editTask(id) {
+  clearInputs() 
   createTask() // open the create-new-task-block
 
   let taskNameID = id + '-name'
   let descriptionID = id + '-description'
 
-  let taskName = document.getElementById(taskNameID).value
-  let description = document.getElementById(descriptionID).value
+  let taskName = document.getElementById(taskNameID).innerText
+  let description = document.getElementById(descriptionID).innerText
 
   // put the name into the input fields
   document.getElementById('storyNameForm').value = taskName
@@ -178,11 +180,16 @@ function saveTask() {
     }
 
     cancelCreateTask() // close the create-new-task-block
-    // save name of the task in the array
-    tasks.push(id)
+    tasks.push(id) // save name of the task in the array
   }
 
 }
+
+function clearInputs() {
+  document.getElementById('storyNameForm').value = ""
+  document.getElementById('descritptionForm').value = ""
+}
+
 /*
 function editTask(){
   var saveButton = document.getElementById("save-button");
