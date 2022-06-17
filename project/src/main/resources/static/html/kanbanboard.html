@@ -39,17 +39,22 @@
 
                     <!-- Create a new Story -->
                     <div class="create-new-task-block" id="create-new-task-block">
-                        <input type="text" id="storyNameForm" placeholder="Enter the story name"></input>
+                        <input type="text" id="storyNameForm" placeholder="Enter the story name" value=""></input>
                         <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
                         <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
                         <button type="button" class="btn btn-danger" id="cancel-button"onclick="cancelCreateTask()">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="delete-button"onclick="deleteTask()">Delete</button>
+                        <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+                        <button type="button" class="btn btn-danger" id="update-button">Update</button>
                     </div>
                   
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
-                    
+                    <div class="task" id="DemoStory" draggable="true" ondragstart="drag(event)">
+                        <span  class="storyTitle" id="DemoStory-name">DemoStory</span>
+                        <div class="edit" onclick="editTask('DemoStory')"></div>
+                        <small id="DemoStory-description">Das ist eine Demo.</small>
+                    </div>
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">

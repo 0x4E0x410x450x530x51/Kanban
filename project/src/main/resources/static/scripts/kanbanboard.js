@@ -54,8 +54,8 @@ function drop(ev) {
   document.getElementById(data).style.opacity = 0;
   ev.target.appendChild(document.getElementById(data));
   ev.currentTarget.appendChild(document.getElementById(data)); // prevents the storys from droping in an other story
-  for (let i = 0;i < 100; i++) {
-    setTimeout(function() {
+  for (let i = 0; i < 100; i++) {
+    setTimeout(function () {
       document.getElementById(data).style.opacity = i / 100
     }, i * 5)
   }
@@ -72,40 +72,77 @@ function drop(ev) {
 
 // ---------------------------------------------------------------------------------------
 
-var tasks = [];
+var tasks = []; // stores all task names
 
 /* Creates a new Story */
 function createTask() {
   var z = document.getElementById("create-new-task-block");
   z.style.display = "block";
 
+  // show save-button 
+  var z = document.getElementById("save-button");
+  z.style.display = "block";
+
+  // hide update and delete button
+  var updateButton = document.getElementById("update-button")
+  updateButton.style.display = "none"
+  var deleteButton = document.getElementById("delete-button")
+  deleteButton.style.display = "none"
 }
 
+/* cloeses the  create-new-task-block */
 function cancelCreateTask() {
+  // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
+
 }
 
 /* edit the story */
 function editTask(id) {
-  createTask()
-  let taskName = id
-  alert(taskName)
-  
-  // put the name into the input field
-  document.getElementById('storyNameForm').value = fileName
+  createTask() // open the create-new-task-block
 
-  // show the delete button 
-  var deleteButton = document.getElementById("delete-button")
+  let taskNameID = id + '-name'
+  let descriptionID = id + '-description'
+
+  let taskName = document.getElementById(taskNameID).value
+  let description = document.getElementById(descriptionID).value
+
+  // put the name into the input fields
+  document.getElementById('storyNameForm').value = taskName
+  document.getElementById('descritptionForm').value = description
+
+  // show the delete and update button 
+  var updateButton = document.getElementById("delete-button")
+  var deleteButton = document.getElementById("update-button")
+  updateButton.style.display = "block"
   deleteButton.style.display = "block"
+
+  // hide the save button
+  var saveButton = document.getElementById("save-button")
+  saveButton.style.display = "none"
+
+  // ckeck if the delete button got clicked 
+  document.getElementById('delete-button').onclick = function () {
+    deleteTask(id)
+  };
+
+  // ckeck if the save button got clicked 
+  document.getElementById('update-button').onclick = function () {
+    deleteTask(id)
+    
+  };
 
 }
 
 /* deletes the story  */
 function deleteTask(id) {
-  var el = document.getElementById(id);
-  el.parentNode.removeChild( el );
+  var el = document.getElementById(id)
+  el.parentNode.removeChild(el) // delete task
+  cancelCreateTask() // close the create-new-task-block
 }
+
+/* Update the task with the new values */
 
 /* Saves the story in the Backlog */
 function saveTask() {
@@ -116,12 +153,10 @@ function saveTask() {
   let id = taskName.toLowerCase().split(" ").join("")
 
   // check if the task already exists
-  for (let i = 0; i < tasks.length; i++)
-  {
-    if (tasks[i] == id) 
-    {
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == id) {
       alert("Please enter a different name.")
-      return 
+      return false; 
     }
   }
 
@@ -134,15 +169,15 @@ function saveTask() {
       <small id="${id + "-description"}" >${description}</small>
   </div>
   `
-  let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
-  z.style.opacity = 0
-  for (let i = 0;i < 100; i++) {
-    setTimeout(function() {
-      z.style.opacity = i / 100
-    }, i * 5)
-  }
+    let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
+    z.style.opacity = 0
+    for (let i = 0; i < 100; i++) {
+      setTimeout(function () {
+        z.style.opacity = i / 100
+      }, i * 5)
+    }
 
-    cancelCreateTask()
+    cancelCreateTask() // close the create-new-task-block
     // save name of the task in the array
     tasks.push(id)
   }
