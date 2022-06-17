@@ -71,12 +71,14 @@ function drop(ev) {
 // working on it
 
 // ---------------------------------------------------------------------------------------
+// This code manages the tasks
+// delete, update, save
 
 var tasks = []; // stores all task names
 
 /* Creates a new Story */
 function createTask() {
-  clearInputs() 
+  clearInputs()
   var z = document.getElementById("create-new-task-block");
   z.style.display = "block";
 
@@ -96,12 +98,12 @@ function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
-  clearInputs() 
+  clearInputs()
 }
 
 /* edit the story */
 function editTask(id) {
-  clearInputs() 
+  clearInputs()
   createTask() // open the create-new-task-block
 
   let taskNameID = id + '-name'
@@ -131,9 +133,22 @@ function editTask(id) {
 
   // ckeck if the save button got clicked 
   document.getElementById('update-button').onclick = function () {
+    updateTask(id)
     deleteTask(id)
-    
   };
+
+}
+
+/* Update the task with the new values */
+function updateTask(id) {
+  saveTask()
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == id) {
+      tasks[i] = ''
+      return
+    }
+  }
 
 }
 
@@ -144,7 +159,7 @@ function deleteTask(id) {
   cancelCreateTask() // close the create-new-task-block
 }
 
-/* Update the task with the new values */
+
 
 /* Saves the story in the Backlog */
 function saveTask() {
@@ -152,55 +167,49 @@ function saveTask() {
   var taskName = document.getElementById("storyNameForm").value
   var description = document.getElementById("descritptionForm").value;
 
-  let id = taskName.toLowerCase().split(" ").join("")
+  let id = taskName.toLowerCase().split(" ").join("") // generate the taskID
 
-  // check if the task already exists
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == id) {
-      alert("Please enter a different name.")
-      return false; 
-    }
+  // validation
+  if (validateTaskname(id) == false) return
+  if (id == 0) {
+    alert('You have to name the story.') // checks if the story is named
+    return false;
   }
 
-  if (taskName == 0) alert('You have to name the story.') // checks if the story is named
-  else {
-    todo.innerHTML += `
+  todo.innerHTML += `
   <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
       <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
       <div class="edit" onclick="editTask('${id}')"></div>
       <small id="${id + "-description"}" >${description}</small>
   </div>
   `
-    let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
-    z.style.opacity = 0
-    for (let i = 0; i < 100; i++) {
-      setTimeout(function () {
-        z.style.opacity = i / 100
-      }, i * 5)
-    }
-
-    cancelCreateTask() // close the create-new-task-block
-    tasks.push(id) // save name of the task in the array
+  let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
+  z.style.opacity = 0
+  for (let i = 0; i < 100; i++) {
+    setTimeout(function () {
+      z.style.opacity = i / 100
+    }, i * 5)
   }
 
+  cancelCreateTask() // close the create-new-task-block
+  tasks.push(id) // save name of the task in the array
 }
 
+// clears the input fields 
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('descritptionForm').value = ""
 }
 
-/*
-function editTask(){
-  var saveButton = document.getElementById("save-button");
-  var editButton = document.getElementById("edit-button");
-  if (saveButton.style.display === "none") {
-      saveButton.style.display = "block";
-      editButton.style.display = "none";
-  } else{
-      saveButton.style.display = "none";
-      editButton.style.display = "block";
+// checks if taskname is valid 
+function validateTaskname(name) {
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i] == name) {
+      alert("Please enter a different name.")
+      return false;
+    }
   }
-}*/
+  return true
+}
 
 // ---------------------------------------------------------------------------------------
