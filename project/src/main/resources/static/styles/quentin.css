@@ -171,7 +171,8 @@ h2 {
 }
 
 #storyNameForm,
-#descritptionForm {
+#descritptionForm,
+#storyColorForm {
   border-radius: 0.2em;
   border: solid 0.1em rgba(0, 0, 0, 0.2);
   padding: 0;
@@ -191,5 +192,5 @@ h2 {
   font-size: 20px; 
   float: right; 
   justify-items: top;
-  margin-top: -25px;
+  margin-top: -30px;
 }

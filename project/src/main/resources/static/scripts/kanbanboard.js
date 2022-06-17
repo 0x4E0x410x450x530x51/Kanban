@@ -104,10 +104,13 @@ function editTask(id) {
 
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
+  var color = document.getElementById("storyColorForm").value
+  
 
-  // put the name into the input fields
+  // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName
   document.getElementById('descritptionForm').value = description
+  document.getElementById('storyColorForm').value = description
 
   // show the delete and update button 
   var updateButton = document.getElementById("delete-button")
@@ -194,7 +197,8 @@ function deleteTask(id) {
 function saveTask() {
   var todo = document.getElementById("todo");
   var taskName = document.getElementById("storyNameForm").value
-  var description = document.getElementById("descritptionForm").value;
+  var description = document.getElementById("descritptionForm").value
+  var color = document.getElementById("storyColorForm").value
 
   let id = taskName.toLowerCase().split(" ").join("") // generate the taskID
 
@@ -212,6 +216,9 @@ function saveTask() {
       <small id="${id + "-description"}" >${description}</small>
   </div>
   `
+
+  var task = document.getElementById(id)
+  task.style.borderLeft = "solid " + color + " 0.3em" 
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array

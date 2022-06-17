@@ -37,10 +37,16 @@
                         </h2>
                     </strong>
 
-                    <!-- Create a new Story -->
+                    <!-- Create a new Story -->             
                     <div class="create-new-task-block" id="create-new-task-block">
                         <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
                         <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
+                        <select id="storyColorForm">
+                            <option class="red" value="red">red</option>
+                            <option class="green" value="green">green</option>
+                            <option class="blue" value="blue">blue</option>
+                            <option class="purple" value="purple">purple</option>
+                        </select>
                         <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
                         <button type="button" class="btn btn-danger" id="cancel-button"onclick="cancelCreateTask()">Cancel</button>
                         <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
