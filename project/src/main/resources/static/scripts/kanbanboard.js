@@ -46,7 +46,6 @@ function allowDrop(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  console.log(1)
 
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
