@@ -91,6 +91,9 @@ function createTask() {
   var createNewTaskBlock = document.getElementById("create-new-task-block");
   createNewTaskBlock.style.display = "block"; // shows the create-new-task-block"
 
+  // set color
+  createNewTaskBlock.style.borderLeft = "solid #E60000 0.5em"
+
   // shows save-button 
   var saveButton = document.getElementById("save-button");
   saveButton.style.display = "block";
