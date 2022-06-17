@@ -68,15 +68,20 @@ function drop(ev) {
 // delete, update, save
 
 var tasks = []; // stores all task names
+var index = 0; 
 
 /* Creates a new Story */
 function createTask() {
   clearInputs()
-  for (let i = 0; i < 3; i++) {
+  
+
+  for (let i = 0; i < 2; i++) {
     setTimeout(function () {
-      document.getElementsByClassName("container")[0].style.filter = "blur(" + i + "px)"
+      let background = document.getElementsByClassName("container")[0]
+      background.style.filter = "blur(" + i + "px)" // blurs background
     }, i * 2)
   }
+  
 
   let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
@@ -103,7 +108,7 @@ function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 2; i++) {
     setTimeout(function () {
       document.getElementsByClassName("container")[0].style.filter = "blur(" + -(i) + "px)"
     }, i * 2)
@@ -128,7 +133,7 @@ function editTask(id) {
 
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
-  var color = document.getElementById("storyColorForm").value
+  //var color = document.getElementById("storyColorForm").value
 
 
   // put the values into the input fields
@@ -183,21 +188,21 @@ function updateTask(id) {
   let oldTaskName = document.getElementById(taskNameID).innerText
 
 
-    // get the new values
-    var newTaskName = document.getElementById("storyNameForm").value
-    var newDescription = document.getElementById("descritptionForm").value
-    var newColor = document.getElementById("storyColorForm").value
+  // get the new values
+  var newTaskName = document.getElementById("storyNameForm").value
+  var newDescription = document.getElementById("descritptionForm").value
+  var newColor = document.getElementById("storyColorForm").value
 
-    if (newTaskName != 0) {
-      // delete old task-name
-      for (let i = 0; i < tasks.length; i++) {
-        if (tasks[i] == oldTaskName) {
-          tasks[i] = ''
-          break
-        }
+  if (newTaskName != 0) {
+    // delete old task-name
+    for (let i = 0; i < tasks.length; i++) {
+      if (tasks[i] == oldTaskName) {
+        tasks[i] = ''
+        break
       }
-
     }
+
+  }
 
   tasks.push(newTaskName) // save name of the task in the array
 
@@ -208,7 +213,7 @@ function updateTask(id) {
   let description = document.getElementById(descriptionID)
   description.innerHTML = newDescription
 
-  var task = document.getElementById(id)
+  let task = document.getElementById(id)
   task.style.borderLeft = "solid " + newColor + " 0.5em"
 
 }
@@ -236,10 +241,9 @@ function saveTask() {
   var description = document.getElementById("descritptionForm").value
   var color = document.getElementById("storyColorForm").value
 
-  let id = taskName.toLowerCase().split(" ").join("") // generate the taskID
+  let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
 
   // validation
-  if (validateTaskname(id) == false) return
   if (id == 0) {
     alert('You have to name the story.') // checks if the story is named
     return false;
@@ -259,23 +263,13 @@ function saveTask() {
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
+  index++; 
 }
 
 // clears the input fields 
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('descritptionForm').value = ""
-}
-
-// checks if taskname is valid 
-function validateTaskname(name) {
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == name) {
-      alert("Please enter a different name.")
-      return false;
-    }
-  }
-  return true
 }
 
 // ---------------------------------------------------------------------------------------

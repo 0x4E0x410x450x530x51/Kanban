@@ -29,11 +29,11 @@
             <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
             <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
             <select id="storyColorForm">
-                <option class="red" value="red">red</option>
-                <option class="yellow" value="yellow">yellow</option>
-                <option class="green" value="green">green</option>
-                <option class="blue" value="#284ff0">blue</option>
-                <option class="purple" value="#433966">purple</option>
+                <option class="red" value="#E60000">red</option>
+                <option class="yellow" value="#e6bf33">yellow</option>
+                <option class="green" value="#aacc33">green</option>
+                <option class="blue" value="#6495ED">blue</option>
+                <option class="purple" value="#8e7cc3">purple</option>
             </select>
             <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
             <button type="button" class="btn btn-danger" id="cancel-button" onclick="cancelCreateTask()">Cancel</button>
@@ -54,18 +54,11 @@
                         </h2>
                     </strong>
 
-
-
                     <div class="task-button-block">
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <!-- Demo Storys-->
-                    <div class="task" id="test" draggable="true" ondragstart="drag(event)" style="border-left: 0.5em solid green; -webkit-user-drag: element;">
-                        <span class="storyTitle" id="test-name">test</span>
-                        <div class="edit" onclick="editTask('test')"></div>
-                        <small id="test-description">test</small>
-                        <hr width="80%">
-                    </div>
+                    
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
