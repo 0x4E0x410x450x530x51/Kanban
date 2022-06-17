@@ -15,7 +15,6 @@ import java.security.NoSuchAlgorithmException;
 
 
 @Controller
-@ResponseBody
 @RequestMapping("/api")
 public class LoginController {
     @Autowired
@@ -42,7 +41,7 @@ public class LoginController {
 
 
         if (userRepository.existsByEmail(payload.getEmail())) {
-            return "Mail schon gebraucht!";
+            return "Mail in use!";
         } else {
 
 

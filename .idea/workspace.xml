@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/WebSocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/controller/MSGController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/MessageDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/MessageEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Kanbansim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/Kanbansim.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/KanbansimApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/KanbansimApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/websocket/WebSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
