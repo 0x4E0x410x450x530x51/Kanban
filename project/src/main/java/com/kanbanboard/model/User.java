@@ -37,7 +37,6 @@ public class User {
     @Column(name = "authority")
     private String authority;
 
-    private String fullname;
 
 
     public Integer getId() {
@@ -103,13 +102,6 @@ public class User {
 
     }
 
-    public User(String Fullname, String  Email, String password){
-        email = Email;
-        password = password;
-        authority = "ROLE_USER";
-        fullname = Fullname;
-
-    }
 
 
 

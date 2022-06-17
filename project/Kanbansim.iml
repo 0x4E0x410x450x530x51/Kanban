@@ -137,5 +137,6 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.gson:gson:unknown" level="project" />
   </component>
 </module>
