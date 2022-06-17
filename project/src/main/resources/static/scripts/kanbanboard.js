@@ -33,11 +33,11 @@ function manageSidebar() {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  /*
-    var elements = document.getElementsByClassName("story-table")
-    for (i = 0; i < elements.length; i++) {
-      elements[i].classList.add("story-border")
-    }*/
+  // makes a shadow around the board when a story gets draged
+  var elements = document.getElementsByClassName("story-table")
+  for (i = 0; i < elements.length; i++) {
+    elements[i].classList.add("story-border")
+  }
 }
 
 function allowDrop(ev) {
@@ -68,12 +68,12 @@ function drop(ev) {
 // delete, update, save
 
 var tasks = []; // stores all task names
-var index = 0; 
+var index = 0;
 
 /* Creates a new Story */
 function createTask() {
   clearInputs()
-  
+
 
   for (let i = 0; i < 2; i++) {
     setTimeout(function () {
@@ -81,7 +81,7 @@ function createTask() {
       background.style.filter = "blur(" + i + "px)" // blurs background
     }, i * 2)
   }
-  
+
 
   let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
@@ -263,7 +263,7 @@ function saveTask() {
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
-  index++; 
+  index++;
 }
 
 // clears the input fields 
