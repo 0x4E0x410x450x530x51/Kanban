@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "users")
 public class User {
-<<<<<<< Updated upstream
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userID", nullable = false)
@@ -25,8 +25,12 @@ public class User {
     @Column(name = "password")
     @NotBlank
     private String password;
-=======
->>>>>>> Stashed changes
+
+    @Column(name = "authority")
+    private String authority;
+
+    private String fullname;
+
 
     public Integer getId() {
         return id;
@@ -36,21 +40,19 @@ public class User {
         this.id = id;
     }
 
-<<<<<<< Updated upstream
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
-=======
+    }
     public String getFullname() {
         return fullname;
     }
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
->>>>>>> Stashed changes
     }
 
     public String getEmail() {
@@ -69,9 +71,6 @@ public class User {
         this.password = password;
     }
 
-<<<<<<< Updated upstream
-}
-=======
     public String getAuthority() {
         return authority;
     }
@@ -80,24 +79,6 @@ public class User {
         this.authority = authority;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userID", nullable = false)
-    private Integer id;
-
-    @Column(name = "fullname")
-
-    private String fullname;
-
-    @Column(name = "email")
-    @NotBlank
-    private String email;
-
-    @Column(name = "password")
-    @NotBlank
-    private String password;
-
-    private String authority;
 
     public User(){
 
@@ -125,4 +106,4 @@ public class User {
 
 
 }
->>>>>>> Stashed changes
+

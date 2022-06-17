@@ -1,2 +1,3 @@
-package com.kanbanboard.config;public class AppSecurity {
+package com.kanbanboard.config;
+public class AppSecurity {
 }

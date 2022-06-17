@@ -1,5 +1,6 @@
 package com.kanbanboard.config;
 
+import com.kanbanboard.dto.AppUserDetails;
 import com.kanbanboard.service.AppUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

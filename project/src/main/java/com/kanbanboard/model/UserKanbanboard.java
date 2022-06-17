@@ -1,12 +1,15 @@
 package com.kanbanboard.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "user_kanbanboard")
-public class UserKanbanboard {
+public class UserKanbanboard implements Serializable {
+    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "kanbanboardID")
+
     private Kanbanboard kanbanboardID;
 
     @ManyToOne(fetch = FetchType.LAZY)
