@@ -134,12 +134,14 @@ function editTask(id) {
   // ckeck if the save button got clicked 
   document.getElementById('update-button').onclick = function () {
     updateTask(id)
-    deleteTask(id)
+    cancelCreateTask()
   };
 
 }
 
 /* Update the task with the new values */
+/*
+Version 1
 function updateTask(id) {
   saveTask()
 
@@ -149,6 +151,43 @@ function updateTask(id) {
       return
     }
   }
+
+}
+*/
+// update version 2
+function updateTask(id) {
+  let taskNameID = id + '-name'
+  let descriptionID = id + '-description'
+
+  // get the old name
+  let oldTaskName = document.getElementById(taskNameID).innerText
+
+  // get the new values
+  var newTaskName = document.getElementById("storyNameForm").value
+  var newDescription = document.getElementById("descritptionForm").value;
+
+  if (validateTaskname(newTaskName) != false) {
+    for (let i = 0; i < tasks.length; i++) {
+      if (tasks[i] == oldTaskName) {
+        tasks[i] = ''
+        return
+      }
+    }
+    tasks.push(newTaskName) // save name of the task in the array
+
+    if (id == 0) {
+      alert('You have to name the story.') // checks if the story is named
+    }
+
+    // Update values
+    let storyTitle = document.getElementById(taskNameID)
+    storyTitle.innerHTML = newTaskName
+
+    let description = document.getElementById(descriptionID)
+    description.innerHTML = newDescription
+
+  }
+
 
 }
 
