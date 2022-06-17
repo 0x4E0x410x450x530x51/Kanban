@@ -31,15 +31,13 @@ function manageSidebar() {
 
 /* Drag and drop storys in the Kanban Board */
 
-// First drag and drop version
-
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  // console.log(1)
+/*
   var elements = document.getElementsByClassName("story-table")
   for (i = 0; i < elements.length; i++) {
     elements[i].classList.add("story-border")
-  }
+  }*/
 }
 
 function allowDrop(ev) {
@@ -64,11 +62,6 @@ function drop(ev) {
     elements[i].classList.remove("story-border")
   }
 }
-
-
-
-// Drag and drop version 2
-// working on it
 
 // ---------------------------------------------------------------------------------------
 // This code manages the tasks
@@ -188,7 +181,6 @@ function updateTask(id) {
 
   }
 
-
 }
 
 /* deletes the story  */
@@ -197,8 +189,6 @@ function deleteTask(id) {
   el.parentNode.removeChild(el) // delete task
   cancelCreateTask() // close the create-new-task-block
 }
-
-
 
 /* Saves the story in the Backlog */
 function saveTask() {
@@ -222,13 +212,6 @@ function saveTask() {
       <small id="${id + "-description"}" >${description}</small>
   </div>
   `
-  let z = document.getElementById(taskName.toLowerCase().split(" ").join(""))
-  z.style.opacity = 0
-  for (let i = 0; i < 100; i++) {
-    setTimeout(function () {
-      z.style.opacity = i / 100
-    }, i * 5)
-  }
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
