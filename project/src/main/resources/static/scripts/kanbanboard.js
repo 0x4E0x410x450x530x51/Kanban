@@ -160,21 +160,21 @@ function updateTask(id) {
 
   // get the new values
   var newTaskName = document.getElementById("storyNameForm").value
-  var newDescription = document.getElementById("descritptionForm").value;
+  var newDescription = document.getElementById("descritptionForm").value
+  //var color = document.getElementById("storyColorForm").value
 
-  // delete old task name
+
+  if (newTaskName != 0) {
+    // delete old task name
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i] == oldTaskName) {
       tasks[i] = ''
       return
     }
-
+  }
+  
     validateTaskname(newTaskName)
     tasks.push(newTaskName) // save name of the task in the array
-
-    if (id == 0) {
-      alert('You have to name the story.') // checks if the story is named
-    }
 
     // Update values
     let storyTitle = document.getElementById(taskNameID)
@@ -183,6 +183,10 @@ function updateTask(id) {
     let description = document.getElementById(descriptionID)
     description.innerHTML = newDescription
 
+    /*
+    var task = document.getElementById(id)
+    task.style.borderLeft = "solid " + color + " 0.3em"
+    */
   }
 
 }
