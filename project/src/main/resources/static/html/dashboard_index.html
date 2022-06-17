@@ -11,8 +11,6 @@
     <body>
 
         <header>
-            <button type="button" class="column2">Account</button>
-
             <!-- Sidebar navigation-->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -27,6 +25,8 @@
             <!--Titel-->
             <h1 class="column1">Dashboard</h1>
             <button id="rowAdder" type="button" class="btn-add">Add New</button>
+
+            <button type="button" class="column2">Account</button>
         </header>
 
         <!--New Add
@@ -38,7 +38,7 @@
             
 
         <div id="addwhole">
-            <div style="width: 90%;">
+            <div style="width: 80%;" style="height: 150%;">
                     <div class="">
                         <!--
                         <div id="row">
@@ -69,6 +69,7 @@
                 $("#rowAdder").click(function () {
                     newRowAdd =
                     '<div style="opacity: 0" class="row"> <div class="input-group-m-3">' +
+                    '<img src="../pic/pen.png alt="Pen Icon">' +    
                     '<div class="form-control m-input"><div class="fields" contentEditable="true">Kanban</div><div class="desc" contentEditable="true">Add some description.</div></div> </div>';
         
                     $('#grid-container').append(newRowAdd);
