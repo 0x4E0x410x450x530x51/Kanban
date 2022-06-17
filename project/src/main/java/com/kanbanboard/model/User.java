@@ -1,11 +1,15 @@
 package com.kanbanboard.model;
 
+import com.kanbanboard.dto.UserDto;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
 public class User {
+<<<<<<< Updated upstream
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userID", nullable = false)
@@ -21,6 +25,8 @@ public class User {
     @Column(name = "password")
     @NotBlank
     private String password;
+=======
+>>>>>>> Stashed changes
 
     public Integer getId() {
         return id;
@@ -30,12 +36,21 @@ public class User {
         this.id = id;
     }
 
+<<<<<<< Updated upstream
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+=======
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+>>>>>>> Stashed changes
     }
 
     public String getEmail() {
@@ -54,4 +69,60 @@ public class User {
         this.password = password;
     }
 
+<<<<<<< Updated upstream
 }
+=======
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userID", nullable = false)
+    private Integer id;
+
+    @Column(name = "fullname")
+
+    private String fullname;
+
+    @Column(name = "email")
+    @NotBlank
+    private String email;
+
+    @Column(name = "password")
+    @NotBlank
+    private String password;
+
+    private String authority;
+
+    public User(){
+
+
+
+    }
+
+    public User(UserDto dto, PasswordEncoder encoder){
+
+        email = dto.getEmail();
+        password = encoder.encode(dto.getPassword());
+        authority = "ROLE_USER";
+
+    }
+
+    public User(String Fullname, String  Email, String password){
+        email = Email;
+        password = password;
+        authority = "ROLE_USER";
+        fullname = Fullname;
+
+    }
+
+
+
+
+}
+>>>>>>> Stashed changes

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Websockets</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.js" integrity="sha512-lyIq9fRcCeSCXhp41XC/250UBmypAHV8KW+AhLcSEIksWHBfhzub6XXwDe67wTpOG8zrO2NAU/TYmEaCW+aQSg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g==" crossorigin="anonymous"></script></footer>
+
+        <script>
+            localStorage.setItem("sessionId", utils.random_string(8))
+            // Try to set up WebSocket connection with the handshake at "http://localhost:8080/stomp"
+            let sock = new SockJS("http://192.168.43.46:8080/board");
+
+            // Create a new StompClient object with the WebSocket endpoint
+            let client = Stomp.over(sock);
+
+            // Start the STOMP communications, provide a callback for when the CONNECT frame arrives.
+            client.connect({}, frame => {
+                // Subscribe to "/topic/messages". Whenever a message arrives add the text in a list-item element in the unordered list.
+                client.subscribe("/topic/messages", payload => {
+
+                    let message_list = document.getElementById('message-list');
+                    let message = document.createElement('li');
+                    document.getElementById('message-list').innerHTML += `<li>[${JSON.parse(payload.body).sessid}]: ${JSON.parse(payload.body).message}</li>`
+
+
+                });
+
+            });
+
+            // Take the value in the ‘message-input’ text field and send it to the server with empty headers.
+            function sendMessage(){
+
+                let input = document.getElementById("message-input");
+                let message = input.value;
+
+                client.send('/app/chat', {}, JSON.stringify({message: message, sessid: localStorage.getItem("sessionId")}));
+
+            }
+        </script>
+    </head>
+    <body>
+    <label for="message-input">Enter message to send</label>
+    <input type="text" id="message-input">
+
+    <button onclick="sendMessage()">send</button>
+
+    <ul id="message-list"></ul>
+    </body>
+
+    <footer>
+   </html>
