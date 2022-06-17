@@ -13,7 +13,7 @@ public class MessageController {
     // Sends the return value of this method to /topic/messages
     @SendTo("/topic/messages")
     public MessageDto getMessages(MessageDto dto){
-
+        System.out.println(dto.getEmail()+": "+dto.getMessage());
         return dto;
 
     }

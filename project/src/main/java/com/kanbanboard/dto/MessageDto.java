@@ -15,7 +15,7 @@ public class MessageDto {
     }
 
     public String getEmail() {
-        return message;
+        return email;
     }
 
     public void setEmail(String email) {
