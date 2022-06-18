@@ -26,8 +26,12 @@
     <main id="main">
         <!-- Create a new Story -->
         <div class="create-new-task-block" id="create-new-task-block">
-            <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
+            <!-- cancel cross -->
+            <span style="font-size:25px;cursor:pointer" id="cancel-button" onclick="cancelCreateTask()">&#10799;</span>
+            <div>
+                <input type="text" id="storyNameForm" placeholder="Name" value=""></input>
             <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
+            <!-- Selection color -->
             <select id="storyColorForm">
                 <option class="red" value="#E60000">red</option>
                 <option class="yellow" value="#e6bf33">yellow</option>
@@ -35,10 +39,10 @@
                 <option class="blue" value="#6495ED">blue</option>
                 <option class="purple" value="#8e7cc3">purple</option>
             </select>
-            <button type="submit" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
-            <button type="button" class="btn btn-danger" id="cancel-button" onclick="cancelCreateTask()">Cancel</button>
+            <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
             <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
             <button type="button" class="btn btn-danger" id="update-button">Update</button>
+        </div>
         </div>
         <!-- button to open the sidebar-->
         <span style="font-size:30px;cursor:pointer" onclick="manageSidebar()">&#9776;</span>
