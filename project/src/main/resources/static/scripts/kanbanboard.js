@@ -197,6 +197,7 @@ function updateTask(id) {
   var newColor = document.getElementById("storyColorForm").value
 
   if (newTaskName != 0) deleteTaskInArray(id)
+  else alert('Name the story.')
 
   tasks.push(newTaskName) // save name of the task in the array
 
