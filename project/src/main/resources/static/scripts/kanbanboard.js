@@ -138,30 +138,25 @@ function editTask(id) {
 
   // get color of the story
   let currentColorOfStory = document.getElementById(id).style.borderLeftColor
-
-  document.getElementById("storyColorForm").value = currentColorOfStory
-
+  
   // set the color
   var createNewTaskBlock = document.getElementById("create-new-task-block")
   createNewTaskBlock.style.borderLeft = "solid " + currentColorOfStory + " 0.5em"
 
   // put the values into the input fields
-  document.getElementById('storyNameForm').value = taskName
-  document.getElementById('descritptionForm').value = description
+  document.getElementById('storyNameForm').value = taskName // name
+  document.getElementById('descritptionForm').value = description // description
+  document.getElementById("storyColorForm").value = currentColorOfStory // color
 
-
-  // convert rgb to hex<:
-  //first cut away the CSS parts
+  // convert rgb to hex:
   let a = currentColorOfStory.split("(")[1].split(")")[0];
-  //Then split it into separate numbers:
   a = a.split(",");
-  //Convert the single numbers to hex
-  var b = a.map(function (x) {             //For each array element
-    x = parseInt(x).toString(16);      //Convert to a base16 string
-    return (x.length == 1) ? "0" + x : x;  //Add zero if we get only one character
+  var b = a.map(function (x) {            
+    x = parseInt(x).toString(16);      
+    return (x.length == 1) ? "0" + x : x;  
   })
-  //And glue it back together:
   currentColorOfStoryHex = "#" + b.join("")
+  alert(currentColorOfStoryHex)
 
   // set color option to current color of the story
   document.getElementById('storyColorForm').value = currentColorOfStoryHex
