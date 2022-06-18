@@ -86,7 +86,7 @@ function createTask() {
     allConts[i].style.webkitUserDrag = "none"
   }
 
-  document.getElementsByClassName("container")[0].style.userSelect = "none" 
+  document.getElementsByClassName("container")[0].style.userSelect = "none"
 
   var createNewTaskBlock = document.getElementById("create-new-task-block");
   createNewTaskBlock.style.display = "block"; // shows the create-new-task-block"
@@ -139,6 +139,8 @@ function editTask(id) {
   // get color of the story
   let currentColorOfStory = document.getElementById(id).style.borderLeftColor
 
+  document.getElementById("storyColorForm").value = currentColorOfStory
+
   // set the color
   var createNewTaskBlock = document.getElementById("create-new-task-block")
   createNewTaskBlock.style.borderLeft = "solid " + currentColorOfStory + " 0.5em"
@@ -146,7 +148,23 @@ function editTask(id) {
   // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName
   document.getElementById('descritptionForm').value = description
-  document.getElementById('storyColorForm').value = description
+
+
+  // convert rgb to hex<:
+  //first cut away the CSS parts
+  let a = currentColorOfStory.split("(")[1].split(")")[0];
+  //Then split it into separate numbers:
+  a = a.split(",");
+  //Convert the single numbers to hex
+  var b = a.map(function (x) {             //For each array element
+    x = parseInt(x).toString(16);      //Convert to a base16 string
+    return (x.length == 1) ? "0" + x : x;  //Add zero if we get only one character
+  })
+  //And glue it back together:
+  currentColorOfStoryHex = "#" + b.join("")
+
+  // set color option to current color of the story
+  document.getElementById('storyColorForm').value = currentColorOfStoryHex
 
   // show the delete and update button 
   var updateButton = document.getElementById("delete-button")
@@ -258,6 +276,7 @@ function saveTask() {
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('descritptionForm').value = ""
+  // document.getElementById('storyColorForm').value = ""
 }
 
 function deleteTaskInArray(taskName) {
