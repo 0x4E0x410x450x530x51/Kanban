@@ -127,7 +127,6 @@ function cancelCreateTask() {
 
 /* edit the story */
 function editTask(id) {
-  clearInputs()
   createTask() // open the create-new-task-block
 
   let taskNameID = id + '-name'
@@ -156,7 +155,6 @@ function editTask(id) {
     return (x.length == 1) ? "0" + x : x;  
   })
   currentColorOfStoryHex = "#" + b.join("")
-  alert(currentColorOfStoryHex)
 
   // set color option to current color of the story
   document.getElementById('storyColorForm').value = currentColorOfStoryHex
@@ -178,7 +176,7 @@ function editTask(id) {
 
   // ckeck if the save button got clicked 
   document.getElementById('update-button').onclick = function () {
-    updateTask(id)
+    if (updateTask(id) == false) return
     cancelCreateTask()
   };
 
@@ -201,23 +199,22 @@ function updateTask(id) {
 */
 // update version 2
 function updateTask(id) {
-  let taskNameID = id + '-name'
-  let descriptionID = id + '-description'
 
+  var taskNameID = id + '-name'
+  var descriptionID = id + '-description'
 
   // get the new values
   var newTaskName = document.getElementById("storyNameForm").value
   var newDescription = document.getElementById("descritptionForm").value
   var newColor = document.getElementById("storyColorForm").value
 
-  if (newTaskName != 0) deleteTaskInArray(id)
-  else
-  {
-    alert('Name the story.')
-    return
-  } 
-  // TODO: pragram a loop
-  
+  // validation
+  if (newTaskName == 0) {
+    alert('You have to name the story.') // checks if the story is named
+    return false
+  }
+
+  deleteTaskInArray(id)
   tasks.push(newTaskName) // save name of the task in the array
 
   // Update values
@@ -230,6 +227,7 @@ function updateTask(id) {
   let task = document.getElementById(id)
   task.style.borderLeft = "solid " + newColor + " 0.5em"
 
+  
 }
 
 /* deletes the story  */
