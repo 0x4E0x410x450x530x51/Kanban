@@ -209,14 +209,20 @@ function updateTask(id) {
   let taskNameID = id + '-name'
   let descriptionID = id + '-description'
 
+
   // get the new values
   var newTaskName = document.getElementById("storyNameForm").value
   var newDescription = document.getElementById("descritptionForm").value
   var newColor = document.getElementById("storyColorForm").value
 
   if (newTaskName != 0) deleteTaskInArray(id)
-  else alert('Name the story.')
-
+  else
+  {
+    alert('Name the story.')
+    return
+  } 
+  // TODO: pragram a loop
+  
   tasks.push(newTaskName) // save name of the task in the array
 
   // Update values
