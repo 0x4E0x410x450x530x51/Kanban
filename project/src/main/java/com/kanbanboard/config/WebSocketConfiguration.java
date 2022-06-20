@@ -20,9 +20,9 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     public void configureMessageBroker(MessageBrokerRegistry registry) {
 
         // Set prefixes for the endpoint that the client listens for our messages from
-        registry.enableSimpleBroker("/topic");
+        registry.enableSimpleBroker("/kanban");
         // Set prefix for endpoints the client will send messages to
-        registry.setApplicationDestinationPrefixes("/app");
+        registry.setApplicationDestinationPrefixes("/boardSend");
 
     }
 
@@ -36,7 +36,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
                 .setAllowedOrigins("http://192.168.43.46:8080")
                 // Enable SockJS fallback options
                 .withSockJS();
-        registry.addEndpoint("/topic/messages").withSockJS();
+        registry.addEndpoint("/kanban/**").withSockJS();
 
     }
     @Override

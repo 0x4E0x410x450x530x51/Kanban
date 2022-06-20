@@ -15,8 +15,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MessageController {
 
-    @MessageMapping("/chat")
-    @SendTo("/topic/messages")
+    @MessageMapping("/{id}")
+    @SendTo("/kanban/{id}")
     public MessageDto getMessages(MessageDto dto){
         return dto;
     }

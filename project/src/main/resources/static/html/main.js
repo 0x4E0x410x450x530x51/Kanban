@@ -16,7 +16,7 @@ function begin() {
     'password': document.getElementById("password").value
   }, frame => {
     // Subscribe to "/topic/messages". Whenever a message arrives add the text in a list-item element in the unordered list.
-    client.subscribe("/topic/messages", payload => {
+    client.subscribe("/kanban/"+document.getElementById("boardid").value, payload => {
 
       let message_list = document.getElementById('message-list');
       let message = document.createElement('li');
@@ -33,6 +33,6 @@ function sendMessage(){
   let input = document.getElementById("message-input");
   let messagee = input.value;
 
-  client.send('/app/chat', {}, JSON.stringify({message: messagee, email: document.getElementById("email").value}));
+  client.send('/boardSend/'+document.getElementById("boardid").value, {}, JSON.stringify({message: messagee, email: document.getElementById("email").value}));
 
 }
