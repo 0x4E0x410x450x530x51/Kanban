@@ -233,7 +233,8 @@ h2 {
 #storyNameForm,
 #descritptionForm,
 #storyColorForm,
-#storyDueDate {
+#storyDueDate,
+#storyPriorityForm {
   border-radius: 0.2em;
   border: solid 0.1em rgba(0, 0, 0, 0.2);
   padding: 0 !important;
@@ -243,7 +244,10 @@ h2 {
 }
 
 #storyNameForm:focus,
-#descritptionForm:focus {
+#descritptionForm:focus,
+#storyColorForm:focus,
+#storyDueDate:focus,
+#storyPriorityForm:focus  {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   border: solid 0.1em rgba(0, 0, 0, 0.2);
   outline: none;
