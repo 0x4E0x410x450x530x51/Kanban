@@ -74,13 +74,8 @@ var index = 0;
 function createTask() {
   clearInputs()
 
-  for (let i = 0; i < 2; i++) {
-    setTimeout(function () {
-      let background = document.getElementsByClassName("container")[0]
-      background.style.filter = "blur(" + i + "px)" // blurs background
-    }, i * 2)
-  }
-
+ let a =  document.getElementsByClassName("md-backdrop")[0].classList.add("backdrop-state")
+console.log(a)
   // makes that the user can't select anything in the background
   let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
@@ -111,11 +106,7 @@ function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
   z.style.display = "none";
-  for (let i = 0; i < 2; i++) {
-    setTimeout(function () {
-      document.getElementsByClassName("container")[0].style.filter = "blur(" + -(i) + "px)"
-    }, i * 2)
-  }
+  document.getElementsByClassName("md-backdrop")[0].classList.remove("backdrop-state")
   let allConts = document.getElementsByClassName("task")
   for (let i = 0; i < allConts.length; i++) {
     allConts[i].style.webkitUserDrag = "element"
