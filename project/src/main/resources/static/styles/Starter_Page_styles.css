@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero{
+   height: 100%;
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+}
+
+#logo{
+    width: 60%;
+    position:absolute;
+    margin-left: 15%;
+    margin-top: 12px;
+}
+
+.form-box{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    margin: 8% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px 0.1px;
+    border-radius: 12px;
+  }
+/*Top Buttons + Shadow*/
+.button-box{
+    width: 220px;
+    margin: 150px auto;
+    position:relative;
+    box-shadow: 0 4px 6px 0.5px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+
+/*Top Button Colour Transition*/
+#btn{
+    left:0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background:rgba(230,0,0,0.8);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+/*Input Design*/
+.input-group{
+    top:240px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    background: linear-gradient(to right, #999, rgb(153, 153, 153)), linear-gradient(to right, #e60000, #e60000, #e60000);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+.input-field:focus {
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    background: rgba(230,0,0,0.8);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+
+/*The 2 Forms*/
+#login{
+    left: 50px;
+    top: 255px;
+}
+#register{
+    left: 450px;
+}
+
+/*Set Login Button to white at the beginning*/
+#loginbtn {
+    color: white;
+}
+
+@-webkit-keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
+}
+@keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
+}

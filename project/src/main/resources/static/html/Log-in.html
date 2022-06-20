@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log-in and Registration</title>
+        <link rel="stylesheet" href="..\styles\Starter_Page_styles.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+
+                <img id="logo" src="..\Pics\ubs_logo.png" alt="UBS Logo">
+
+                    <div class="button-box">
+                        <div id="btn"></div> <!--Top Buttons Color and Transition-->
+                        <!--Top Buttons to switch-->
+                        <button type="button" id="loginbtn" class="toggle-btn" onclick="login()">Log In</button>
+                        <button type="button" id="registerbtn" class="toggle-btn" onclick="register()">Register</button>
+                    </div>
+                
+
+                <!-- Input Login-->
+                <form id="login" class="input-group">
+                    <input type="email" class="input-field" placeholder="E-Mail" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+
+                <!--Input Register-->
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="Full Name" required>
+                    <input type="email" class="input-field" placeholder="Enter E-Mail" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            var regbtn = document.getElementById("registerbtn")
+            var logbtn = document.getElementById("loginbtn")
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+                for (let i = 0; i < 255; i++) {
+                    setTimeout(function() {
+                        regbtn.style.color = `rgb(${i}, ${i}, ${i})`
+                        logbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
+                    }, i)
+                }
+            }
+            
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+                for (let i = 0; i < 255; i++) {
+                    setTimeout(function() {
+                        logbtn.style.color = `rgb(${i}, ${i}, ${i})`
+                        regbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
+
+                    }, i)
+                }
+            }
+
+        </script>
+    </body>
+</html>
