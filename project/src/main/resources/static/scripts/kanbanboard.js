@@ -208,6 +208,9 @@ function updateTask(id) {
   var newDescription = document.getElementById("descritptionForm").value
   var newColor = document.getElementById("storyColorForm").value
 
+
+  console.log(newDescription)
+
   // validation
   if (newTaskName == 0) {
     alert('You have to name the story.') // checks if the story is named
@@ -221,8 +224,7 @@ function updateTask(id) {
   let storyTitle = document.getElementById(taskNameID)
   storyTitle.innerHTML = newTaskName
 
-  let description = document.getElementById(descriptionID)
-  description.innerHTML = newDescription
+  document.getElementById(descriptionID).value = newDescription
 
   let task = document.getElementById(id)
   task.style.borderLeft = "solid " + newColor + " 0.5em"
@@ -275,7 +277,7 @@ function saveTask() {
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('descritptionForm').value = ""
-  // document.getElementById('storyColorForm').value = ""
+  document.getElementById('storyColorForm').value = "#e60000"
 }
 
 function deleteTaskInArray(taskName) {

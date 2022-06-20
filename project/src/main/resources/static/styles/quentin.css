@@ -188,12 +188,18 @@ h2 {
 #storyColorForm {
   border-radius: 0.2em;
   border: solid 0.1em rgba(0, 0, 0, 0.2);
-  padding: 0;
+  padding: 0 !important;
   margin-left: 5px;
   width: 98%;
   margin-top: 5px !important;
   display: block;
-  resize: none;
+  resize: calc(5);
+}
+
+#storyNameForm:focus,
+#descritptionForm:focus {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 0px solid;
 }
 
 .story-border{
