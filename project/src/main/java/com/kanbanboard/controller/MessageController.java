@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MessageController {
 
-    @MessageMapping("/{id}")
+    @MessageMapping("/{id}") // we send messages to "boardSend/{id} through this...?
     @SendTo("/kanban/{id}")
     public MessageDto getMessages(MessageDto dto){
         return dto;
