@@ -36,3 +36,26 @@ function sendMessage(){
   client.send('/boardSend/'+document.getElementById("boardid").value, {}, JSON.stringify({message: messagee, email: document.getElementById("email").value}));
 
 }
+
+async function login() {
+    let a_1 = await (fetch(
+        "/api/login", {
+          method: "POST",
+            headers: {
+              'Content-Type':"application/json"
+            },
+          body: JSON.stringify({
+            email: document.getElementById("emailLoginInput").value,
+            password: document.getElementById("passwordLoginInput").value
+          })
+        }
+      ))
+    let a_2 = await a_1.text();
+    if (a_2 === "Success!") {
+        document.location.pathname = "/html/index.html"
+    }
+
+}
+
+
+

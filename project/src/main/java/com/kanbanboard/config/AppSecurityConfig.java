@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,7 +36,24 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/**").permitAll()
                 .antMatchers("/page/board/{id}")
                 .access("@appSecurityConfig.checkUserId(authentication,#id)")
+                .antMatchers("/styles/**").permitAll()
+                .antMatchers("/Pics/**").permitAll()
+                .antMatchers("/scripts/**").permitAll()
+                .antMatchers("/php/**").permitAll()
+                .antMatchers("/api/login").permitAll()
+                .antMatchers("/api/register").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/html/login.html")
+                .defaultSuccessUrl("/html/index.html", true)
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll()
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+
+
         ;
     }
 

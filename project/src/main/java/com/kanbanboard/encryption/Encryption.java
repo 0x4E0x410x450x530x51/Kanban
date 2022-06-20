@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Encryption {
-    public byte[] getSHA(String input) throws NoSuchAlgorithmException
+    /*public byte[] getSHA(String input) throws NoSuchAlgorithmException
     {
         // Static getInstance method is called with hashing SHA
         MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -32,7 +32,7 @@ public class Encryption {
         }
 
         return hexString.toString();
-    }
+    }*/
 
     public boolean passwordEqual(String inputPassword, String databasePassword) {
 

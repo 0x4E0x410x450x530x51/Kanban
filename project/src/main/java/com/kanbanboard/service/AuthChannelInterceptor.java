@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLOutput;
+import java.util.Optional;
 
 @Service
 public class AuthChannelInterceptor implements ChannelInterceptor {
@@ -54,10 +55,10 @@ public class AuthChannelInterceptor implements ChannelInterceptor {
                     .setHeader("test1", "test2")
                     .build();
             try {
-                User joiner = a.findbyEmail(email);
-                message1 = MessageBuilder.withPayload(joiner.getFullname() +" has joined the channel!")
-                        .setHeader("test1", "test2")
-                        .build();
+                //Optional<User> joiner = a.findbyEmail(email);
+                //message1 = MessageBuilder.withPayload(joiner.getFullname() +" has joined the channel!")
+                //        .setHeader("test1", "test2")
+                //        .build();
             } catch (UsernameNotFoundException e) {
                 e.printStackTrace();
             }
