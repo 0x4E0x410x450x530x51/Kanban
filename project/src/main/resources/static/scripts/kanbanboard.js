@@ -41,15 +41,15 @@ function drag(ev) {
 }
 
 function allowDrop(ev) {
-  ev.preventDefault();
+  ev.preventDefault()
 }
 
 function drop(ev) {
-  ev.preventDefault();
+  ev.preventDefault()
 
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  ev.currentTarget.appendChild(document.getElementById(data)); // prevents the storys from droping in an other story
+  var data = ev.dataTransfer.getData("text")
+  ev.target.appendChild(document.getElementById(data))
+  ev.currentTarget.appendChild(document.getElementById(data)) // prevents the storys from droping in an other story
   document.getElementById(data).style.opacity = 0;
   for (let i = 0; i < 100; i++) {
     setTimeout(function () {
@@ -68,6 +68,7 @@ function drop(ev) {
 
 var tasks = []; // stores all task names
 var index = 0;
+
 
 /* Creates a new Story */
 function createTask() {
@@ -131,13 +132,18 @@ function editTask(id) {
 
   let taskNameID = id + '-name'
   let descriptionID = id + '-description'
+  let dueDateID = id + '-dueDate'
 
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
+  let dueDate = document.getElementById(dueDateID).innerText
+  
+  // back to the original format
+  let dueDateFormated = dueDate.replace(/ /g, "T");
 
   // get color of the story
   let currentColorOfStory = document.getElementById(id).style.borderLeftColor
-  
+
   // set the color
   var createNewTaskBlock = document.getElementById("create-new-task-block")
   createNewTaskBlock.style.borderLeft = "solid " + currentColorOfStory + " 0.5em"
@@ -145,14 +151,15 @@ function editTask(id) {
   // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName // name
   document.getElementById('descritptionForm').value = description // description
-  document.getElementById("storyColorForm").value = currentColorOfStory // color
+  document.getElementById('storyColorForm').value = currentColorOfStory // color
+  document.getElementById('storyDueDate').value = dueDateFormated // due date
 
   // convert rgb to hex:
   let a = currentColorOfStory.split("(")[1].split(")")[0];
   a = a.split(",");
-  var b = a.map(function (x) {            
-    x = parseInt(x).toString(16);      
-    return (x.length == 1) ? "0" + x : x;  
+  var b = a.map(function (x) {
+    x = parseInt(x).toString(16);
+    return (x.length == 1) ? "0" + x : x;
   })
   currentColorOfStoryHex = "#" + b.join("")
 
@@ -174,7 +181,7 @@ function editTask(id) {
     deleteTask(id)
   };
 
-  // ckeck if the save button got clicked 
+  // ckeck if the update button got clicked 
   document.getElementById('update-button').onclick = function () {
     if (updateTask(id) == false) return
     cancelCreateTask()
@@ -199,17 +206,17 @@ function updateTask(id) {
 */
 // update version 2
 function updateTask(id) {
-
-  var taskNameID = id + '-name'
-  var descriptionID = id + '-description'
+  let taskNameID = id + '-name'
+  let descriptionID = id + '-description'
+  let dueDateID = id + '-dueDate'
 
   // get the new values
-  var newTaskName = document.getElementById("storyNameForm").value
-  var newDescription = document.getElementById("descritptionForm").value
-  var newColor = document.getElementById("storyColorForm").value
+  let newTaskName = document.getElementById("storyNameForm").value
+  let newDescription = document.getElementById("descritptionForm").value
+  let newColor = document.getElementById("storyColorForm").value
+  let newDueDate = document.getElementById("storyDueDate").value
 
-
-  console.log(newDescription)
+  let newDueDateFormated = newDueDate.replace(/T/g, "  ");
 
   // validation
   if (newTaskName == 0) {
@@ -221,15 +228,10 @@ function updateTask(id) {
   tasks.push(newTaskName) // save name of the task in the array
 
   // Update values
-  let storyTitle = document.getElementById(taskNameID)
-  storyTitle.innerHTML = newTaskName
-
-  document.getElementById(descriptionID).value = newDescription
-
-  let task = document.getElementById(id)
-  task.style.borderLeft = "solid " + newColor + " 0.5em"
-
-  
+  document.getElementById(taskNameID).innerHTML = newTaskName
+  document.getElementById(descriptionID).innerHTML = newDescription
+  document.getElementById(dueDateID).innerHTML = newDueDateFormated
+  document.getElementById(id).style.borderLeft = "solid " + newColor + " 0.5em"
 }
 
 /* deletes the story  */
@@ -247,8 +249,12 @@ function saveTask() {
   var taskName = document.getElementById("storyNameForm").value
   var description = document.getElementById("descritptionForm").value
   var color = document.getElementById("storyColorForm").value
+  let dueDate = document.getElementById("storyDueDate").value
 
   let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
+
+  // format the dates
+  let dueDateFormated = dueDate.replace(/T/g, "  ");
 
   // validation
   if (id == 0) {
@@ -256,15 +262,17 @@ function saveTask() {
     return false;
   }
 
+  // genereate div
   todo.innerHTML += `
   <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
       <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
       <div class="edit" onclick="editTask('${id}')"></div>
       <small id="${id + "-description"}" >${description}</small>
       <hr width="80%">
+      <small class="dueDate" id="${id + "-dueDate"}" >${dueDateFormated}</small>
   </div>
   `
-
+  // set the color
   var task = document.getElementById(id)
   task.style.borderLeft = "solid " + color + " 0.5em"
 
@@ -278,6 +286,7 @@ function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('descritptionForm').value = ""
   document.getElementById('storyColorForm').value = "#e60000"
+  document.getElementById('storyDueDate').value = ""
 }
 
 function deleteTaskInArray(taskName) {
