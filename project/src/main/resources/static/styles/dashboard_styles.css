@@ -17,6 +17,7 @@
 /* Styles for the sidebar navigation */
 #tlines{
     float: left;
+    transition: 0.5s;
 }
 .sidenav {
     height: 100%;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="..\styles\dashboard_styles.css">
         <script src="..\scripts\dashboard_script.js"></script>
         <title>Dashboard Index</title>
@@ -9,79 +10,77 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
     </head>
     <body>
-
-        <header>
-            <!-- Sidebar navigation-->
+        <div class="col">
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">About</a>
                 <a href="#">Services</a>
                 <a href="#">Clients</a>
                 <a href="#">Contact</a>
             </div>
-            <!--The 3 Lines for Nav-->
-            <span id="tlines" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-
-            <!--Titel-->
-            <h1 class="column1">Dashboard</h1>
-            <button id="rowAdder" type="button" class="btn-add">Add New</button>
-
-            <button type="button" class="column2">Account</button>
-        </header>
-
-        <!--New Add
-
-            <div id="div-container">
-                <div id="newDiv"></div>
-            </div>
--->
+            <!--The 3 Lines for Nav-->  
             
-
-        <div id="addwhole">
-            <div style="width: 80%;" style="height: 150%;">
-                    <div class="">
-                        <!--
-                        <div id="row">
-                            <div class="input-group-m-3">       
-                                <div class="form-control m-input">
-                                    <div class="fields" contentEditable="true">
-                                        Kanban
+            <span id="tlines" style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
+        </div>
+        <main id="main">
+            <header>
+                <!-- Sidebar navigation-->
+            
+                <!--Titel-->
+                <h1 class="column1">Dashboard</h1>
+                <button id="rowAdder" type="button" class="btn-add">Add New</button>
+                <button type="button" class="column2">Account</button>
+            </header>
+            <!--New Add
+                <div id="div-container">
+                    <div id="newDiv"></div>
+                </div>
+            -->
+            
+            <div id="addwhole">
+                <div style="width: 80%;" style="height: 150%;">
+                        <div class="">
+                            <!--
+                            <div id="row">
+                                <div class="input-group-m-3">
+                                    <div class="form-control m-input">
+                                        <div class="fields" contentEditable="true">
+                                            Kanban
+                                        </div>
+                                        <div class="desc" contentEditable="true">Add some description.</div>
                                     </div>
-                                    <div class="desc" contentEditable="true">Add some description.</div>
                                 </div>
                             </div>
-                        </div>
-                    -->
-                        <div id="grid-container"></div>
-                            <!--
-                                <button id="rowAdder" type="button"
-                                    class="btn btn-dark">
-                                    <span class="bi bi-plus-square-dotted">
-                                    </span> +
-                                </button>
-                            -->
-                        </div>
-
+                        -->
+                            <div id="grid-container"></div>
+                                <!--
+                                    <button id="rowAdder" type="button"
+                                        class="btn btn-dark">
+                                        <span class="bi bi-plus-square-dotted">
+                                        </span> +
+                                    </button>
+                                -->
+                            </div>
+                </div>
+                <script type="text/javascript">
+                    var afg_tab = []
+                    $("#rowAdder").click(function () {
+                        newRowAdd =
+                        '<div style="opacity: 0" class="row"> <div class="input-group-m-3">' +
+                        '<img src="../pic/pen.png alt="Pen Icon">' +
+                        '<div class="form-control m-input"><div class="fields" contentEditable="true">Kanban</div><div class="desc" contentEditable="true">Add some description.</div></div> </div>';
+            
+                        $('#grid-container').append(newRowAdd);
+                        for (let i = 0; i < 10; i++) {
+                            setTimeout(function() {
+                                document.getElementsByClassName("row")[document.getElementsByClassName("row").length-1].style.opacity = i / 10
+                            }, i*10)
+                        }
+                        afg_tab.push(newRowAdd)
+                    });
+                </script>
             </div>
-
-            <script type="text/javascript">
-                var afg_tab = []
-                $("#rowAdder").click(function () {
-                    newRowAdd =
-                    '<div style="opacity: 0" class="row"> <div class="input-group-m-3">' +
-                    '<img src="../pic/pen.png alt="Pen Icon">' +    
-                    '<div class="form-control m-input"><div class="fields" contentEditable="true">Kanban</div><div class="desc" contentEditable="true">Add some description.</div></div> </div>';
-        
-                    $('#grid-container').append(newRowAdd);
-                    for (let i = 0; i < 10; i++) {
-                        setTimeout(function() {
-                            document.getElementsByClassName("row")[document.getElementsByClassName("row").length-1].style.opacity = i / 10
-                        }, i*10)
-                    }
-                    afg_tab.push(newRowAdd)
-                });
-            </script>
-        </div> 
-        
+            
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
