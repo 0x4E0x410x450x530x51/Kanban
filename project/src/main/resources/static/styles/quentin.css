@@ -105,8 +105,49 @@
   font-size: large;
 }
 
-.dueDate {
-  font-size: 12px;
+.storyInformation {
+  transform: rotate(90deg);
+  width: 5%;
+  display: flex;
+  margin-left: 40%; 
+  margin-top: 0;
+  margin-bottom: -6%;
+  font-size: 20px;
+  position: relative;
+}
+
+.storyInformation::before {
+  content: attr(data-hover);
+  left: -42px;
+  top: 5px;
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(-90deg);
+}
+
+.storyInformation:hover::before {
+  opacity: 1;
+  visibility: visible;
+  font-size: small;
+}
+
+.closeButton {
+  display: none;
+  
+}
+
+.closeButton::before {
+  z-index: 2;
+  left: -27px;
+}
+
+.showMoreBlock {
+  display: none;
+  margin-top: 15px;
 }
 
 #task-button {
@@ -199,7 +240,6 @@ h2 {
   width: 98%;
   margin-bottom: 7px;
   display: block;
-  resize: none;
 }
 
 #storyNameForm:focus,
@@ -207,6 +247,12 @@ h2 {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   border: solid 0.1em rgba(0, 0, 0, 0.2);
   outline: none;
+}
+
+#descritptionForm {
+  resize: vertical; 
+  max-height: 145px;
+  min-height: 73px;
 }
 
 #storyNameForm {

@@ -18,9 +18,9 @@
     <!-- Sidebar navigation-->
     <div id="mySidenav" class="sidenav">
         <a href="#">Settings</a>
-        <a href="#">Colors</a>
+        <a href="#">Dashbord</a>
         <a href="#">Statistics</a>
-        <a href="#">Filter</a>
+        <a href="#">Sign out</a>
     </div>
 
     <main id="main">
@@ -63,7 +63,18 @@
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <!-- Demo Storys-->
-
+                    <div class="task" id="demo0" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
+                        0.5em solid rgb(230, 191, 51); -webkit-user-drag: element;">
+                        <span class="storyTitle" id="demo0-name">Demo</span>
+                        <div class="edit" onclick="editTask('demo0')"></div>
+                        <small class="description" id="demo0-description">This is a yellow demo story.</small>
+                        <hr width="80%">
+                        <span class="storyInformation" id="demo0-storyExtensionButton" data-hover="Show more" onclick="showMore('demo0')">»</span>
+                        <span class="storyInformation closeButton" id="demo0-storyCloseButton" data-hover="Close" onclick="showLess('demo0')">&#171;</span>
+                        <div id="demo0-showMoreBlock" class="showMoreBlock">
+                            <small class="dueDate" id="demo0-dueDate">2022-08-24 20:00</small>
+                        </div>
+                    </div>
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"

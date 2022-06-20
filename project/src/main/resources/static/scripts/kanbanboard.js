@@ -48,7 +48,7 @@ function drop(ev) {
   ev.preventDefault()
 
   var data = ev.dataTransfer.getData("text")
-  ev.target.appendChild(document.getElementById(data))
+  //ev.target.appendChild(document.getElementById(data))
   ev.currentTarget.appendChild(document.getElementById(data)) // prevents the storys from droping in an other story
   document.getElementById(data).style.opacity = 0;
   for (let i = 0; i < 100; i++) {
@@ -137,9 +137,9 @@ function editTask(id) {
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
   let dueDate = document.getElementById(dueDateID).innerText
-  
+
   // back to the original format
-  let dueDateFormated = dueDate.replace(/ /g, "T");
+  let dueDateFormated = dueDate.replace(/ /g, "T")
 
   // get color of the story
   let currentColorOfStory = document.getElementById(id).style.borderLeftColor
@@ -151,8 +151,8 @@ function editTask(id) {
   // put the values into the input fields
   document.getElementById('storyNameForm').value = taskName // name
   document.getElementById('descritptionForm').value = description // description
-  document.getElementById('storyColorForm').value = currentColorOfStory // color
   document.getElementById('storyDueDate').value = dueDateFormated // due date
+
 
   // convert rgb to hex:
   let a = currentColorOfStory.split("(")[1].split(")")[0];
@@ -165,6 +165,7 @@ function editTask(id) {
 
   // set color option to current color of the story
   document.getElementById('storyColorForm').value = currentColorOfStoryHex
+ 
 
   // show the delete and update button 
   var updateButton = document.getElementById("delete-button")
@@ -267,9 +268,13 @@ function saveTask() {
   <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
       <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
       <div class="edit" onclick="editTask('${id}')"></div>
-      <small id="${id + "-description"}" >${description}</small>
+      <small class="description" id="${id + "-description"}" >${description}</small>
       <hr width="80%">
-      <small class="dueDate" id="${id + "-dueDate"}" >${dueDateFormated}</small>
+      <span class="storyInformation" id="${id + '-storyExtensionButton'}" data-hover="Show more" onclick="showMore('${id}')">»</span>
+      <span class="storyInformation closeButton" id="${id + '-storyCloseButton'}" data-hover="Close" onclick="showLess('${id}')">&#171;</span>
+      <div id="${id + "-showMoreBlock"}" class="showMoreBlock">
+          <small class="dueDate" id="${id + "-dueDate"}">${dueDateFormated}</small>
+      </div>
   </div>
   `
   // set the color
@@ -296,6 +301,42 @@ function deleteTaskInArray(taskName) {
       return
     }
   }
+}
+
+
+/* Show more details from a story */
+function showMore(id) {
+  let blockID = id + '-showMoreBlock'
+  let showMoreBlock = document.getElementById(blockID)
+
+  let storyExtensionButtonID = id + '-storyExtensionButton'
+  let storyExtensionButton = document.getElementById(storyExtensionButtonID)
+
+  let storyCloseButtonID = id + '-storyCloseButton'
+  let storyCloseButton = document.getElementById(storyCloseButtonID)
+  
+
+  // show close button and the showMoreBlock and hide the showMoreButton
+  showMoreBlock.style.display = "block"
+  storyExtensionButton.style.display = "none"
+  storyCloseButton.style.display = "block"
+
+}
+
+function showLess(id) {
+  let blockID = id + '-showMoreBlock'
+  let showMoreBlock = document.getElementById(blockID)
+
+  let storyExtensionButtonID = id + '-storyExtensionButton'
+  let storyExtensionButton = document.getElementById(storyExtensionButtonID)
+
+  let storyCloseButtonID = id + '-storyCloseButton'
+  let storyCloseButton = document.getElementById(storyCloseButtonID)
+
+  // hide the showMoreBlock and close button and show the showMoreButton
+  showMoreBlock.style.display = "none"
+  storyExtensionButton.style.display = "block"
+  storyCloseButton.style.display = "none"
 }
 
 /*
