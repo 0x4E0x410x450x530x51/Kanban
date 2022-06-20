@@ -73,8 +73,9 @@
     border-left: 0;
     border-right: 0;
     border-top: 0;
+    border-bottom: 1px solid transparent;
     outline: none;
-    background: linear-gradient(to right, #ffffff00, rgba(230, 0, 0, 0)), linear-gradient(to right, #e60000, #e60000, #e60000);
+    background: linear-gradient(to right, #999, rgb(153, 153, 153)), linear-gradient(to right, #e60000, #e60000, #e60000);
     background-size: 100% 0.1em, 0 0.1em;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
@@ -91,7 +92,7 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     background: rgba(230,0,0,0.8);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
     border: 0;
