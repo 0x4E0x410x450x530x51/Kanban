@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig" isReverseEngineeringLicenceAccepted="true">
+    <option name="defaultUnitInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="645b0ab9-7d4a-4304-bf10-f795796f7432" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/kanbanboard/repository/model" />
+  </component>
+</project>

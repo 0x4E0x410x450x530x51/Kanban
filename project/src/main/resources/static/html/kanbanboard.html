@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\styles\quentin.css">
+    <!-- JavaScript -->
+    <script language="javascript" type="text/javascript" src="..\scripts\kanbanboard.js"></script>
+    <!-- CSS only Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Kanban-Board</title>
+</head>
+
+<body>
+    <!-- Sidebar navigation-->
+    <div id="mySidenav" class="sidenav">
+        <a href="#">Settings</a>
+        <a href="#">Dashbord</a>
+        <a href="#">Statistics</a>
+        <a href="#">Sign out</a>
+    </div>
+    <md-backdrop class="md-backdrop"></md-backdrop>
+    
+
+    <main id="main">
+        <!-- Create a new Story -->
+        <div class="create-new-task-block" id="create-new-task-block">
+            <!-- cancel cross -->
+            <span style="font-size:25px;cursor:pointer" id="cancel-button" onclick="cancelCreateTask()">&#10799;</span>
+            <span id="storyPriority"></span>
+            <div>
+                <input type="text" id="storyNameForm" placeholder="Name" maxlength="50"></input>
+                <textarea id="descritptionForm" rows="3" placeholder="Description" maxlength="300"></textarea>
+                <textarea id="definitionOfDoneForm" rows="2" placeholder="Definition of done" maxlength="300"></textarea>
+                <!-- Priority -->
+                <select id="storyPriorityForm">
+                    <option class="high" value="!">High</option>
+                    <option class="high" value="•">Medium</option>
+                    <option class="low" value="↓">Low</option>
+                </select>
+                <!-- Selection color -->
+                <select id="storyColorForm">
+                    <option class="red" value="#e60000">red</option>
+                    <option class="yellow" value="#e6bf33">yellow</option>
+                    <option class="green" value="#aacc33">green</option>
+                    <option class="blue" value="#6495ed">blue</option>
+                    <option class="purple" value="#8e7cc3">purple</option>
+                </select>
+                <div class="storyDueDateFormTitle">Due date:</div>
+                <input type="datetime-local" id="storyDueDate"></input>
+                <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
+                <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+                <button type="button" class="btn btn-danger" id="update-button">Save Changes</button>
+            </div>
+        </div>
+        <!-- button to open the sidebar-->
+        <span style="font-size:30px;cursor:pointer" onclick="manageSidebar()">&#9776;</span>
+        <!-- Kanban board -->
+        <div class="container">
+            <div class="kanbanBoardTitle">
+                <h1>Kanbanboard-Demo</h1>
+            </div>
+            <div class="kanban-board">
+                <!-- Backlog-->
+                <div class="kanban-block story-table" id="todo" class="backlog" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
+                    <strong>
+                        <h2>
+                            <div class="backlogTitle">Backlog</div>
+                        </h2>
+                    </strong>
+
+                    <div class="task-button-block">
+                        <button id="task-button" onclick="createTask()">&#x2b;</button>
+                    </div>
+                    <!-- Demo Storys-->
+                </div>
+                <!-- In Progress-->
+                <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
+                    <strong>
+                        <h2>
+                            <div class="inProgressTitle">In Progress</div>
+                        </h2>
+                    </strong>
+                </div>
+                <!-- Done-->
+                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
+                    <strong>
+                        <h2>
+                            <div class="doneTitle">Done</div>
+                        </h2>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Bundle with Popper Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

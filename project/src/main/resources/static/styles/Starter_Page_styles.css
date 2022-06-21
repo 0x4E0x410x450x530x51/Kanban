@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 
-.hero{
+.full{
    height: 100%;
    width: 100%;
    background-position: center;
@@ -13,17 +13,15 @@
 }
 
 #logo{
-    width: 60%;
-    position:absolute;
-    margin-left: 15%;
-    margin-top: 12px;
+
+    
 }
 
 .form-box{
     width: 400px;
-    height: 500px;
+ 
     position: relative;
-    margin: 8% auto;
+    margin: 2% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
@@ -32,14 +30,15 @@
   }
 /*Top Buttons + Shadow*/
 .button-box{
-    width: 220px;
-    margin: 150px auto;
+    display: flex;
+    justify-content: space-around;
+   
     position:relative;
     box-shadow: 0 4px 6px 0.5px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.10);
     border-radius: 10px;
 }
 .toggle-btn{
-    padding: 10px 30px;
+    padding: 10px 0px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -50,20 +49,20 @@
 
 /*Top Button Colour Transition*/
 #btn{
-    left:0;
+    left:0%;
     position: absolute;
-    width: 110px;
+    width: 50%;
     height: 100%;
     background:rgba(230,0,0,0.8);
-    border-radius: 10px;
+    border-radius: 10px !important;
     transition: .5s;
 }
 
 /*Input Design*/
-.input-group{
-    top:240px;
+.input-groups{
+    top:20px;
     position: absolute;
-    width: 280px;
+    
     transition: .5s;
 }
 .input-field {
@@ -105,11 +104,12 @@
 
 /*The 2 Forms*/
 #login{
-    left: 50px;
-    top: 255px;
+  
+    bottom: 10px;
 }
 #register{
-    left: 450px;
+    
+    bottom: 10px;
 }
 
 /*Set Login Button to white at the beginning*/
@@ -132,4 +132,45 @@
     to {
         color: rgb(255, 255, 255);
     }
+}
+
+
+/*Title*/
+.loginTitle{
+    padding-top: 15px;
+    padding-bottom: 5px;
+	text-align: center;	
+    font-size: 3em;
+}
+
+/*added by AndyI0I*/
+
+.form-cred{
+    height:400px;
+    position: relative;
+    top: 20px;
+}
+.center-content{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.dissappear-left{
+    right:300px;
+}
+
+.dissappear-right{
+    left: 200%;
+}
+
+.appear.center{
+
+}
+
+.login-menu {
+    position: relative;
+    top: 10%;
 }
