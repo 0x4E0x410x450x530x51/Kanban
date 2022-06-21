@@ -19,6 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+/*
+    To whomever has to maintain this next year, if you're an apprentice: I'm so sorry and I hope you don't hold a grudge or lose your mind.
+    If you sincerely want to fix/maintain this then I suggest reading a lot about websockets and spring-websockets. Many thanks and good luck!
+*/
+
 @Component
 public class WebSocketSessionListener
 {
@@ -35,14 +40,14 @@ public class WebSocketSessionListener
             String userId = nativeHeaders.get(0);
             connectedClientId.add(userId);
             System.out.println(userId);
-            propagateDvcMsg(new MessageDto(userId+" has joined the channel!", "SYSTEM"));
+            //propagateDvcMsg(new MessageDto(userId+" has joined the channel!", "SYSTEM"));
         }
         else
         {
             String userId = princ.getName();
             connectedClientId.add(userId);
             System.out.println(userId);
-            propagateDvcMsg(new MessageDto(userId+" has joined the channel!", "SYSTEM"));
+            //propagateDvcMsg(new MessageDto(userId+" has joined the channel!", "SYSTEM"));
 
         }
     }
@@ -58,7 +63,7 @@ public class WebSocketSessionListener
             String userId = nativeHeaders.get(0);
             connectedClientId.remove(userId);
             System.out.println(userId);
-            propagateDvcMsg(new MessageDto(userId+" has left the channel!", "SYSTEM"));
+            //propagateDvcMsg(new MessageDto(userId+" has left the channel!", "SYSTEM"));
 
         }
         else
@@ -66,7 +71,7 @@ public class WebSocketSessionListener
             String userId = princ.getName();
             connectedClientId.remove(userId);
             System.out.println(userId);
-            propagateDvcMsg(new MessageDto(userId+" has left the channel!", "SYSTEM"));
+            //propagateDvcMsg(new MessageDto(userId+" has left the channel!", "SYSTEM"));
 
 
         }

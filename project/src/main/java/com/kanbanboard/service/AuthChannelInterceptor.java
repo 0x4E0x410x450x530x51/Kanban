@@ -33,6 +33,10 @@ public class AuthChannelInterceptor implements ChannelInterceptor {
 
     }
 
+    // Hello sean here, here's a useful comment!
+    // https://stackoverflow.com/help/searching
+
+
     // Processes a message before sending it
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
