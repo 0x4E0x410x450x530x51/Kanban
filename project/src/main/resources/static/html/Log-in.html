@@ -34,7 +34,7 @@
                         <form id="login" class="input-group">
                             <input type="email" class="input-field" placeholder="E-Mail" required>
                             <input type="password" class="input-field" placeholder="Enter Password" required>
-                            <button type="submit" class="submit-btn">Log in</button>
+                            <button type="submit" class="submit-btn" id="submit2">Log in</button>
                         </form>
 
                         <!--Input Register-->
@@ -43,7 +43,7 @@
                             <input type="email" class="input-field" placeholder="Enter E-Mail" required>
                             <input type="password" class="input-field" placeholder="Enter Password" required>
                             <input type="password" class="input-field" placeholder="Enter Password again" required>
-                            <button type="submit" class="submit-btn">Register</button>
+                            <button type="submit" class="submit-btn" id="submit1">Register</button>
                         </form>
                     </div>  
                 </div>
@@ -82,10 +82,14 @@
                     }
                 }
 
-                const btn = document.getElementsByClassName('submit-btn');
+                const btn1 = document.getElementById('submit1');
+                const btn2 = document.getElementById('submit2');
 
-                btn.addEventListener('click', function onClick() {
-                btn.style.color = '#CCCCCC';
+                btn1.addEventListener('click', function onClick() {
+                btn1.style.color = '#CCCCCC';
+                });
+                btn2.addEventListener('click', function onClick() {
+                btn2.style.color = '#CCCCCC';
                 });
             </script>
         </section>    
