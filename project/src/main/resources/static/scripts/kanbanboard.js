@@ -92,11 +92,16 @@ function createTask() {
     createNewTaskBlock.style.borderLeft = "solid " + this.value + " 0.5em"
   });
 
-  // set priority
-  document.querySelector('#storyPriorityForm').addEventListener("change", function() {
-    let priority = document.getElementById('storyPriority')
+  // set priority an prioritycolor of of create-new-task-block
+  document.querySelector('#storyPriorityForm').addEventListener("change", function() {  
+    let place = document.getElementById('storyPriority')
     selected = this.value
-    priority.innerHTML = this.value
+    place.innerHTML = this.value
+
+    if (selected == "!") place.style.color = "#e60000"
+    else if (selected == "•") place.style.color = "#8e7cc3"
+    else if (selected == "↓") place.style.color = "#6495ed"
+      
   });
   
   // shows save-button 
