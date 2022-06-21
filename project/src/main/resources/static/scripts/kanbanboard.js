@@ -241,13 +241,6 @@ function updateTask(id) {
   deleteTaskInArray(id)
   tasks.push(newTaskName) // save name of the task in the array
 
-  // set prio colors
-  let storyPriorityOnStory = document.getElementsByClassName('prio')
-  if (priority == "&#33;"){
-    storyPriorityOnStory.style.color = "#e60000"
-  } 
-
-
   // Update values
   document.getElementById(taskNameID).innerHTML = newTaskName
   document.getElementById(descriptionID).innerHTML = newDescription
@@ -255,6 +248,11 @@ function updateTask(id) {
   document.getElementById(id).style.borderLeft = "solid " + newColor + " 0.5em"
   document.getElementById(priorityID).innerHTML = priority
   document.getElementById(defOfDoID).innerHTML = definitionOfDone
+
+  var taskPrio = document.getElementById(id + "-prio");
+  if (taskPrio.innerText == "!") taskPrio.style.color = "#e60000"
+  else if (taskPrio.innerText == "•") taskPrio.style.color = "#8e7cc3"
+  else if (taskPrio.innerText == "↓") taskPrio.style.color = "#6495ed"
 }
 
 /* deletes the story  */
@@ -306,10 +304,12 @@ function saveTask() {
   </div>
   `
   // set the color
+  var taskPrio = document.getElementById(id + "-prio");
+  if (taskPrio.innerText == "!") taskPrio.style.color = "#e60000"
+  else if (taskPrio.innerText == "•") taskPrio.style.color = "#8e7cc3"
+  else if (taskPrio.innerText == "↓") taskPrio.style.color = "#6495ed"
   var task = document.getElementById(id)
   task.style.borderLeft = "solid " + color + " 0.5em"
-  let taskPrio = document.getElementById(id + "-prio")
-  if (taskPrio == "&#33;") taskPrio.style.color = "#e60000"
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
