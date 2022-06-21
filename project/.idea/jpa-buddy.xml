@@ -3,6 +3,6 @@
   <component name="JpaBuddyIdeaProjectConfig" isReverseEngineeringLicenceAccepted="true">
     <option name="defaultUnitInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="645b0ab9-7d4a-4304-bf10-f795796f7432" />
-    <option name="reLastEntityCreationPackage" value="src/main/java/com/kanbanboard/repository/model" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/kanbanboard/model" />
   </component>
 </project>

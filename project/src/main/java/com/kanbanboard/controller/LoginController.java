@@ -3,10 +3,12 @@ package com.kanbanboard.controller;
 
 
 import com.kanbanboard.config.AppSecurityConfig;
+import com.kanbanboard.model.Activsession;
 import com.kanbanboard.model.User;
 import com.kanbanboard.payload.LoginRequest;
 import com.kanbanboard.payload.SignUpRequest;
 import com.kanbanboard.encryption.Encryption;
+import com.kanbanboard.repository.ActivsessionRepository;
 import com.kanbanboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,6 +23,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class LoginController {
+    @Autowired
+    public ActivsessionRepository activsessionRepository;
     @Autowired
     public UserRepository userRepository;
     Encryption encrypt = new Encryption();
@@ -51,11 +55,15 @@ public class LoginController {
 
         String sessId = appSecurityConfig.passwordEncoder().encode(payload.getEmail());
 
+        if (activsessionRepository.existsBySessionID(sessId)) {
 
+        }
+
+        Activsession activsession = activsessionRepository.findBySessionID(sessId);
 
         if (correctPassword) {
             // if user already has session in database, retrieve and assign. Else create new and add db entry....
-            req.getSession().setAttribute("KANBANSESS", sessId);
+            req.getSession().setAttribute("KANBANSESSIONID", sessId);
             return "Success!";
         }
         return "Incorrect credentials";

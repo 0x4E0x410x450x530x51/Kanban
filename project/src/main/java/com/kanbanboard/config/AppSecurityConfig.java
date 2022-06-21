@@ -50,6 +50,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
+                .deleteCookies("KANBANSESSIONID")
                 .permitAll()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 

@@ -1252,494 +1252,510 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="342" parent="283" name="kanbanboard">
+    <table id="342" parent="283" name="activsessions">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="343" parent="283" name="kanbanboard_story">
+    <table id="343" parent="283" name="kanbanboard">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="344" parent="283" name="story">
+    <table id="344" parent="283" name="kanbanboard_story">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="345" parent="283" name="user_kanbanboard">
+    <table id="345" parent="283" name="story">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="346" parent="283" name="users">
+    <table id="346" parent="283" name="user_kanbanboard">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="347" parent="331" name="id">
+    <table id="347" parent="283" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="348" parent="331" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="348" parent="331" name="bio">
+    <column id="349" parent="331" name="bio">
       <DataType>longtext|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="349" parent="331" name="birth_date">
+    <column id="350" parent="331" name="birth_date">
       <DataType>varchar(20)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="350" parent="331" name="death_date">
+    <column id="351" parent="331" name="death_date">
       <DataType>varchar(20)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="351" parent="331" name="name">
+    <column id="352" parent="331" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="352" parent="331" name="wikipedia">
+    <column id="353" parent="331" name="wikipedia">
       <DataType>varchar(255)|0s</DataType>
       <Position>6</Position>
     </column>
-    <index id="353" parent="331" name="IDXor6k6jmywerxbme223c988bmg">
+    <index id="354" parent="331" name="IDXor6k6jmywerxbme223c988bmg">
       <ColNames>name</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="354" parent="331" name="PRIMARY">
+    <key id="355" parent="331" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="355" parent="332" name="id">
+    <column id="356" parent="332" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="356" parent="332" name="description">
+    <column id="357" parent="332" name="description">
       <DataType>longtext|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="357" parent="332" name="first_publish_date">
+    <column id="358" parent="332" name="first_publish_date">
       <DataType>varchar(20)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="358" parent="332" name="subtitle">
+    <column id="359" parent="332" name="subtitle">
       <DataType>varchar(500)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="359" parent="332" name="title">
+    <column id="360" parent="332" name="title">
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="360" parent="332" name="IDXg0286ag1dlt4473st1ugemd0m">
+    <index id="361" parent="332" name="IDXg0286ag1dlt4473st1ugemd0m">
       <ColNames>title</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="361" parent="332" name="PRIMARY">
+    <key id="362" parent="332" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="362" parent="333" name="book_id">
+    <column id="363" parent="333" name="book_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="363" parent="333" name="author_id">
+    <column id="364" parent="333" name="author_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="364" parent="333" name="FKm9snrd6n0p8qo3ug4hi1yqtuv">
+    <foreign-key id="365" parent="333" name="FKm9snrd6n0p8qo3ug4hi1yqtuv">
       <ColNames>book_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>book</RefTableName>
     </foreign-key>
-    <foreign-key id="365" parent="333" name="FKr6lll2h47ibxr6aek0gfef9ck">
+    <foreign-key id="366" parent="333" name="FKr6lll2h47ibxr6aek0gfef9ck">
       <ColNames>author_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>author</RefTableName>
     </foreign-key>
-    <index id="366" parent="333" name="FKr6lll2h47ibxr6aek0gfef9ck">
+    <index id="367" parent="333" name="FKr6lll2h47ibxr6aek0gfef9ck">
       <ColNames>author_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="367" parent="333" name="PRIMARY">
+    <key id="368" parent="333" name="PRIMARY">
       <ColNames>book_id
 author_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="368" parent="334" name="id">
+    <column id="369" parent="334" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="369" parent="334" name="cover_file">
+    <column id="370" parent="334" name="cover_file">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="370" parent="334" name="book_id">
+    <column id="371" parent="334" name="book_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="371" parent="334" name="FK627gw105vtb8t1n5hy84ifyu8">
+    <foreign-key id="372" parent="334" name="FK627gw105vtb8t1n5hy84ifyu8">
       <ColNames>book_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>book</RefTableName>
     </foreign-key>
-    <index id="372" parent="334" name="FK627gw105vtb8t1n5hy84ifyu8">
+    <index id="373" parent="334" name="FK627gw105vtb8t1n5hy84ifyu8">
       <ColNames>book_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="373" parent="334" name="PRIMARY">
+    <key id="374" parent="334" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="374" parent="335" name="id">
+    <column id="375" parent="335" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="375" parent="335" name="subject">
+    <column id="376" parent="335" name="subject">
       <DataType>varchar(400)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="376" parent="335" name="book_id">
+    <column id="377" parent="335" name="book_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="377" parent="335" name="FKn3av7hd3rhjpuv9ruinv920w9">
+    <foreign-key id="378" parent="335" name="FKn3av7hd3rhjpuv9ruinv920w9">
       <ColNames>book_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>book</RefTableName>
     </foreign-key>
-    <index id="378" parent="335" name="IDXarbom1oc6jojeadah5s314bqx">
+    <index id="379" parent="335" name="IDXarbom1oc6jojeadah5s314bqx">
       <ColNames>subject</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="379" parent="335" name="FKn3av7hd3rhjpuv9ruinv920w9">
+    <index id="380" parent="335" name="FKn3av7hd3rhjpuv9ruinv920w9">
       <ColNames>book_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="380" parent="335" name="PRIMARY">
+    <key id="381" parent="335" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="381" parent="336" name="id">
+    <column id="382" parent="336" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="382" parent="336" name="address">
+    <column id="383" parent="336" name="address">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="383" parent="336" name="city">
+    <column id="384" parent="336" name="city">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="384" parent="336" name="email">
+    <column id="385" parent="336" name="email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="385" parent="336" name="name">
+    <column id="386" parent="336" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="386" parent="336" name="phone">
+    <column id="387" parent="336" name="phone">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="387" parent="336" name="zip">
+    <column id="388" parent="336" name="zip">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <key id="388" parent="336" name="PRIMARY">
+    <key id="389" parent="336" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="389" parent="337" name="next_val">
+    <column id="390" parent="337" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="390" parent="338" name="role_id">
+    <column id="391" parent="338" name="role_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="391" parent="338" name="name">
+    <column id="392" parent="338" name="name">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="392" parent="338" name="PRIMARY">
+    <key id="393" parent="338" name="PRIMARY">
       <ColNames>role_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="393" parent="339" name="id">
+    <column id="394" parent="339" name="id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="394" parent="339" name="password">
+    <column id="395" parent="339" name="password">
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="395" parent="339" name="role">
+    <column id="396" parent="339" name="role">
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="396" parent="339" name="username">
+    <column id="397" parent="339" name="username">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <key id="397" parent="339" name="PRIMARY">
+    <key id="398" parent="339" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="398" parent="340" name="user_id">
+    <column id="399" parent="340" name="user_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="399" parent="340" name="enabled">
+    <column id="400" parent="340" name="enabled">
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="400" parent="340" name="password">
+    <column id="401" parent="340" name="password">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="401" parent="340" name="username">
+    <column id="402" parent="340" name="username">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="402" parent="340" name="username_UNIQUE">
+    <index id="403" parent="340" name="username_UNIQUE">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="403" parent="340" name="PRIMARY">
+    <key id="404" parent="340" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="404" parent="340" name="username_UNIQUE">
+    <key id="405" parent="340" name="username_UNIQUE">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="405" parent="341" name="user_id">
+    <column id="406" parent="341" name="user_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="406" parent="341" name="role_id">
+    <column id="407" parent="341" name="role_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="407" parent="341" name="FK2o0jvgh89lemvvo17cbqvdxaa">
+    <foreign-key id="408" parent="341" name="FK2o0jvgh89lemvvo17cbqvdxaa">
       <ColNames>user_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="408" parent="341" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <foreign-key id="409" parent="341" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
       <RefColNames>role_id</RefColNames>
       <RefTableName>roles</RefTableName>
     </foreign-key>
-    <index id="409" parent="341" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <index id="410" parent="341" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="410" parent="341" name="PRIMARY">
+    <key id="411" parent="341" name="PRIMARY">
       <ColNames>user_id
 role_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="411" parent="342" name="kanbanboardID">
+    <column id="412" parent="342" name="activSessionID">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="412" parent="342" name="created">
-      <DataType>date|0s</DataType>
+    <column id="413" parent="342" name="sessionID">
+      <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="413" parent="342" name="completed">
+    <column id="414" parent="342" name="userID">
       <DataType>int|0s</DataType>
       <Position>3</Position>
-    </column>
-    <column id="414" parent="342" name="inprogress">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
     </column>
     <key id="415" parent="342" name="PRIMARY">
-      <ColNames>kanbanboardID</ColNames>
+      <ColNames>activSessionID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="416" parent="343" name="ID">
+    <column id="416" parent="343" name="kanbanboardid">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="417" parent="343" name="kanbanboardID">
+    <column id="417" parent="343" name="completed">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="418" parent="343" name="storyID">
+    <column id="418" parent="343" name="created">
+      <DataType>date|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="419" parent="343" name="inprogress">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <key id="420" parent="343" name="PRIMARY">
+      <ColNames>kanbanboardid</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="421" parent="344" name="id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="422" parent="344" name="kanbanboardid">
+      <DataType>int|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="423" parent="344" name="storyid">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="419" parent="343" name="kanbanboard_story_ibfk_1">
-      <ColNames>kanbanboardID</ColNames>
-      <RefColNames>kanbanboardID</RefColNames>
+    <foreign-key id="424" parent="344" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
+      <ColNames>kanbanboardid</ColNames>
+      <RefColNames>kanbanboardid</RefColNames>
       <RefTableName>kanbanboard</RefTableName>
     </foreign-key>
-    <foreign-key id="420" parent="343" name="kanbanboard_story_ibfk_2">
-      <ColNames>storyID</ColNames>
-      <RefColNames>storyID</RefColNames>
+    <foreign-key id="425" parent="344" name="FKi67cheim7ec1sacuvbv0rg76y">
+      <ColNames>storyid</ColNames>
+      <RefColNames>storyid</RefColNames>
       <RefTableName>story</RefTableName>
     </foreign-key>
-    <index id="421" parent="343" name="kanbanboardID">
-      <ColNames>kanbanboardID</ColNames>
+    <index id="426" parent="344" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
+      <ColNames>kanbanboardid</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="422" parent="343" name="storyID">
-      <ColNames>storyID</ColNames>
+    <index id="427" parent="344" name="FKi67cheim7ec1sacuvbv0rg76y">
+      <ColNames>storyid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="423" parent="343" name="PRIMARY">
-      <ColNames>ID</ColNames>
+    <key id="428" parent="344" name="PRIMARY">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="424" parent="344" name="storyID">
+    <column id="429" parent="345" name="storyid">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="425" parent="344" name="storyname">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="430" parent="345" name="story_assign">
+      <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="426" parent="344" name="storyStatus">
-      <DataType>int|0s</DataType>
+    <column id="431" parent="345" name="story_description">
+      <DataType>varchar(1024)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="427" parent="344" name="storyDescription">
-      <DataType>varchar(1024)|0s</DataType>
+    <column id="432" parent="345" name="story_expire">
+      <DataType>date|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="428" parent="344" name="storyExpire">
-      <DataType>date|0s</DataType>
+    <column id="433" parent="345" name="story_status">
+      <DataType>int|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="429" parent="344" name="storyAssign">
-      <DataType>int|0s</DataType>
+    <column id="434" parent="345" name="storyname">
+      <DataType>varchar(255)|0s</DataType>
       <Position>6</Position>
     </column>
-    <key id="430" parent="344" name="PRIMARY">
-      <ColNames>storyID</ColNames>
+    <key id="435" parent="345" name="PRIMARY">
+      <ColNames>storyid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="431" parent="345" name="ID">
+    <column id="436" parent="346" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="432" parent="345" name="kanbanboardID">
-      <DataType>int|0s</DataType>
+    <column id="437" parent="346" name="owner">
+      <DataType>bit(1)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="433" parent="345" name="userID">
+    <column id="438" parent="346" name="kanbanboardid">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="434" parent="345" name="owner">
-      <DataType>tinyint(1)|0s</DataType>
+    <column id="439" parent="346" name="userid">
+      <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <foreign-key id="435" parent="345" name="user_kanbanboard_ibfk_2">
-      <ColNames>kanbanboardID</ColNames>
-      <RefColNames>kanbanboardID</RefColNames>
+    <foreign-key id="440" parent="346" name="FKgltl9wqd781f3e50ftq95lkpw">
+      <ColNames>kanbanboardid</ColNames>
+      <RefColNames>kanbanboardid</RefColNames>
       <RefTableName>kanbanboard</RefTableName>
     </foreign-key>
-    <foreign-key id="436" parent="345" name="user_kanbanboard_ibfk_1">
-      <ColNames>userID</ColNames>
-      <RefColNames>userID</RefColNames>
+    <foreign-key id="441" parent="346" name="FKn8ow30beu5ss57ca6rlfwu9km">
+      <ColNames>userid</ColNames>
+      <RefColNames>userid</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="437" parent="345" name="kanbanboardID">
-      <ColNames>kanbanboardID</ColNames>
+    <index id="442" parent="346" name="FKgltl9wqd781f3e50ftq95lkpw">
+      <ColNames>kanbanboardid</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="438" parent="345" name="userID">
-      <ColNames>userID</ColNames>
+    <index id="443" parent="346" name="FKn8ow30beu5ss57ca6rlfwu9km">
+      <ColNames>userid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="439" parent="345" name="PRIMARY">
-      <ColNames>ID</ColNames>
+    <key id="444" parent="346" name="PRIMARY">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="440" parent="346" name="userID">
+    <column id="445" parent="347" name="userid">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="441" parent="346" name="fullname">
+    <column id="446" parent="347" name="authority">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="442" parent="346" name="email">
+    <column id="447" parent="347" name="email">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="443" parent="346" name="password">
+    <column id="448" parent="347" name="fullname">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="444" parent="346" name="email">
-      <ColNames>email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="445" parent="346" name="PRIMARY">
-      <ColNames>userID</ColNames>
+    <column id="449" parent="347" name="password">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <key id="450" parent="347" name="PRIMARY">
+      <ColNames>userid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-    </key>
-    <key id="446" parent="346" name="email">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
