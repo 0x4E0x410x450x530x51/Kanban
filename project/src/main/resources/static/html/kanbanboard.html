@@ -29,13 +29,15 @@
         <div class="create-new-task-block" id="create-new-task-block">
             <!-- cancel cross -->
             <span style="font-size:25px;cursor:pointer" id="cancel-button" onclick="cancelCreateTask()">&#10799;</span>
+            <span id="storyPriority"></span>
             <div>
                 <input type="text" id="storyNameForm" placeholder="Name"></input>
                 <textarea id="descritptionForm" rows="3" placeholder="Description"></textarea>
                 <!-- Priority -->
                 <select id="storyPriorityForm">
-                    <option class="high" value="high">High</option>
-                    <option class="low" value="low">Low</option>
+                    <option class="high" value="&#33;">High</option>
+                    <option class="high" value="&#8226;">Medium</option>
+                    <option class="low" value="&#8659;">Low</option>
                 </select>
                 <!-- Selection color -->
                 <select id="storyColorForm">
@@ -48,7 +50,7 @@
                 <input type="datetime-local" id="storyDueDate"></input>
                 <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
                 <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
-                <button type="button" class="btn btn-danger" id="update-button">Update</button>
+                <button type="button" class="btn btn-danger" id="update-button">Save Changes</button>
             </div>
         </div>
         <!-- button to open the sidebar-->
@@ -69,19 +71,6 @@
                         <button id="task-button" onclick="createTask()">&#x2b;</button>
                     </div>
                     <!-- Demo Storys-->
-                    <div class="task" id="demo0" draggable="true" ondragstart="drag(event)" "="" style=" border-left:
-                        0.5em solid rgb(230, 191, 51); -webkit-user-drag: element;">
-                        <span class="storyTitle" id="demo0-name">Demo</span>
-                        <div class="edit" onclick="editTask('demo0')"></div>
-                        <small class="description" id="demo0-description">This is a yellow demo story.</small>
-                        <hr width="80%">
-                        <span class="storyInformation" id="demo0-storyExtensionButton" data-hover="Show more" onclick="showMore('demo0')">»</span>
-                        <span class="storyInformation closeButton" id="demo0-storyCloseButton" data-hover="Close" onclick="showLess('demo0')">&#171;</span>
-                        <div id="demo0-showMoreBlock" class="showMoreBlock">
-                            <div>Due date:</div>
-                            <small class="dueDate" id="demo0-dueDate">2022-08-24 20:00</small>
-                        </div>
-                    </div>
                 </div>
                 <!-- In Progress-->
                 <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
