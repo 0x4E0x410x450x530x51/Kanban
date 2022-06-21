@@ -131,6 +131,7 @@ function editTask(id) {
 
   // back to the original format
   let dueDateFormated = dueDate.replace(/ /g, "T")
+  console.log(dueDateFormated)
 
   // get color of the story
   let currentColorOfStory = document.getElementById(id).style.borderLeftColor
@@ -246,7 +247,7 @@ function saveTask() {
   let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
 
   // format the dates
-  let dueDateFormated = dueDate.replace(/T/g, "  ");
+  let dueDateFormated = dueDate.replace(/T/g, "  ")
 
   // validation
   if (id == 0) {
@@ -264,6 +265,7 @@ function saveTask() {
       <span class="storyInformation" id="${id + '-storyExtensionButton'}" data-hover="Show more" onclick="showMore('${id}')">»</span>
       <span class="storyInformation closeButton" id="${id + '-storyCloseButton'}" data-hover="Close" onclick="showLess('${id}')">&#171;</span>
       <div id="${id + "-showMoreBlock"}" class="showMoreBlock">
+          <div>Due date:</div>
           <small class="dueDate" id="${id + "-dueDate"}">${dueDateFormated}</small>
       </div>
   </div>
