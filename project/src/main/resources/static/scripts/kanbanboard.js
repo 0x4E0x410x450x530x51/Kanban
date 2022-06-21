@@ -308,6 +308,8 @@ function saveTask() {
   // set the color
   var task = document.getElementById(id)
   task.style.borderLeft = "solid " + color + " 0.5em"
+  let taskPrio = document.getElementById(id + "-prio")
+  if (taskPrio == "&#33;") taskPrio.style.color = "#e60000"
 
   cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
@@ -321,8 +323,9 @@ function clearInputs() {
   document.getElementById('descritptionForm').value = ""
   document.getElementById('storyColorForm').value = "#e60000"
   document.getElementById('storyDueDate').value = ""
-  document.getElementById('storyPriorityForm').value = ""
-  document.getElementById('storyPriority').innerHTML = ""
+  document.getElementById('storyPriorityForm').value = "&#8226;"
+  document.getElementById('storyPriorityForm').selectedIndex = 1
+  document.getElementById('storyPriority').innerHTML = "&#8226;"
   document.getElementById('create-new-task-block').style.borderLeft = "solid #e60000 0.5em"
 }
 

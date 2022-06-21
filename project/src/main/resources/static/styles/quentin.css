@@ -292,6 +292,7 @@ h2 {
   float: right; 
   margin-top: -3px;
   margin-right: 25px;
+  color: orange; 
 }
 
 .edit::after,
