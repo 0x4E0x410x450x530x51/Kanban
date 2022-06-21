@@ -19,7 +19,7 @@
 
 .form-box{
     width: 400px;
-    height: 500px;
+ 
     position: relative;
     margin: 2% auto;
     background: #fff;
@@ -32,7 +32,7 @@
 .button-box{
     display: flex;
     justify-content: space-around;
-    top: 100%;
+   
     position:relative;
     box-shadow: 0 4px 6px 0.5px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.10);
     border-radius: 10px;
@@ -60,9 +60,9 @@
 
 /*Input Design*/
 .input-groups{
-    top:240px;
+    top:20px;
     position: absolute;
-    width: 280px;
+    
     transition: .5s;
 }
 .input-field {
@@ -105,11 +105,11 @@
 /*The 2 Forms*/
 #login{
   
-    top: 255px;
+    bottom: 10px;
 }
 #register{
-    left: 460px;
-    top: 13em;
+    
+    bottom: 10px;
 }
 
 /*Set Login Button to white at the beginning*/
@@ -142,15 +142,20 @@
 	text-align: center;	
     font-size: 3em;
 }
+
+/*added by AndyI0I*/
+
+.form-cred{
+    height:400px;
+    position: relative;
+    top: 20px;
+}
 .center-content{
     display: flex;
     justify-content: center;
 }
 
-.button-box-offset {
-    position: relative;
-    top: 10%;
-}
+
 
 
 .dissappear-left{
@@ -158,9 +163,14 @@
 }
 
 .dissappear-right{
-    left: 300px
+    left: 200%;
 }
 
 .appear.center{
 
+}
+
+.login-menu {
+    position: relative;
+    top: 10%;
 }
