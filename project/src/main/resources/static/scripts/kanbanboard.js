@@ -331,6 +331,7 @@ function clearInputs() {
   document.getElementById('storyPriorityForm').value = "&#8226;"
   document.getElementById('storyPriorityForm').selectedIndex = 1
   document.getElementById('storyPriority').innerHTML = "&#8226;"
+  document.getElementById('storyPriority').style.color = "#8E7CC3"
   document.getElementById('create-new-task-block').style.borderLeft = "solid #e60000 0.5em"
 }
 
