@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.full{
+   height: 100%;
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+}
+
+#logo{
+
+    
+}
+
+.form-box{
+    width: 400px;
+ 
+    position: relative;
+    margin: 2% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px 0.1px;
+    border-radius: 12px;
+  }
+/*Top Buttons + Shadow*/
+.button-box{
+    display: flex;
+    justify-content: space-around;
+   
+    position:relative;
+    box-shadow: 0 4px 6px 0.5px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+}
+.toggle-btn{
+    padding: 10px 0px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+
+/*Top Button Colour Transition*/
+#btn{
+    left:0%;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background:rgba(230,0,0,0.8);
+    border-radius: 10px !important;
+    transition: .5s;
+}
+
+/*Input Design*/
+.input-groups{
+    top:20px;
+    position: absolute;
+    
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    background: linear-gradient(to right, #999, rgb(153, 153, 153)), linear-gradient(to right, #e60000, #e60000, #e60000);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+.input-field:focus {
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    background: rgba(230,0,0,0.8);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+
+/*The 2 Forms*/
+#login{
+  
+    bottom: 10px;
+}
+#register{
+    
+    bottom: 10px;
+}
+
+/*Set Login Button to white at the beginning*/
+#loginbtn {
+    color: white;
+}
+
+@-webkit-keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
+}
+@keyframes fading {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+    }
+}
+
+
+/*Title*/
+.loginTitle{
+    padding-top: 15px;
+    padding-bottom: 5px;
+	text-align: center;	
+    font-size: 3em;
+}
+
+/*added by AndyI0I*/
+
+.form-cred{
+    height:400px;
+    position: relative;
+    top: 20px;
+}
+.center-content{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.dissappear-left{
+    right:300px;
+}
+
+.dissappear-right{
+    left: 200%;
+}
+
+.appear.center{
+
+}
+
+.login-menu {
+    position: relative;
+    top: 10%;
+}
