@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 
-.hero{
+.full{
    height: 100%;
    width: 100%;
    background-position: center;
@@ -23,7 +23,7 @@
     width: 400px;
     height: 500px;
     position: relative;
-    margin: 8% auto;
+    margin: 2% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
@@ -105,11 +105,12 @@
 
 /*The 2 Forms*/
 #login{
-    left: 50px;
+    left: 60px;
     top: 255px;
 }
 #register{
-    left: 450px;
+    left: 460px;
+    top: 13em;
 }
 
 /*Set Login Button to white at the beginning*/
@@ -132,4 +133,13 @@
     to {
         color: rgb(255, 255, 255);
     }
+}
+
+
+/*Title*/
+.loginTitle{
+    padding-top: 15px;
+    padding-bottom: 5px;
+	text-align: center;	
+    font-size: 3em;
 }

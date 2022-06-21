@@ -1,73 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Log-in and Registration</title>
         <link rel="stylesheet" href="..\styles\Starter_Page_styles.css">
     </head>
     <body>
-        <div class="hero">
-            <div class="form-box">
-
-                <img id="logo" src="..\Pics\ubs_logo.png" alt="UBS Logo">
-
-                    <div class="button-box">
-                        <div id="btn"></div> <!--Top Buttons Color and Transition-->
-                        <!--Top Buttons to switch-->
-                        <button type="button" id="loginbtn" class="toggle-btn" onclick="login()">Log In</button>
-                        <button type="button" id="registerbtn" class="toggle-btn" onclick="register()">Register</button>
+        <header>
+            <div class="container top">
+                <div class="row">
+                    <div class="col-12">
+                        <h1  class="loginTitle">Kanban-Board</h1>
                     </div>
-                
-
-                <!-- Input Login-->
-                <form id="login" class="input-group">
-                    <input type="email" class="input-field" placeholder="E-Mail" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
-                    <button type="submit" class="submit-btn">Log in</button>
-                </form>
-
-                <!--Input Register-->
-                <form id="register" class="input-group">
-                    <input type="text" class="input-field" placeholder="Full Name" required>
-                    <input type="email" class="input-field" placeholder="Enter E-Mail" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
-                    <button type="submit" class="submit-btn">Register</button>
-                </form>
+                </div>
             </div>
-        </div>
+        </header>
+        <section class="container">
+            <div class="full">
+                <div class="form-box">
 
-        <script>
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
-            var z = document.getElementById("btn");
+                    <img id="logo" src="..\Pics\ubs_logo.png" alt="UBS Logo">
 
-            var regbtn = document.getElementById("registerbtn")
-            var logbtn = document.getElementById("loginbtn")
+                        <div class="button-box">
+                            <div id="btn"></div> <!--Top Buttons Color and Transition-->
+                            <!--Top Buttons to switch-->
+                            <button type="button" id="loginbtn" class="toggle-btn" onclick="login()">Log In</button>
+                            <button type="button" id="registerbtn" class="toggle-btn" onclick="register()">Register</button>
+                        </div>
+                    
+                    <div class="row">  
+                        <!-- Input Login-->
+                        <form id="login" class="input-group">
+                            <input type="email" class="input-field" placeholder="E-Mail" required>
+                            <input type="password" class="input-field" placeholder="Enter Password" required>
+                            <button type="submit" class="submit-btn">Log in</button>
+                        </form>
 
-            function register(){
-                x.style.left = "-400px";
-                y.style.left = "50px";
-                z.style.left = "110px";
-                for (let i = 0; i < 255; i++) {
-                    setTimeout(function() {
-                        regbtn.style.color = `rgb(${i}, ${i}, ${i})`
-                        logbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
-                    }, i)
+                        <!--Input Register-->
+                        <form id="register" class="input-group">
+                            <input type="text" class="input-field" placeholder="Full Name" required>
+                            <input type="email" class="input-field" placeholder="Enter E-Mail" required>
+                            <input type="password" class="input-field" placeholder="Enter Password" required>
+                            <input type="password" class="input-field" placeholder="Enter Password again" required>
+                            <button type="submit" class="submit-btn">Register</button>
+                        </form>
+                    </div>  
+                </div>
+            </div>
+
+            <script>
+                var x = document.getElementById("login");
+                var y = document.getElementById("register");
+                var z = document.getElementById("btn");
+
+                var regbtn = document.getElementById("registerbtn")
+                var logbtn = document.getElementById("loginbtn")
+
+                function register(){
+                    x.style.left = "-400px";
+                    y.style.left = "60px";
+                    z.style.left = "110px";
+                    for (let i = 0; i < 255; i++) {
+                        setTimeout(function() {
+                            regbtn.style.color = `rgb(${i}, ${i}, ${i})`
+                            logbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
+                        }, i)
+                    }
                 }
-            }
-            
-            function login(){
-                x.style.left = "50px";
-                y.style.left = "450px";
-                z.style.left = "0";
-                for (let i = 0; i < 255; i++) {
-                    setTimeout(function() {
-                        logbtn.style.color = `rgb(${i}, ${i}, ${i})`
-                        regbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
+                
+                function login(){
+                    x.style.left = "60px";
+                    y.style.left = "450px";
+                    z.style.left = "0";
+                    for (let i = 0; i < 255; i++) {
+                        setTimeout(function() {
+                            logbtn.style.color = `rgb(${i}, ${i}, ${i})`
+                            regbtn.style.color = `rgb(${255-i}, ${255-i}, ${255-i})`
 
-                    }, i)
+                        }, i)
+                    }
                 }
-            }
 
-        </script>
+                const btn = document.getElementsByClassName('submit-btn');
+
+                btn.addEventListener('click', function onClick() {
+                btn.style.color = '#CCCCCC';
+                });
+            </script>
+        </section>    
     </body>
 </html>
