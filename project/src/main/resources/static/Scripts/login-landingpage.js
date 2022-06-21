@@ -7,8 +7,8 @@ var x = document.getElementById("login");
 
                 function register(){
                     x.style.left = "-400px";
-                    y.style.left = "60px";
-                    z.style.left = "110px";
+                    y.style.left = "0";
+                    z.style.left = "50%";
                     for (let i = 0; i < 255; i++) {
                         setTimeout(function() {
                             regbtn.style.color = `rgb(${i}, ${i}, ${i})`
@@ -18,8 +18,8 @@ var x = document.getElementById("login");
                 }
                 
                 function login(){
-                    x.style.left = "60px";
-                    y.style.left = "450px";
+                    x.style.left = "0px";
+                    y.style.left = "400px";
                     z.style.left = "0";
                     for (let i = 0; i < 255; i++) {
                         setTimeout(function() {

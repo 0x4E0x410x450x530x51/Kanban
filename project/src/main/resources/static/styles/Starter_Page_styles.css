@@ -4,26 +4,12 @@
     font-family: sans-serif;
 }
 
-.full{
-   height: 100%;
-   width: 100%;
-   background-position: center;
-   background-size: cover;
-   position: absolute;
-}
-
-#logo{
-    width: 60%;
-    position:absolute;
-    margin-left: 15%;
-    margin-top: 12px;
-}
 
 .form-box{
     width: 400px;
     height: 500px;
     position: relative;
-    margin: 2% auto;
+
     background: #fff;
     padding: 5px;
     overflow: hidden;
@@ -32,14 +18,15 @@
   }
 /*Top Buttons + Shadow*/
 .button-box{
-    width: 220px;
-    margin: 150px auto;
+    display: flex;
+    justify-content: space-around;
+    top: 100%;
     position:relative;
     box-shadow: 0 4px 6px 0.5px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.10);
     border-radius: 10px;
 }
 .toggle-btn{
-    padding: 10px 30px;
+    padding: 10px 0px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -50,19 +37,19 @@
 
 /*Top Button Colour Transition*/
 #btn{
-    left:0;
+    left:0%;
     position: absolute;
-    width: 110px;
+    width: 50%;
     height: 100%;
     background:rgba(230,0,0,0.8);
-    border-radius: 10px;
+    border-radius: 10px !important;
     transition: .5s;
 }
 
 /*Input Design*/
-.input-group{
-    top:240px;
-    position: absolute;
+.input-groups{
+    top: 50%;
+    position: relative;
     width: 280px;
     transition: .5s;
 }
@@ -103,14 +90,9 @@
 }
 
 
-/*The 2 Forms*/
-#login{
-    left: 60px;
-    top: 255px;
-}
+
 #register{
-    left: 460px;
-    top: 13em;
+    left: 100%; 
 }
 
 /*Set Login Button to white at the beginning*/
@@ -142,4 +124,13 @@
     padding-bottom: 5px;
 	text-align: center;	
     font-size: 3em;
+}
+.center-content{
+    display: flex;
+    justify-content: center;
+}
+
+.button-box-offset {
+    position: relative;
+    top: 10%;
 }
