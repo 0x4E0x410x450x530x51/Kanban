@@ -235,7 +235,7 @@ function updateTask(id) {
   let priority = document.getElementById("storyPriorityForm").value
   let definitionOfDone = document.getElementById("definitionOfDoneForm").value
 
-  let newDueDateFormated = newDueDate.replace(/T/g, "  ");
+  let newDueDateFormated = newDueDate.replace(/T/g, " ");
 
   // validation
   if (newTaskName == 0) {
@@ -282,7 +282,7 @@ function saveTask() {
   let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
 
   // format the dates
-  let dueDateFormated = dueDate.replace(/T/g, "  ")
+  let dueDateFormated = dueDate.replace(/T/g, " ")
 
   // validation
   if (id == 0) {
