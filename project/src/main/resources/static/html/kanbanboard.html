@@ -37,9 +37,9 @@
                 <textarea id="definitionOfDoneForm" rows="2" placeholder="Definition of done" maxlength="300"></textarea>
                 <!-- Priority -->
                 <select id="storyPriorityForm">
-                    <option class="high" value="&#33;">High</option>
-                    <option class="high" value="&#8226;">Medium</option>
-                    <option class="low" value="&#8226;">Low</option>
+                    <option class="high" value="!">High</option>
+                    <option class="high" value="•">Medium</option>
+                    <option class="low" value="↓">Low</option>
                 </select>
                 <!-- Selection color -->
                 <select id="storyColorForm">
@@ -49,6 +49,7 @@
                     <option class="blue" value="#6495ed">blue</option>
                     <option class="purple" value="#8e7cc3">purple</option>
                 </select>
+                <div class="storyDueDateFormTitle">Due date:</div>
                 <input type="datetime-local" id="storyDueDate"></input>
                 <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
                 <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
@@ -60,7 +61,7 @@
         <!-- Kanban board -->
         <div class="container">
             <div class="kanbanBoardTitle">
-                <h1>Title of the Kanbanboard</h1>
+                <h1>Kanbanboard-Demo</h1>
             </div>
             <div class="kanban-board">
                 <!-- Backlog-->
