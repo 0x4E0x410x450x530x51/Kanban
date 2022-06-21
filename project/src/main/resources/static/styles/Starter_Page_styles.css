@@ -4,12 +4,24 @@
     font-family: sans-serif;
 }
 
+.full{
+   height: 100%;
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+}
+
+#logo{
+
+    
+}
 
 .form-box{
     width: 400px;
     height: 500px;
     position: relative;
-
+    margin: 2% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
@@ -48,8 +60,8 @@
 
 /*Input Design*/
 .input-groups{
-    top: 50%;
-    position: relative;
+    top:240px;
+    position: absolute;
     width: 280px;
     transition: .5s;
 }
@@ -90,9 +102,14 @@
 }
 
 
-
+/*The 2 Forms*/
+#login{
+  
+    top: 255px;
+}
 #register{
-    left: 100%; 
+    left: 460px;
+    top: 13em;
 }
 
 /*Set Login Button to white at the beginning*/
@@ -133,4 +150,17 @@
 .button-box-offset {
     position: relative;
     top: 10%;
+}
+
+
+.dissappear-left{
+    right:300px;
+}
+
+.dissappear-right{
+    left: 300px
+}
+
+.appear.center{
+
 }
