@@ -74,7 +74,7 @@ var index = 0;
 function createTask() {
   clearInputs()
 
-  // let a =  document.getElementsByClassName("md-backdrop")[0].classList.add("backdrop-state")
+  document.getElementsByClassName("md-backdrop")[0].classList.add("backdrop-state")
 
   // makes that the user can't select anything in the background
   let allConts = document.getElementsByClassName("task")
@@ -134,12 +134,14 @@ function editTask(id) {
   let descriptionID = id + '-description'
   let dueDateID = id + '-dueDate'
   let prioID = id + '-prio'
+  let defOfDoID = id + '-defOfDo'
 
   // get old values from the story
   let taskName = document.getElementById(taskNameID).innerText
   let description = document.getElementById(descriptionID).innerText
   let dueDate = document.getElementById(dueDateID).innerText
   let priority = document.getElementById(prioID).innerText
+  let defOfDo = document.getElementById(defOfDoID).innerText
 
   // back to the original format
   let dueDateFormated = dueDate.replace(/ /g, "T")
@@ -158,6 +160,7 @@ function editTask(id) {
   document.getElementById('storyNameForm').value = taskName // name
   document.getElementById('descritptionForm').value = description // description
   document.getElementById('storyDueDate').value = dueDateFormated // due date
+  document.getElementById('definitionOfDoneForm').value = defOfDo // definition of done
 
 
   // convert rgb to hex:
@@ -217,6 +220,7 @@ function updateTask(id) {
   let descriptionID = id + '-description'
   let dueDateID = id + '-dueDate'
   let priorityID = id + '-prio'
+  let defOfDoID = id + '-defOfDo'
 
   // get the new values
   let newTaskName = document.getElementById("storyNameForm").value
@@ -224,6 +228,7 @@ function updateTask(id) {
   let newColor = document.getElementById("storyColorForm").value
   let newDueDate = document.getElementById("storyDueDate").value
   let priority = document.getElementById("storyPriorityForm").value
+  let definitionOfDone = document.getElementById("definitionOfDoneForm").value
 
   let newDueDateFormated = newDueDate.replace(/T/g, "  ");
 
@@ -240,7 +245,6 @@ function updateTask(id) {
   let storyPriorityOnStory = document.getElementsByClassName('prio')
   if (priority == "&#33;"){
     storyPriorityOnStory.style.color = "#e60000"
-    alert("high")
   } 
 
 
@@ -250,6 +254,7 @@ function updateTask(id) {
   document.getElementById(dueDateID).innerHTML = newDueDateFormated
   document.getElementById(id).style.borderLeft = "solid " + newColor + " 0.5em"
   document.getElementById(priorityID).innerHTML = priority
+  document.getElementById(defOfDoID).innerHTML = definitionOfDone
 }
 
 /* deletes the story  */
@@ -269,10 +274,9 @@ function saveTask() {
   var color = document.getElementById("storyColorForm").value
   let dueDate = document.getElementById("storyDueDate").value
   let priority = document.getElementById("storyPriorityForm").value
+  let definitionOfDone = document.getElementById("definitionOfDoneForm").value
 
   let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
-
-  alert(priority)
 
   // format the dates
   let dueDateFormated = dueDate.replace(/T/g, "  ")
@@ -296,6 +300,8 @@ function saveTask() {
       <div id="${id + "-showMoreBlock"}" class="showMoreBlock">
           <div class="dueDateTitle">Due date:</div>
           <small class="dueDate" id="${id + "-dueDate"}">${dueDateFormated}</small>
+          <div class="definitionOfDonetitle">Definition of done:</div>
+          <small class="definitionOfDone" id="${id + "-defOfDo"}">${definitionOfDone}</small>
       </div>
   </div>
   `
@@ -311,6 +317,7 @@ function saveTask() {
 // clears the input fields 
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
+  document.getElementById('definitionOfDoneForm').value = ""
   document.getElementById('descritptionForm').value = ""
   document.getElementById('storyColorForm').value = "#e60000"
   document.getElementById('storyDueDate').value = ""
