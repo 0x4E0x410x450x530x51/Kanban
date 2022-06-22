@@ -1,0 +1,166 @@
+/* Styles for the sidebar navigation */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #CCCCCC;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #content {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+  
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+
+  /* header: ---------------------------------------------------------*/
+
+  hr {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  header {
+    margin-top: -40px;
+  }
+
+  /* account */
+  .userAccount {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    right: 2em;
+    top: 1.5em;
+    position: absolute;
+    border-radius: 0.5em;
+    border: solid #B0B0B0 0.15em;
+    background-color: rgba(0, 0, 0, .1);
+    padding: 5px; 
+  }
+
+  .accountImg {
+    background-color: #e60000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    margin-right: 5px;
+  }
+
+  .accountName {
+    margin: auto;
+  }  
+
+  /*style for the kanbanboard-----------------------------------------------------*/
+
+  /*
+  .kanbanSection {
+    height: 500px;
+    width: 30.5%;
+    border-top: solid rgba(0, 0, 0, .2) 2px; 
+    border-bottom: solid rgba(0, 0, 0, .2) 2px; 
+    border-right: solid rgba(0, 0, 0, .2) 2px;
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+  }
+
+  /*For the left border
+  .backlog {
+    border-left: solid rgba(0, 0, 0, .2) 2px;
+  }
+
+  main {
+    margin-top: 5% !important;
+    width: max-content;
+  }
+
+  .container {
+    width: 70%;
+    min-width: 50%;
+    margin: auto;
+    display: flex;
+  }
+
+  /* titles 
+  .title {
+    height: 20%;
+    width: 100%;
+    border-bottom: solid rgba(0, 0, 0, .2) 2px; 
+  }
+  */
+
+  .kanbanSection {
+    border-top: solid rgba(0, 0, 0, .2) 2px; 
+    border-bottom: solid rgba(0, 0, 0, .2) 2px; 
+    border-right: solid rgba(0, 0, 0, .2) 2px;
+    border-left: solid rgba(0, 0, 0, .2) 2px;
+    height: 500px;
+    width: 113.09%;
+  }
+
+  .title {
+    height: 20%;
+    width: 100%;
+    border-bottom: solid rgba(0, 0, 0, .2) 2px; 
+  }
+
+  /* Buttons --------------------------------------------------------*/
+
+  .button {
+    border: none;
+    border-radius: 0.5em;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100px;
+  }
+
+  .playButton {
+    background-color: rgb(98, 218, 98);
+  }
+
+  .pauseButton {
+    background-color: rgb(52, 52, 189);
+  }
+
+  .stopButton {
+    background-color: #e60000;
+  }

@@ -17,11 +17,6 @@ function manageSidebar() {
   openNav()
 
   var element = document.querySelector('.sidenav');
-
-  // width and height in pixels
-  // including padding + border
-
-  // jQuery outerWidth()
   var width = element.offsetWidth;
 
   if (width == 250) closeNav()
