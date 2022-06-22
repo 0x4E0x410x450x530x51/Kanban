@@ -156,7 +156,9 @@
     justify-content: center;
 }
 
-
+.center-text {
+    text-align: center;
+}
 
 
 .dissappear-left{
@@ -178,4 +180,18 @@
 
 .login-window {
     margin-top: 50px;
+}
+
+#forgottPWD {
+    margin: 0;
+    margin-top: 10px;
+}
+
+#resetPWD {
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+}
+
+#resetPWD:hover {
+    text-decoration: underline;
 }
