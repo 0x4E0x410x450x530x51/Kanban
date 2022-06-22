@@ -1,6 +1,9 @@
 package com.kanbanboard.config;
 
 import com.kanbanboard.dto.AppUserDetails;
+import com.kanbanboard.model.PersistentLogin;
+import com.kanbanboard.model.UserKanbanboard;
+import com.kanbanboard.repository.PersistentLoginRepository;
 import com.kanbanboard.repository.UserKanbanboardRepository;
 import com.kanbanboard.repository.UserRepository;
 import com.kanbanboard.service.AppUserDetailsService;
@@ -19,6 +22,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.lang.reflect.Array;
 import java.util.List;
 
 /**
@@ -95,17 +102,29 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    PersistentLoginRepository persistentLoginRepository;
+
     public boolean checkUserId(Authentication authentication, int id) {
 
+
+
+        String currentUserName = null;
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
-            String currentUserName = authentication.getName();
+            currentUserName = authentication.getName();
+
             System.out.println(currentUserName);
+            PersistentLogin persistentLogin = persistentLoginRepository.findBySessionID(currentUserName);
+            System.out.println(persistentLogin);
+            UserKanbanboard userKanbanboard = userKanbanboardRepository.findByUserID_Id(Integer.valueOf(persistentLogin.getUserID()));
+
+            if (id == Integer.valueOf(String.valueOf(userKanbanboard.getKanbanboardID()))) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        //List allKanbanboards = userKanbanboardRepository.findByKanbanboardID_Id(id);
-
-
-        return id==1    ;
-
+        return false;
     }
 
     @Override

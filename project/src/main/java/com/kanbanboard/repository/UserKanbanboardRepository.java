@@ -9,4 +9,8 @@ public interface UserKanbanboardRepository<ID> extends JpaRepository<UserKanbanb
 
     List<UserKanbanboard> findByKanbanboardID_Id(Integer id);
 
+    UserKanbanboard findByUserID_Id(Integer id);
+
+
+
 }

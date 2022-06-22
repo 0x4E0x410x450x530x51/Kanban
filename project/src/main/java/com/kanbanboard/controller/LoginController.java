@@ -3,38 +3,39 @@ package com.kanbanboard.controller;
 
 
 import com.kanbanboard.config.AppSecurityConfig;
-import com.kanbanboard.model.Activsession;
+import com.kanbanboard.model.PersistentLogin;
 import com.kanbanboard.model.User;
 import com.kanbanboard.payload.LoginRequest;
 import com.kanbanboard.payload.SignUpRequest;
 import com.kanbanboard.encryption.Encryption;
-import com.kanbanboard.repository.ActivsessionRepository;
+import com.kanbanboard.repository.PersistentLoginRepository;
 import com.kanbanboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Optional;
+import javax.servlet.http.HttpServletResponse;
+import java.net.http.HttpRequest;
+import java.util.Collections;
 
 
 @RestController
 @RequestMapping("/api")
 public class LoginController {
     @Autowired
-    public ActivsessionRepository activsessionRepository;
+    public PersistentLoginRepository persistentLoginRepository;
     @Autowired
     public UserRepository userRepository;
     Encryption encrypt = new Encryption();
+    PersistentLogin persistentLogin = new PersistentLogin();
     AppSecurityConfig appSecurityConfig = new AppSecurityConfig();
     public LoginController (UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @PostMapping(value = "/login")
-    public String login(@RequestBody LoginRequest payload, HttpServletRequest req) {
+    public String login(@RequestBody LoginRequest payload, HttpServletResponse response, HttpServletRequest request) {
 
 
         // prevent non-ubs employees
@@ -53,20 +54,38 @@ public class LoginController {
         boolean correctPassword = appSecurityConfig.passwordEncoder().matches(payload.getPassword(), userdata.getPassword());
 
 
-        String sessId = appSecurityConfig.passwordEncoder().encode(payload.getEmail());
 
-        if (activsessionRepository.existsBySessionID(sessId)) {
-
-        }
-
-        Activsession activsession = activsessionRepository.findBySessionID(sessId);
 
         if (correctPassword) {
+
+            System.out.println(request.getSession().getId());
+
+            if (!persistentLoginRepository.existsByUserID(userdata.getId().toString())) {
+                createCookie(response, request, userdata);
+            } else if(!persistentLoginRepository.existsBySessionID(request.getSession().getId())){
+                PersistentLogin p = persistentLoginRepository.findByUserID(userdata.getId().toString());
+                persistentLoginRepository.deleteAllById(Collections.singleton((Integer) p.getId()));
+                createCookie(response, request, userdata);
+
+            }
+
+
+
+
+
             // if user already has session in database, retrieve and assign. Else create new and add db entry....
-            req.getSession().setAttribute("KANBANSESSIONID", sessId);
             return "Success!";
         }
         return "Incorrect credentials";
+    }
+
+    private void createCookie(HttpServletResponse response, HttpServletRequest request, User userdata) {
+        Cookie cookie = new Cookie("KSESSION", request.getSession().getId());
+        cookie.setSecure(true);
+        response.addCookie(cookie);
+        persistentLogin.setSessionID(request.getSession().getId());
+        persistentLogin.setUserID(userdata.getId().toString());
+        persistentLoginRepository.save(persistentLogin);
     }
 
     @PostMapping(value = "/signup")

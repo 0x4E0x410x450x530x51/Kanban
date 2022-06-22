@@ -1252,15 +1252,15 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="342" parent="283" name="activsessions">
+    <table id="342" parent="283" name="kanbanboard">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="343" parent="283" name="kanbanboard">
+    <table id="343" parent="283" name="kanbanboard_story">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="344" parent="283" name="kanbanboard_story">
+    <table id="344" parent="283" name="persistent_logins">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -1581,81 +1581,83 @@ role_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="412" parent="342" name="activSessionID">
+    <column id="412" parent="342" name="kanbanboardid">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="413" parent="342" name="sessionID">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="414" parent="342" name="userID">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <key id="415" parent="342" name="PRIMARY">
-      <ColNames>activSessionID</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="416" parent="343" name="kanbanboardid">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="417" parent="343" name="completed">
+    <column id="413" parent="342" name="completed">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="418" parent="343" name="created">
+    <column id="414" parent="342" name="created">
       <DataType>date|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="419" parent="343" name="inprogress">
+    <column id="415" parent="342" name="inprogress">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <key id="420" parent="343" name="PRIMARY">
+    <key id="416" parent="342" name="PRIMARY">
       <ColNames>kanbanboardid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="421" parent="344" name="id">
+    <column id="417" parent="343" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="422" parent="344" name="kanbanboardid">
+    <column id="418" parent="343" name="kanbanboardid">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="423" parent="344" name="storyid">
+    <column id="419" parent="343" name="storyid">
       <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="424" parent="344" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
+    <foreign-key id="420" parent="343" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
       <ColNames>kanbanboardid</ColNames>
       <RefColNames>kanbanboardid</RefColNames>
       <RefTableName>kanbanboard</RefTableName>
     </foreign-key>
-    <foreign-key id="425" parent="344" name="FKi67cheim7ec1sacuvbv0rg76y">
+    <foreign-key id="421" parent="343" name="FKi67cheim7ec1sacuvbv0rg76y">
       <ColNames>storyid</ColNames>
       <RefColNames>storyid</RefColNames>
       <RefTableName>story</RefTableName>
     </foreign-key>
-    <index id="426" parent="344" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
+    <index id="422" parent="343" name="FKqqlyht5y8rg95a6p3pf4nmh3n">
       <ColNames>kanbanboardid</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="427" parent="344" name="FKi67cheim7ec1sacuvbv0rg76y">
+    <index id="423" parent="343" name="FKi67cheim7ec1sacuvbv0rg76y">
       <ColNames>storyid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="428" parent="344" name="PRIMARY">
+    <key id="424" parent="343" name="PRIMARY">
       <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="425" parent="344" name="persistent_loginsID">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="426" parent="344" name="userID">
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="427" parent="344" name="sessionID">
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="428" parent="344" name="PRIMARY">
+      <ColNames>persistent_loginsID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
