@@ -13,7 +13,7 @@
 }
 
 #logo{
-
+    margin-top: 70px;
     
 }
 
@@ -25,7 +25,7 @@
     background: #fff;
     padding: 5px;
     overflow: hidden;
-    box-shadow: 0px 0px 3px 0.1px;
+    box-shadow: 0px .30px 4px 0px;
     border-radius: 12px;
   }
 /*Top Buttons + Shadow*/
@@ -53,7 +53,7 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    background:rgba(230,0,0,0.8);
+    background:rgba(230,0,0,1);
     border-radius: 10px !important;
     transition: .5s;
 }
@@ -92,7 +92,7 @@
     display: block;
     margin: auto;
     margin-top: 10%;
-    background: rgba(230,0,0,0.8);
+    background: rgba(230,0,0,1);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
     border: 0;
     outline: none;
@@ -137,6 +137,7 @@
 
 /*Title*/
 .loginTitle{
+    margin-top: 30px;
     padding-top: 15px;
     padding-bottom: 5px;
 	text-align: center;	
@@ -173,4 +174,8 @@
 .login-menu {
     position: relative;
     top: 10%;
+}
+
+.login-window {
+    margin-top: 50px;
 }
