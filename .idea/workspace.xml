@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__javax_enterprise_cdi_api_2_0_SP1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_json_json_20171018.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/Activsession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/repository/ActivsessionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/PersistentLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/repository/PersistentLoginRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ca9a2570-3f0a-469f-8027-6a54ac3f8c7b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ca9a2570-3f0a-469f-8027-6a54ac3f8c7b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Kanbansim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/Kanbansim.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/config/AppSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/config/AppSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/config/WebSocketConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/config/WebSocketConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/scripts/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/styles/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/encryption/Encryption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/model/Activsession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/kanbanboard/repository/ActivsessionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

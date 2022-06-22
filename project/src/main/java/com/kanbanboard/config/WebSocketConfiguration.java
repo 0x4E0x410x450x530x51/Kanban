@@ -33,7 +33,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
         // Registers the endpoint where the handshake will take place
         registry.addEndpoint("/board")
                 // Allow the origin http://localhost:63343 to send messages to us. (Base url of the client)
-                .setAllowedOrigins("http://192.168.43.46:8080")
+                .setAllowedOrigins("http://localhost:8080")
                 // Enable SockJS fallback options
                 .withSockJS();
         registry.addEndpoint("/kanban/**").withSockJS();

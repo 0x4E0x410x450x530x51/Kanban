@@ -21,15 +21,19 @@
         <!-- Input Login-->
         <form method="#" action="#" id="login" class="input-group">
             <input type="email" class="input-field" name="email" id="emailLoginInput" placeholder="E-Mail" required>
-            <input type="text" class="input-field" name="password" id="passwordLoginInput" placeholder="Enter Password" required>
-            <button onclick="login(); return false;" type="button" class="submit-btn">Log in</button>
+            <input type="password" class="input-field" name="password" id="passwordLoginInput" placeholder="Enter Password" required>
+            <label>
+            <input id="remember-me" name="remember-me" type="checkbox" value="Remember Me"> Remember me
+            </label>
+            <button  onclick="login(); return false;" type="button" class="submit-btn">Log in</button>
         </form>
 
         <!--Input Register-->
         <form method="#" action="#" id="register" class="input-group">
             <input type="text" class="input-field" placeholder="Full Name" required>
             <input type="email" class="input-field" placeholder="Enter E-Mail" required>
-            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="password" class="input-field" placeholder="Enter Password" required>
+
             <button onclick="register(); return false;" type="button" class="submit-btn">Register</button>
         </form>
     </div>

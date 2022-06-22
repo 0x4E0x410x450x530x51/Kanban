@@ -59,7 +59,7 @@ async function login() {
       ))
     let a_2 = await a_1.text();
     if (a_2 === "Success!") {
-        document.location.pathname = "/html/index.html"
+       // document.location.pathname = "/html/index.html"
     }
 }
 
