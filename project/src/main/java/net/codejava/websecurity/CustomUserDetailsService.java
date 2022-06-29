@@ -1,12 +1,15 @@
 package net.codejava.websecurity;
- 
-import net.codejava.model.User;
+
+import org.springframework.security.core.userdetails.User;
 import net.codejava.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
- 
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
  
     @Autowired
@@ -14,12 +17,20 @@ public class CustomUserDetailsService implements UserDetailsService {
      
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepo.findByEmail(email);
-        if (user == null) {
+        net.codejava.model.User user = userRepo.findByEmail(email);
+        /*if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
 
-        return new CustomUserDetails(user);
+        return new CustomUserDetails(user);*/
+
+        if (user.getEmail().equals(email)) {
+            return new User(user.getEmail(),
+                    user.getPassword(),
+                    new ArrayList<>());
+        } else {
+            throw new UsernameNotFoundException("User not found with email: " + email);
+        }
     }
 
 }
