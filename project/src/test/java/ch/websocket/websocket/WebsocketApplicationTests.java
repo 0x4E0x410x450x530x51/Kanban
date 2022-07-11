@@ -1,10 +1,10 @@
-package com.kanbanboard.application;
+package ch.websocket.websocket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KanbansimApplicationTests {
+class WebsocketApplicationTests {
 
     @Test
     void contextLoads() {
