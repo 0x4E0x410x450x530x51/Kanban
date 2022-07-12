@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class WebsocketController {
 
+	//Sending Message to Client - Websocket
+
 	@MessageMapping("/board/{fleetId}")
 	@SendTo("/topic/board/{fleetId}")
 	public Simple simple(@DestinationVariable String fleetId, String text) {
