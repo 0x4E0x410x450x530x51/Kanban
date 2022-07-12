@@ -1,0 +1,94 @@
+/*Test Button*/
+#adder {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+/* Styles for the sidebar navigation */
+#tlines {
+  float: left;
+  transition: 0.5s;
+  margin-left: 10px;
+  position: absolute;
+}
+
+#main {
+  transition: 0.5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #CCCCCC;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*The Top*/
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+main {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.title {
+  border-bottom: #CCCCCC solid 2px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 15px;
+}
+
+th {
+  padding: 0 100px 0 100px; 
+}
+
+/* table media query --------------------*/
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  th {
+    padding: 0 60px 0 60px; 
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  th {
+    padding: 0 30px 0 30px; 
+  }
+}
