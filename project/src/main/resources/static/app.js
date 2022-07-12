@@ -1,14 +1,15 @@
 var stompClient = null;
-let link = window.location.href.split("board/")
+
+var link = window.location.href.split("board/")
+
 $(document).ready ( function(){
 
-    var socket = new SockJS('/boardConnection');
+    let socket = new SockJS('/boardConnection');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
-        setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/board/' + link[1], function(input) {
-            var textGet = JSON.parse(input.body)
+            let textGet = JSON.parse(input.body)
             if (textGet.text.includes("<script>")) {
                 disconnect();
             } else  {
@@ -22,7 +23,6 @@ function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
     }
-    setConnected(false);
     console.log("Disconnected");
 }
 
