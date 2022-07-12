@@ -2,35 +2,21 @@ var stompClient = null;
 let link = window.location.href.split("board/")
 $(document).ready ( function(){
 
-    var socket = new SockJS('/fleet');
+    var socket = new SockJS('/boardConnection');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/fleet/' + link[1], function(input) {
+        stompClient.subscribe('/topic/board/' + link[1], function(input) {
             var textGet = JSON.parse(input.body)
             if (textGet.text.includes("<script>")) {
                 disconnect();
             } else  {
                 showGreeting(textGet.text);
             }
-
-
         });
     });
 });
-
-function setConnected(connected) {
-    $("#connect").prop("disabled", connected);
-    $("#disconnect").prop("disabled", !connected);
-    if (connected) {
-        $("#conversation").show();
-    }
-    else {
-        $("#conversation").hide();
-    }
-    $("#greetings").html("");
-}
 
 function disconnect() {
     if (stompClient !== null) {
@@ -41,8 +27,7 @@ function disconnect() {
 }
 
 function sendName() {
-
-    stompClient.send("/live/fleet/" + link[1], {}, $("#name").val());
+    stompClient.send("/live/board/" + link[1], {}, $("#name").val());
 }
 
 function showGreeting(text) {

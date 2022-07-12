@@ -40,8 +40,8 @@ public class WebsocketController {
 		return new Simple(fleetId, driverId);
 	}*/
 
-	@MessageMapping("/fleet/{fleetId}")
-	@SendTo("/topic/fleet/{fleetId}")
+	@MessageMapping("/board/{fleetId}")
+	@SendTo("/topic/board/{fleetId}")
 	public Simple simple(@DestinationVariable String fleetId, String text) {
 		return new Simple(fleetId, text);
 	}
