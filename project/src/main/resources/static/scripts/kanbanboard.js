@@ -297,7 +297,9 @@ function saveTask() {
       <div class="prio" id="${id + "-prio"}">${priority}</div>
       <div class="edit" onclick="editTask('${id}')"></div>
       <small class="description" id="${id + "-description"}" >${description}</small>
-      <hr width="80%">
+      <div style="height: 5px;background-color: #ccc;max-width: 90%;">
+      <div id="${id}-progress" style="height: 5px;background-color: green;max-width: 100%;width: 0%"></div>
+      </div>
       <span class="storyInformation" id="${id + '-storyExtensionButton'}" data-hover="Show more" onclick="showMore('${id}')">»</span>
       <span class="storyInformation closeButton" id="${id + '-storyCloseButton'}" data-hover="Close" onclick="showLess('${id}')">&#171;</span>
       <div id="${id + "-showMoreBlock"}" class="showMoreBlock">
