@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="KanbanSimulationWAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/KanbanSimulationWAR</output-path>
+    <root id="archive" name="KanbanSimulationWAR.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Kanbansim" />
+          <element id="jpa-descriptors" facet="Kanbansim/jpa/JPA" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Kanbansim/web/Web" />
+    </root>
+  </artifact>
+</component>

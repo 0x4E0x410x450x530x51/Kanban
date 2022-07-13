@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="KanbanSimulation">
+    <output-path>$PROJECT_DIR$/out/artifacts/KanbanSimulation</output-path>
+    <root id="archive" name="KanbanSimulation.jar">
+      <element id="module-output" name="Kanbansim" />
+      <element id="jpa-descriptors" facet="Kanbansim/jpa/JPA" />
+      <element id="javaee-facet-resources" facet="Kanbansim/web/Web" />
+    </root>
+  </artifact>
+</component>
