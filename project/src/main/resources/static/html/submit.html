@@ -26,25 +26,32 @@
         <!--Top part-->
         <header>
             <h1>Submit</h1>
-            <button id="adder" type="button" class="btn-add btn btn-danger" onclick="addFunction()">Add-Bsp</button>
+            <button id="adder" type="button" class="btn-add" onclick="addFunction()">Add-Bsp</button>
         </header>
         <main class="container">
-            <table id="submitTable">
-                <tr class="title">
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>EFF</th>
-                    <th>View</th>
-                </tr>
-                <tr>
-                    <td>Test data</td>
-                    <td>Test data</td>
-                    <td>Test data</td>
-                    <td><button type="button" class="btn btn-danger">View</button></td>
-                </tr>
-            </table>
+            <div class="row">
+                <div class="col-12">
+                    <table id="submitTable">
+                        <tr class="title">
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>EFF</th>
+                            <th>View</th>
+                        </tr>
+                        <tr>
+                            <td>Test data</td>
+                            <td>Test data</td>
+                            <td>Test data</td>
+                            <td><button type="button" class="btn-view"><span>View</span></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </main>
     </div>
+
+    <footer>
+    </footer>
 
     <!--Bootstrap Script-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

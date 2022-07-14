@@ -31,7 +31,7 @@ function addFunction() {
                     <td>Test data</td>
                     <td>Test data</td>
                     <td>Test data</td>
-                    <td><button type="button" class="btn btn-danger">View</button></td>
+                    <td><button type="button" class="btn-view">View</button></td>
                 </tr>
     `
 }
