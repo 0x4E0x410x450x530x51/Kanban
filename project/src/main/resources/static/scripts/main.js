@@ -12,6 +12,11 @@ const taskColors = ["red", "yellow", "green", "blue", "purple"]
 
 var timescale = 1000
 
+// cool workaround, thank you JavaScript!
+function getTimescale() {
+    return timescale
+}
+
 const configuration = {
     "RedWorkers":5,
     "YellowWorkers":5,
@@ -152,6 +157,7 @@ function sortTasks() {
                 break;
         }
     })
+
 }
 
 function getColor(el) {
@@ -231,7 +237,8 @@ function startProgress(el, elWorker) {
                 finalTaskComplete(el, elWorker)
                 return;
             }
-        }, ((timescale / elWorker) / 10 ) * ie )
+            console.log("Timescale:", getTimescale())
+        }, ((getTimescale() / elWorker) / 10 ) * ie )
     }
 
    
@@ -452,7 +459,7 @@ function moveTask(el) {
         }
             progressTasks.push(findTask(el))
 
-    }, /*((timescale * 10)/ elWorker)*/)
+    }, /*((getTimescale() * 10)/ elWorker)*/)
 
     setTimeout(function() {
         bcklog.childNodes.forEach(cn => {
@@ -460,7 +467,7 @@ function moveTask(el) {
                 cn.remove();
             }
         })
-    }, /*((timescale * 10)/ elWorker)*/ + 100)
+    }, /*((getTimescale() * 10)/ elWorker)*/ + 100)
 
 
 
@@ -536,6 +543,14 @@ function beginAll() {
 
 }
 
+
+function changeTime() {
+
+    timescale = 1000 / parseInt(document.getElementById("sliderTime").value)
+    document.getElementById("sliderDiv").innerHTML = Math.round(1000 / (100/ parseInt(document.getElementById("sliderTime").value)))
+
+}
+
 // goated optimization !!!
 
 window.onload = function() {
@@ -548,11 +563,7 @@ window.onload = function() {
     nodeObserverAdded = obsAdded
     
     // time slider callback
-    document.getElementById("sliderTime").oninput = function() {
-        console.log("A")
-        timescale = 1000 / parseInt(document.getElementById("sliderTime").value)
-        document.getElementById("sliderDiv").innerHTML = Math.round(1000 / (100/ parseInt(document.getElementById("sliderTime").value)))
-    }
+
 
 }
 
