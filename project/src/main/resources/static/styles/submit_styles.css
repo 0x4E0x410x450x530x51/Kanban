@@ -49,6 +49,7 @@ h1 {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
+  padding: 20px 0 20px 0;
 }
 
 header{
@@ -89,7 +90,7 @@ td{
   text-align: center;
   display: inline-block;
   border-radius: 2px;
-  width: 100px;
+  width: 80px;
   cursor: pointer;
 
   transition: 0.5s;
