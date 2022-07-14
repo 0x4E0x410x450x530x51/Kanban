@@ -546,6 +546,14 @@ window.onload = function() {
     obsAdded.observe(bcklog, observerConfig)
     nodeObserverProgress = obsProg
     nodeObserverAdded = obsAdded
+    
+    // time slider callback
+    document.getElementById("sliderTime").oninput = function() {
+        console.log("A")
+        timescale = 1000 / parseInt(document.getElementById("sliderTime").value)
+        document.getElementById("sliderDiv").innerHTML = Math.round(1000 / (100/ parseInt(document.getElementById("sliderTime").value)))
+    }
+
 }
 
 var progressCallback = function(ml) {
