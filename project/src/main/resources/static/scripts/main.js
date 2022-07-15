@@ -165,23 +165,17 @@ function getColor(el) {
     switch(rgb2hex(el.style.borderLeftColor)) {
         case "#e60000":
             return "red"
-            break;
         case "#e6bf33":
             return "yellow"
-            break;
         case "#aacc33":
             return "green"
-            break;
         case "#6495ed":
             return "blue"
-            break; 
         case "#8e7cc3":
             return "purple"
-            break;
         default:
-            console.log("ALERTALERT")
+            alert("Error in code, [GetColor Function]")
             return "AAAAA";
-            break;
     }
 }
 
