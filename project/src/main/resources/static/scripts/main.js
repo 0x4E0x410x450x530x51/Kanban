@@ -444,11 +444,9 @@ function moveTask(el) {
             ipTaskVar.push(findTask(el))
             break;
         default:
-            console.log("AAAAAAAA")
             return;
     }
 
-    //ip.appendChild(el)
     setTimeout(function() {
         ip.appendChild(el)
         el.style.opacity = 0;
@@ -459,7 +457,7 @@ function moveTask(el) {
         }
             progressTasks.push(findTask(el))
 
-    }, /*((getTimescale() * 10)/ elWorker)*/)
+    })
 
     setTimeout(function() {
         bcklog.childNodes.forEach(cn => {
@@ -467,7 +465,7 @@ function moveTask(el) {
                 cn.remove();
             }
         })
-    }, /*((getTimescale() * 10)/ elWorker)*/ + 100)
+    },100)
 
 
 
@@ -562,8 +560,6 @@ window.onload = function() {
     nodeObserverProgress = obsProg
     nodeObserverAdded = obsAdded
     
-    // time slider callback
-
 
 }
 
@@ -573,15 +569,6 @@ var progressCallback = function(ml) {
             console.log(mutation.addedNodes[0])
             completeTask(mutation.addedNodes[0])
             break;
-            for (let i = mutation.addedNodes.length-1; i > 0; i--) {
-                if (mutation.addedNodes[i].tagName == "DIV" && mutation.addedNodes[i].getAttribute("class") == "task") {
-                    completeTask(mutation.addedNodes[0])
-                    //console.log(mutation.addedNodes[0])
-                    break;
-                }
-            }
-            /// console.log(mutation.addedNodes[0])
-            // completeTask(mutation.addedNodes[0])
         }
     }
 }
@@ -591,13 +578,6 @@ var progressCallback = function(ml) {
 var addedCallback = function(ml) {
     for (var mutation of ml) {
         if (mutation.type == "childList" && mutation.addedNodes.length > 0) {
-            /*for (var mnode of mutation.addedNodes) {
-                if (mnode.tagName == "DIV") {
-                    if (mnode.getAttribute("class") == "task") {
-                        moveTask(mnode)
-                   }
-               } 
-            }*/
             for (let i = mutation.addedNodes.length-1; i > 0; i--) {
                 if (mutation.addedNodes[i].tagName == "DIV" && mutation.addedNodes[i].getAttribute("class") == "task") {
                     if (!simulationPaused) {
