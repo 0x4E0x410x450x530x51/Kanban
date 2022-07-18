@@ -509,26 +509,26 @@ function beginAll() {
     // generate random tasks (Terribly sorry for the one-liner, I'm in a hurry.)
     let max_gen = taskCount + 20
     let t_inc = 0
-    for (let i = taskCount; i < (max_gen); i++) {
-        setTimeout(function() {
+    let i = 0;
+    //for (let i = taskCount; i < (max_gen); i++) {
+    setInterval(function() {
+        i++
+        genCreateTask(
+            "Task #"+(i+1).toString(),
+            "Description #"+(i+1).toString(),
+            ["!", "•", "↓"][Math.floor(Math.random() * 3)],
+            "Definition of done #"+(i+1).toString(),
+            ["#e60000", "#e6bf33", "#aacc33", "#6495ed", "#8e7cc3"][Math.floor(Math.random() * 5)],
+            "2022-0"+(Math.floor(Math.random()*8)+1).toString()+"-0"+(Math.floor(Math.random()*8)+1).toString()+"T"+(Math.floor(Math.random() * 23)+1).toString()+":"+(Math.floor(Math.random() * 59)+1).toString(), //2022-06-24T17:12"
+            i
+        )
+        
+        taskCount++;
+        t_inc++;           
+    },500000*t_inc)
 
-            genCreateTask(
-                "Task #"+(i+1).toString(),
-                "Description #"+(i+1).toString(),
-                ["!", "•", "↓"][Math.floor(Math.random() * 3)],
-                "Definition of done #"+(i+1).toString(),
-                ["#e60000", "#e6bf33", "#aacc33", "#6495ed", "#8e7cc3"][Math.floor(Math.random() * 5)],
-                "2022-0"+(Math.floor(Math.random()*8)+1).toString()+"-0"+(Math.floor(Math.random()*8)+1).toString()+"T"+(Math.floor(Math.random() * 23)+1).toString()+":"+(Math.floor(Math.random() * 59)+1).toString(), //2022-06-24T17:12"
-                i
-            )
-            
-            taskCount++;
-            t_inc++;           
-        }, t_inc + i * 100)
+    //}
 
-    }
-
-    sortTasks()
     
 
     // Once all tasks have been generated we start by evaluating all the variables set by the user.
@@ -553,9 +553,10 @@ window.onload = function() {
     obsAdded.observe(bcklog, observerConfig)
     nodeObserverProgress = obsProg
     nodeObserverAdded = obsAdded
-    
-
 }
+
+
+
 
 var progressCallback = function(ml) {
     for (var mutation of ml) {
