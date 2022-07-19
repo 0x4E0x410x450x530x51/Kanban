@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\styles\dashboard_styles.css">
+    <script defer src="..\scripts\dashboard_script.js"></script>
+    <title>Dashboard Index</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+</head>
+
+<body>
+    <div id="backdrop" class="off"></div>
+    <div id=" mainDiv">
+
+        <header>
+            <!--Titel-->
+            <h1 class="column1">Kanbanboard-Simulation</h1>
+            <button class="helpButton">?</button>
+            <hr>
+        </header>
+        <main class="container">
+            <div class="textAndImg row">
+                <img src="/project/src/main/resources/static/pic/kanban1.jpg" alt="kanbanboard" height="500px"
+                    width="500px" class="col" />
+                <article class="description col">
+                    Fünf Jahrhunderte später erlebte Lorem Ipsum mit der Veröffentlichung von Letraset's
+                    Trockentransferbögen. Diese Lagen der Beschriftung könnte überall gerieben werden und
+                    wurden schnell von Grafikern, Druckern, Architekten und Werbetreibenden für ihre
+                    professionelle Optik und Benutzerfreundlichkeit angenommen.
+                </article>
+            </div>
+            <div class="button">
+                <button type="button" class="createSimulation" onclick="openSettings()">
+                    Create Simulation
+                </button>
+            </div>
+            <div id="settings">
+                <div class="tab">
+                    <button id="backlog-tab" class="tablinks"
+                        onclick="openTabContent(event, 'backlog')">Backlog</button>
+                    <button id="team-tab" class="tablinks" onclick="openTabContent(event, 'team')">Team</button>
+                    <button id="rules-tab" class="tablinks" onclick="openTabContent(event, 'rules')">Rules</button>
+                    <button id="board-tab" class="tablinks" onclick="openTabContent(event, 'board')">Board</button>
+                </div>
+                <button class="helpButton2">?</button>
+                <button class="close" id="closeSettings" onclick="closeSettings()">&#10799;</button>
+                <!-- Backlog settings-->
+                <div id="backlog" class="tabcontent">
+                    <form>
+                        <!-- Task creation strategy -->
+                        <div class="col max-width dialog-row">
+                            <div class="row">
+                                <small class="col">Task creation strategy</small>
+                                <select class="col" name="task-creation-strategy" id="task-creation-strategy">
+                                    <option value="limit">If Limit allows</option>
+                                    <option value="constant">Constant Push</option>
+                                    <option value="random">Random Push</option>
+                                    <option value="scrum">Scrum</option>
+                                </select>
+                            </div>
+                            <div class="col" id="special-settings-constant">
+                                Constant demand level <input type="number" value="5.5" id="demand-level"> items/day
+                            </div>
+                            <div class="col" id="special-settings-random">
+                                Variable demand level <input type="number" value="5.5" id="varialbe-demand-lever">
+                                items/day
+                                Expected batch size <input type="number" value="1" id="expected-batch-size"> items
+                            </div>
+                            <div class="col" id="special-settings-scrum">
+                                Iteration length <input type="number" value="10" id="iteration-lenght"> days
+                                Tasks per iteration <input type="number" value="55" id="task-per-iteration"> tasks
+                                Substract existing WIP from new tasks number <input type="checkbox" id="substract"
+                                    value="substract">
+                            </div>
+                        </div>
+                        <!-- Task size strategy -->
+                        <div class="col max-width dialog-row">
+                            <div class="row">
+                                <small class="col">Task size strategy</small>
+                                <select class="col" name="task-size-strategy" id="task-size-strategy">
+                                    <option value="constant">Constant</option>
+                                    <option value="distribution">Normal distribution</option>
+                                    <option value="smlxl">S/M/L/XL</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Team settings-->
+                <div id="team" class="tabcontent">
+
+                    <div class="row justify-content-center">
+                        <label for="" class="col-2 group-input-label">Test</label>
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                    </div>
+                    <div class="row justify-content-center">
+                        <label for="" class="col-2 group-input-label">Test</label>
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                    </div>
+                    <div class="row justify-content-center">
+                        <label for="" class="col-2 group-input-label">Test</label>
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                    </div>
+                    <div class="row justify-content-center">
+                        <label for="" class="col-2 group-input-label">Test</label>
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                        <input type="text" class="col-4 group-input-field" id="#generated#">
+                    </div>
+                </div>
+                <!-- Rules settings-->
+                <div id="rules" class="tabcontent">
+                    <!-- Max WIP for a single person -->
+                    <section class="row max-width dialog-row">
+                        <small class="col">Max WIP for a person</small>
+                        <input class="col" name="max-wip-person" id="max-wip-person" type="number" />
+                    </section>
+                    <!-- Max no. of people working on a single task -->
+                    <section class="row max-width dialog-row">
+                        <small class="col">Max people working on one task</small>
+                        <input class="col" name="max-person-task" id="max-person-task" type="number" />
+                    </section>
+                    <!-- Warmup time before working on a task -->
+                    <section class="row max-width dialog-row">
+                        <small class="col">Warmup time before Working (around)</small>
+                        <input class="col" name="max-warmup" id="max-warmup" type="number" />
+                    </section>
+                </div>
+                <!-- Board settings-->
+                <div id="board" class="tabcontent">
+                    <div class="container">
+                        <div class="table-div">
+                            <table id="board-table">
+                                <tr>
+                                    <td>Column name</td>
+                                    <td>Queue?</td>
+                                </tr>
+                                <tr id="1">
+                                    <th><input type="text" placeholder="Column name" value="Analysis"></th>
+                                    <th><input id="123" type="checkbox"><label onclick="deleteRow('1')" id="redCross"
+                                            for="123">&#10799;</label></th>
+                                </tr>
+                                <tr id="2">
+                                    <th><input type="text" placeholder="Column name" value="Development"></th>
+                                    <th><input id="123" type="checkbox"><label onclick="deleteRow('2')" id="redCross"
+                                            for="123">&#10799;</label></th>
+                                </tr>
+                                <tr id="3">
+                                    <th><input type="text" placeholder="Column name" value="QA"></th>
+                                    <th><input id="123" type="checkbox"><label onclick="deleteRow('3')" id="redCross"
+                                            for="123">&#10799;</label></th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="boardBtnDiv">
+                                <button class="col boardBtn" type="button" id="addNewColumnButton"
+                                onclick="addNewColumn()">Add new Column</button>
+                            <button class="col boardBtn" type="button" id="addNewColumnButton"
+                                onclick="saveAndReload()">Save and reload</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <!-- loading screen -->
+                <div class="loading-area">
+                    <div class="loader" id="loader">
+                        <div class="ring"></div>
+                    </div>
+                    <a href="" id="link">
+
+                    </a>
+                </div>
+
+                <div class="row">
+                    <div class="col" id="dialog-button">
+                        <button type="submit" class="generateLink" onclick="generateLink()">Generate Link</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

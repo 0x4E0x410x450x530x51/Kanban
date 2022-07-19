@@ -1,22 +1,38 @@
 package ch.project.kanbanboard.controller;
 
+import ch.project.kanbanboard.entity.Board;
+import ch.project.kanbanboard.entity.JSONFILE;
+import ch.project.kanbanboard.repository.BoardRepository;
+import ch.project.kanbanboard.service.ConsoleMessageManager;
 import ch.project.kanbanboard.service.GenerateUUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.time.LocalDate;
 
 @Controller
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CreateNewBoardController {
+
+    Board board;
+
+    @Autowired
+    BoardRepository boardRepository;
+
+    @Autowired
+    ConsoleMessageManager consoleMessageManager;
 
     @Autowired
     Environment environment;
@@ -34,24 +50,26 @@ public class CreateNewBoardController {
 
 
     //Building KanbanBoard URL with UUID + DB Check for Duplicate + Save Settings
-    @GetMapping("/newBoardLink")
-    public RedirectView createNewBoardLink() throws UnknownHostException {
+    @PostMapping(value = "/newBoardLink")
+    public @ResponseBody String createNewBoardLink(JSONFILE file) throws UnknownHostException {
 
         //Check if Authorized
-        //Get Default Settings + Custom Settings -> Save to DB - Mache Mapping Post
-        //Return Link + Redirect to Link
+        //Get Default Settings(Evtl HardCoded in JS) + Custom Settings -> Save to DB
+
+
+        //Generate UUID + Save to Clipboard + Save to DB
         url = "https://" + InetAddress.getLocalHost().getHostAddress() + ":" + port + "/board/";
         String uuid = String.valueOf(generateUUID.generateUUID());
-        System.out.println(port);
-        System.out.println(url);
         url = url + uuid;
-        System.out.println(url + uuid);
+        consoleMessageManager.printInfoMessage(url);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(new StringSelection(url), null);
 
-        RedirectView redirectView = new RedirectView();
-        redirectView.setUrl(url);
-        return redirectView;
+        board.setId(uuid);
+        board.setCreationDate(LocalDate.now());
+        boardRepository.save(board);
+
+        return url;
     }
 
 }

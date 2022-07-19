@@ -2,75 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_jboss_jandex_2_2_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_orm_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/.idea/libraries/Maven__org_springframework_spring_tx_5_3_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Defaultsetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Departement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/LockedSetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/LockedSettingsHasSettingsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/LockedSettingsHasSettingsConfigId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SettingsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SettingsConfigHasDepartement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SettingsConfigHasDepartementId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SettingsConfigHasStrat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SettingsConfigHasStratId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Sizestrat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SizestratHasSettingsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/SizestratHasSettingsConfigId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Strat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Workingeff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/WorkingeffHasDepartement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/WorkingeffHasDepartementId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kanban.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Constantpush.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Constantsetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Createstrat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Departmentsized.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Normalsetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Randompush.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Rule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Scrumcreate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Settingsconfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Sizedsetting.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/AbstractAuditableRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/AbstractPersistableRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/DefaultsettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/DepartementRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/LockedSettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/LockedSettingsHasSettingsConfigRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SettingsConfigHasDepartementRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SettingsConfigHasStratRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SettingsConfigRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SizestratHasSettingsConfigRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SizestratRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/StratRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/WorkingeffHasDepartementRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/WorkingeffRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/ConstantpushRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/ConstantsettingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/CreatestratRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/DepartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/DepartmentsizedRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/NormalsettingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/RandompushRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/RuleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/ScrumcreateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SettingsconfigurationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/repository/SizedsettingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/service/ConsoleColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/service/ConsoleMessageManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/dashboard_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/kanban1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/kanban2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/pen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/scripts/dashboard_script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/dashboard_styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/websocket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f96b356-bf31-4f52-b99a-8927c5dbb6c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f96b356-bf31-4f52-b99a-8927c5dbb6c6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/artifacts/KanbanSimulation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/artifacts/KanbanSimulationWAR.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Kanbansim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/Kanbansim.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/WebsocketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/WebsocketApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/controller/CreateNewBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/CreateNewBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/controller/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/WebsocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/entity/Simple.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Simple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/websocket/service/GenerateUUID.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/service/GenerateUUID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/test/java/ch/websocket/websocket/WebsocketApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/test/java/ch/project/kanbanboard/websocket/WebsocketApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/WebsocketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/WebsocketApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/CreateNewBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/CreateNewBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/WebsocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/Simple.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/entity/JSONFILE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/main.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +74,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,5 +93,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
