@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    overflow-x:hidden;
+}
+
+main {
+    padding: 0;
+}
+
+/* Header -------------*/
+
+header {
+    text-align: center;
+    padding: 1em 0 1em 0;
+    font-family: Helvetica;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.helpBtn-round {
+    border-radius: 50%;
+    border: none;
+    background-color: #e60000;
+    position: absolute;
+    top: 1em;
+    right: 1em; 
+    color: white; 
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+}
+
+.questionMark-div {
+    margin-top: -3px; 
+}
+
+/* Images --------------*/
+
+#ubs-logo {
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 10px 0 0 10px;
+    font-family: Helvetica;
+}
+
+/* Main ----------------*/
+
+#background-image {
+    text-align: center;
+    padding: 100px 0 100px 0;
+    background-image: url(../pic/geometric-elements-red-color-abstract-vector-with-transparent-background.webp);
+    background-size: 2000px;
+    background-attachment: fixed;
+    font-family: cursive;
+}
+
+article {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.row {
+    margin-top: 50px;
+}
+
+.centered {
+    text-align: center !important;
+    justify-content: center;
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.border-bottom {
+    border-bottom: 6px;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
+}
+
+.button:hover {
+    background-color: red;
+    color: white;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+p {
+    font-size: large;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+h5 {
+    font-family: cursive;
+}
+
+/* Footer ----------------*/
+
+footer {
+    margin-top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #120130;
+    color: white;
+    text-align: center;
+    padding: 1em 0 1em 0;
+}
+
+/* Settings ----------------*/
+
+.setting-title {
+    width: max-content;
+    float: left;
+    margin: 0;
+}
+
+select {
+    width: 50%;
+}
+
+.div.settings-col {
+    margin-top: 2em; 
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    width: 100px !important;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    text-align: center;
+}
+
+.table-div {
+    display: flex;
+    justify-content: center;
+}
+
+
+.redCross {
+    font-size: 30px;
+    color: #e60000;
+    position: absolute;
+    margin-top: -0.46em;
+    margin-left: -10px; 
+    cursor: pointer;
+}
+
+.redCross-team {
+    font-size: 30px;
+    color: #e60000;
+    position: absolute;
+    margin-top: -0.8em;
+    cursor: pointer;
+}
+
+.team-title {
+    font-size: 20px;
+}
+
+#team-table tr {
+    width: 50% !important;
+}
+
+#team-settings,
+#rules-settings,
+#board-settings {
+    display: none;
+}
+
+.additional-settings {
+    margin-top: 10px;
+}
+
+#constant-special-settings, 
+#random-special-settings,
+#scrum-special-settings {
+    display: none;
+}
+
+.input-section {
+    margin-top: 20px;
+}
+
+#board-table {
+    width: 50% !important;
+}
+
+#board-table tr th {
+    width: 100%;
+}
+
+#board-table tr th input {
+    width: 100% !important;
+}
+
+.table-btn-div {
+    margin-top: 2em;  
+}
+
+.table-btn {
+    color: black;
+    background: transparent;
+    border-color: red;
+    margin-bottom: 3em; 
+}
+
+.table-btn:hover {
+    background-color: rgba(211, 55, 55, 0.2);
+}
+
+#constant-settings-size, 
+#distribution-settings-size,
+#smlxl-settings-size {
+    display: none; 
+}
+
+.smlxl {
+    margin-top: 20px; 
+}
+
+#smlxl-default-section {
+    display: none;
+}
+
+/* Settings navbar -------------*/
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: rgba(167, 164, 164, .1);
+    float: left; 
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar a.active {
+    border-left: solid 0.3em red;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: rgb(177, 177, 177);
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    .tabcontent {
+        margin-left: 7px !important;
+    }
+
+    .sidebar a.active {
+        border-top: solid 0.3em red;
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+.tab-title {
+    margin: 0;
+    padding: 0;
+}
+
+.tabcontent {
+    margin-left: 17%;
+}
+
+.footerlink a {
+    color: white;
+    text-decoration: none;
+}
+
+.center {
+    display: flex block;
+    justify-content: center;
+    align-items: center;
+}
+
+.res {
+    width: 50%;
+    text-align: left !important;
+}

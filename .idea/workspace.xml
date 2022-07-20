@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
+    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="SQL Edit">
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/createSimulation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/helpPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/landingPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/UBS_logo_logotype_emblem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/geometric-elements-red-color-abstract-vector-with-transparent-background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/pic/modern-stylish-geometric-red-background-cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/scripts/landingPage_script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/landingPage_styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f96b356-bf31-4f52-b99a-8927c5dbb6c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f96b356-bf31-4f52-b99a-8927c5dbb6c6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kanban.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Kanban.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/CreateNewBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/dashboard_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/scripts/dashboard_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/styles/dashboard_styles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -58,5 +72,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="SQL Edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL Edit" />
   </component>
 </project>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\styles\landingPage_styles.css">
+    <title>Create Simulation</title>
+    <script src="..\scripts\landingPage_script.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+</head>
+
+<body>
+    <header class="border-bottom">
+        <h1>Simulation Configurations</h1>
+        <img id="ubs-logo" src="../pic/UBS_logo_logotype_emblem.png" alt="UBS-Logo"
+            height="40px" width="120px">
+        <button class="helpBtn-round"><div class="questionMark-div">?</div></button>
+    </header>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <a class="tablinks active" onclick="openTabContent(event ,'backlog-settings')">
+            <p class="tab-title">Backlog</p>
+        </a>
+        <a class="tablinks" onclick="openTabContent(event ,'team-settings')">
+            <p class="tab-title">Team</p>
+        </a>
+        <a class="tablinks" onclick="openTabContent(event ,'rules-settings')">
+            <p class="tab-title">Rules</p>
+        </a>
+        <a class="tablinks" onclick="openTabContent(event ,'board-settings')">
+            <p class="tab-title">Board</p>
+        </a>
+    </div>
+    <main class="content" id="settings">
+        <div id="backlog-settings" class="tabcontent">
+            <h2 class="underline">Backlog</h2>
+            <div class="row">
+                <div class="col">
+                    <h4>Task creation strategy</h4>
+                    <select id="task-creation-strat">
+                        <option value="limit">If Limit allows</option>
+                        <option value="constant">Constant Push</option>
+                        <option value="random">Random Push</option>
+                        <option value="scrum">Scrum</option>
+                    </select>
+                    <div class="additional-settings">
+                        <div id="constant-special-settings">
+                            <div class="input-section">
+                                Constant demand level <input type="number" value="5.5" id="constant-demand-lvl"> items/day
+                            </div>
+                        </div>
+                        <div id="random-special-settings">
+                            <div class="input-section">
+                                Variable demand level <input type="number" value="5.5" id="varialbe-demand-lever"> items/day
+                            </div>
+                            <div class="input-section">
+                                Expected batch size <input type="number" value="1" id="expected-batch-size"> items
+                            </div>
+                        </div>
+                        <div id="scrum-special-settings">
+                            <div class="input-section">
+                                Iteration length <input type="number" value="10" id="iteration-lenght"> days
+                            </div>
+                            <div class="input-section">
+                                Tasks per iteration <input type="number" value="55" id="task-per-iteration"> tasks
+                            </div>
+                            <div class="input-section">
+                                Substract existing WIP from new tasks number <input type="checkbox" id="substract" value="substract">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Task size strategy</h4>
+                    <select id="task-size-strat">
+                        <option value="constant">Constant</option>
+                        <option value="distribution">Normal distribution</option>
+                        <option value="smlxl">S/M/L/XL</option>
+                    </select>
+                    <div class="additional-settings" id="additional-settings-size-strat">
+                        <div id="constant-settings-size">
+
+                        </div>
+                        <div id="distribution-settings-size">
+
+                        </div>
+                        <div>
+                            <div class="row smlxl" id="smlxl-default-section">
+                                <div class="col">
+                                    <p>Effort(h)</p>
+                                    <div class="input-section">
+                                        Small: <input type="number" id="small" value="3">
+                                    </div>
+                                    <div class="input-section">
+                                        Medium: <input type="number" id="small" value="10">
+                                    </div>
+                                    <div class="input-section">
+                                        Large: <input type="number" id="small" value="25">
+                                    </div>
+                                    <div class="input-section">
+                                        XLarge: <input type="number" id="small" value="75">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p>Probability(%)</p>
+                                    <div class="input-section">
+                                        <input type="number" id="small" value="45">
+                                    </div>
+                                    <div class="input-section">
+                                        <input type="number" id="small" value="30">
+                                    </div>
+                                    <div class="input-section">
+                                        <input type="number" id="small" value="20">
+                                    </div>
+                                    <div class="input-section">
+                                        <input type="number" id="small" value="5">
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row" id="smlxl-settings-size">
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="team-settings" class="tabcontent">
+            <h2 class="underline">Team</h2>
+            <div id="team" class="row">
+                <div class="col">
+                    <table id="team-table">
+                        <tr id="team-titles">
+                            <td><p class="team-title">Name</p></td>
+                            <td><p class="team-title">Headcount</p></td>
+                            <td><p class="team-title">Analysis</p></td>
+                            <td><p class="team-title">Development</p></td>
+                            <td><p class="team-title">QA</p></td>
+                        </tr>
+                        <tr id="row-1">
+                            <th class="1-col"><input type="text" value="Analyst" placeholder="Name"></th>
+                            <th class="2-col"><input type="number" value="2"></th>
+                            <th class="3-col"><input type="number" value="100"></th>
+                            <th class="4-col"><input type="number" value="0"></th>
+                            <th class="5-col"><input type="number" value="0"></th>
+                            <th class="6-col"><label onclick="deleteRow('team-1')" class="redCross-team">&#10799;</label></th>
+                        </tr>
+                        <tr id="row-2">
+                            <th class="1-col"><input type="text" value="Developer" placeholder="Name"></th>
+                            <th class="2-col"><input type="number" value="5"></th>
+                            <th class="3-col"><input type="number" value="0"></th>
+                            <th class="4-col"><input type="number" value="100"></th>
+                            <th class="5-col"><input type="number" value="0"></th>
+                            <th class="6-col"><label onclick="deleteRow('team-2')" class="redCross-team">&#10799;</label></th>
+                        </tr>
+                        <tr id="row-3">
+                            <th class="1-col"><input type="text" value="Tester" placeholder="Name"></th>
+                            <th class="2-col"><input type="number" value="3"></th>
+                            <th class="3-col"><input type="number" value="0"></th>
+                            <th class="4-col"><input type="number" value="0"></th>
+                            <th class="5-col"><input type="number" value="100"></th>
+                            <th class="6-col"><label onclick="deleteRow('team-3')" class="redCross-team">&#10799;</label></th>
+                        </tr>
+                    </table>
+                    <div class="table-btn-div">
+                        <button type="button" class="table-btn" onclick="addNewTeamColumn()">Add column</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rules-settings" class="tabcontent">
+            <h2 class="underline">Rules</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="input-section">
+                        Max WIP for a person <input class="rules-input" id="max-wip-person" type="number" value="2" />
+                    </div>
+                    <div class="input-section">
+                        Max people working on one task <input class="rules-input" id="max-person-task" type="number" value="2" />
+                    </div>
+                    <div class="input-section">
+                        Warmup time before Working <input class="rules-input" id="max-warmup" type="number" value="1" /> hours
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="board-settings" class="tabcontent">
+            <h2 class="underline">Board</h2>
+            <div id="board" class="row">
+                <div class="col settings-col">
+                    <table id="board-table">
+                        <tr>
+                            <td>
+                                <p class="tab-title">Column name</p>
+                            </td>
+                            <td>
+                                <p class="tab-title">Queue?</p>
+                            </td>
+                        </tr>
+                        <tr id="1">
+                            <th><input id="1-input" type="text" placeholder="Column name" value="Analysis"></th>
+                            <th><input type="checkbox"><label onclick="deleteRow('1')" class="redCross">&#10799;</label></th>
+                        </tr>
+                        <tr id="2">
+                            <th><input id="2-input" type="text" placeholder="Column name" value="Development"></th>
+                            <th><input id="123" type="checkbox"><label onclick="deleteRow('2')" class="redCross">&#10799;</label></th>
+                        </tr>
+                        <tr id="3">
+                            <th><input id="3-input" type="text" placeholder="Column name" value="QA"></th>
+                            <th><input id="123" type="checkbox"><label onclick="deleteRow('3')" class="redCross">&#10799;</label></th>
+                        </tr>
+                    </table>
+                    <div class="table-btn-div">
+                        <button type="button" class="table-btn" onclick="addNewColumn()">Add column</button>
+                        <button type="button" class="table-btn" onclick="saveBoard()">Save and reload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Backlog settings
+        <div id="backlog" class="row">
+            <h2 class="underline">Backlog</h2>
+            <div class="col settings-col">
+                <p>Task creation strategy</p>
+                <select class="col" name="task-creation-strategy" id="task-creation-strategy">
+                    <option value="limit">If Limit allows</option>
+                    <option value="constant">Constant Push</option>
+                    <option value="random">Random Push</option>
+                    <option value="scrum">Scrum</option>
+                </select>
+                <div id="special-settings-constant">
+                    Constant demand level <input type="number" value="5.5" id="demand-level"> items/day
+                </div>
+                <div id="special-settings-random">
+                    Variable demand level <input type="number" value="5.5" id="varialbe-demand-lever">
+                    items/day
+                    Expected batch size <input type="number" value="1" id="expected-batch-size"> items
+                </div>
+                <div id="special-settings-scrum">
+                    Iteration length <input type="number" value="10" id="iteration-lenght"> days
+                    Tasks per iteration <input type="number" value="55" id="task-per-iteration"> tasks
+                    Substract existing WIP from new tasks number <input type="checkbox" id="substract"
+                        value="substract">
+                </div>
+            </div>
+            <div class="col settings-col">
+                <small class="col">Task size strategy</small>
+                <select class="col" name="task-size-strategy" id="task-size-strategy">
+                    <option value="constant">Constant</option>
+                    <option value="distribution">Normal distribution</option>
+                    <option value="smlxl">S/M/L/XL</option>
+                </select>
+            </div>
+        </div>
+        <div id="team" class="row">
+            <h2 class="underline">Team</h2>
+            <div class="col settings-col">
+                <div class="row justify-content-center">
+                    <label for="" class="col-2 group-input-label">Test</label>
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                </div>
+                <div class="row justify-content-center">
+                    <label for="" class="col-2 group-input-label">Test</label>
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                </div>
+                <div class="row justify-content-center">
+                    <label for="" class="col-2 group-input-label">Test</label>
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                </div>
+                <div class="row justify-content-center">
+                    <label for="" class="col-2 group-input-label">Test</label>
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                    <input type="text" class="col-4 group-input-field" id="#generated#">
+                </div>
+            </div>
+        </div>
+        <div id="rules" class="row">
+            <h2 class="underline">Rules</h2>
+            <div class="col settings-col">
+                <section class="row max-width dialog-row">
+                    <p>Max WIP for a person</p>
+                    <input name="max-wip-person" id="max-wip-person" type="number" />
+                </section>
+                <section class="row max-width dialog-row">
+                    <p>Max people working on one task</p>
+                    <input name="max-person-task" id="max-person-task" type="number" />
+                </section>
+                <section class="row max-width dialog-row">
+                    <p>Warmup time before Working (around)</p>
+                    <input name="max-warmup" id="max-warmup" type="number" />
+                </section>
+            </div>
+        </div>
+        <div id="board" class="row">
+            <h2 class="underline">Board</h2>
+            <div class="col settings-col">
+                <table id="board-table">
+                    <tr>
+                        <td>Column name</td>
+                        <td>Queue?</td>
+                    </tr>
+                    <tr id="1">
+                        <th><input type="text" placeholder="Column name" value="Analysis"></th>
+                        <th><input id="123" type="checkbox"><label onclick="deleteRow('1')" id="redCross"
+                                for="123">&#10799;</label></th>
+                    </tr>
+                    <tr id="2">
+                        <th><input type="text" placeholder="Column name" value="Development"></th>
+                        <th><input id="123" type="checkbox"><label onclick="deleteRow('2')" id="redCross"
+                                for="123">&#10799;</label></th>
+                    </tr>
+                    <tr id="3">
+                        <th><input type="text" placeholder="Column name" value="QA"></th>
+                        <th><input id="123" type="checkbox"><label onclick="deleteRow('3')" id="redCross"
+                                for="123">&#10799;</label></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row centered">
+            <div>
+                <button class="button" onclick="generateLink()"><span>Generate Link</span></button>
+            </div>
+        </div> -->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

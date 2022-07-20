@@ -8,12 +8,11 @@ import ch.project.kanbanboard.service.GenerateUUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -24,7 +23,7 @@ import java.time.LocalDate;
 
 @Controller
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class CreateNewBoardController {
+public class BoardController {
 
     Board board;
 
@@ -45,19 +44,19 @@ public class CreateNewBoardController {
 
     private String url;
 
-    public CreateNewBoardController() throws UnknownHostException {
+    public BoardController() throws UnknownHostException {
     }
 
 
-    //Building KanbanBoard URL with UUID + DB Check for Duplicate + Save Settings
-    @PostMapping(value = "/newBoardLink")
-    public @ResponseBody String createNewBoardLink(JSONFILE file) throws UnknownHostException {
+    @PostMapping(value = "/newBoard")
+    public @ResponseBody String createNewBoard(JSONFILE file, Boolean auth) throws UnknownHostException {
 
         //Check if Authorized
         //Get Default Settings(Evtl HardCoded in JS) + Custom Settings -> Save to DB
 
-
+        //********************************************************************
         //Generate UUID + Save to Clipboard + Save to DB
+
         url = "https://" + InetAddress.getLocalHost().getHostAddress() + ":" + port + "/board/";
         String uuid = String.valueOf(generateUUID.generateUUID());
         url = url + uuid;
@@ -65,11 +64,36 @@ public class CreateNewBoardController {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(new StringSelection(url), null);
 
+        //Save Board to Board Table on DB
         board.setId(uuid);
         board.setCreationDate(LocalDate.now());
         boardRepository.save(board);
 
+        //********************************************************************
+        //Get Rules from JSON + Save to DB
+
+        //********************************************************************
+        //Get Departments from JSON + Save to DB
+
+        //...
         return url;
     }
 
+    @PostMapping(value = "/submitBoard")
+    public @ResponseBody String submitBoard(JSONFILE file) throws UnknownHostException {
+
+        //Get JSON + Save to DB
+
+        return "Submit";
+
+    }
+
+    @GetMapping(value = "/viewBoard")
+    public @ResponseBody String viewBoard(JSONFILE file) throws UnknownHostException {
+
+        //Get JSON + Save to DB
+
+        return "View";
+
+    }
 }

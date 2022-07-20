@@ -27,20 +27,36 @@ public class ViewController {
             return new ModelAndView("../index.html");
         } else {
             consoleMessageManager.printErrorMessage("Board does not exist!");
-            return new ModelAndView("html/dashboard_index.html");
+            return new ModelAndView("html/index.html");
         }
 
         //Load Board Settings + Create JSON and Return
     }
 
-    @GetMapping("/")
-    public ModelAndView landingPage() {
-
-        consoleMessageManager.printInfoMessage("Loading Landing Page");
-        //New LandingPage
-        ModelAndView modelAndView = new ModelAndView("html/dashboard_index.html");
+    @GetMapping("/createSimulation")
+    public ModelAndView createBoard() {
+        consoleMessageManager.printInfoMessage("Loading Create Board Page");
+        //View Create Simulation Page
+        ModelAndView modelAndView = new ModelAndView("html/createSimulation.html");
         return modelAndView;
     }
 
 
+    @GetMapping("/")
+    public ModelAndView landingPage() {
+
+        consoleMessageManager.printInfoMessage("Loading Landing Page");
+        //View LandingPage
+        ModelAndView modelAndView = new ModelAndView("html/landingPage.html");
+        return modelAndView;
+    }
+
+    @GetMapping("/help")
+    public ModelAndView helpPage() {
+
+        consoleMessageManager.printInfoMessage("Loading Landing Page");
+        //View HelpPage
+        ModelAndView modelAndView = new ModelAndView("html/helpPage.html");
+        return modelAndView;
+    }
 }
