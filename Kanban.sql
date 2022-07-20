@@ -102,6 +102,7 @@ CREATE TABLE departmentSized (
 
 CREATE TABLE departments (
   ID INT NOT NULL AUTO_INCREMENT,
+  settingsID INT NOT NULL,
   departmentName VARCHAR(255) NOT NULL,
   members INT NOT NULL,
   colIndex INT NOT NULL,
@@ -127,3 +128,5 @@ ALTER TABLE normalSettings ADD FOREIGN KEY (departmentID) REFERENCES departments
 
 ALTER TABLE departmentSized ADD FOREIGN KEY (departmentID) REFERENCES departments(ID);
 ALTER TABLE departmentSized ADD FOREIGN KEY (sizedSettings) REFERENCES sizedSettings(ID);
+
+ALTER TABLE departments ADD FOREIGN KEY (settingsID) REFERENCES settingsconfiguration(ID);
