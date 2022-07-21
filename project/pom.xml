@@ -17,6 +17,13 @@
     <properties>
         <java.version>18</java.version>
     </properties>
+    <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+            <include>**/*.properties</include>
+        </includes>
+    </resource>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

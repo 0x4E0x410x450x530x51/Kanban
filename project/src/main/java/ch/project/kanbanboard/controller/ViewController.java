@@ -27,10 +27,10 @@ public class ViewController {
 
         if (boardRepository.existsById(boardKey)) {
             consoleMessageManager.printInfoMessage("Board exists!");
-            return new ModelAndView("../index.html");
+            return new ModelAndView("html/boardPage.html");
         } else {
             consoleMessageManager.printErrorMessage("Board does not exist!");
-            return new ModelAndView("html/index.html");
+            return new ModelAndView("redirect:/");
         }
 
 
@@ -41,7 +41,7 @@ public class ViewController {
     public ModelAndView createBoard() {
         consoleMessageManager.printInfoMessage("Loading Create Board Page");
         //View Create Simulation Page
-        ModelAndView modelAndView = new ModelAndView("html/createSimulation.html");
+        ModelAndView modelAndView = new ModelAndView("html/createSimulationPage.html");
         return modelAndView;
     }
 
