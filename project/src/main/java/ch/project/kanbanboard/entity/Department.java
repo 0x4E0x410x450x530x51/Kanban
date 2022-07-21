@@ -1,9 +1,6 @@
 package ch.project.kanbanboard.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "departments")
@@ -11,6 +8,10 @@ public class Department {
     @Id
     @Column(name = "ID", nullable = false)
     private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "settingsID", nullable = false)
+    private Settingsconfiguration settingsID;
 
     @Column(name = "departmentName", nullable = false)
     private String departmentName;
@@ -36,6 +37,14 @@ public class Department {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Settingsconfiguration getSettingsID() {
+        return settingsID;
+    }
+
+    public void setSettingsID(Settingsconfiguration settingsID) {
+        this.settingsID = settingsID;
     }
 
     public String getDepartmentName() {

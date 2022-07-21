@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="SQL Edit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f96b356-bf31-4f52-b99a-8927c5dbb6c6.xml" beforeDir="false" />
+    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/boardPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/createSimulation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/help.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/landingPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/createSimulationPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/createSimulationPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/helpPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/helpPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/landingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/landingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/scripts/landingPage_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/styles/landingPage_styles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,11 +32,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,29 +47,10 @@
       <option name="presentableId" value="Default" />
       <updated>1655284419920</updated>
       <workItem from="1655284421690" duration="439000" />
-      <workItem from="1657627996590" duration="466000" />
-      <workItem from="1657697484360" duration="1239000" />
-      <workItem from="1657700526723" duration="594000" />
-      <workItem from="1658386809343" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="SQL Edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL Edit" />
   </component>
 </project>

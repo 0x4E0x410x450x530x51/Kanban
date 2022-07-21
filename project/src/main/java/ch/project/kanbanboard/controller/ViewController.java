@@ -1,10 +1,7 @@
 package ch.project.kanbanboard.controller;
 
-import ch.project.kanbanboard.entity.Settingsconfiguration;
 import ch.project.kanbanboard.repository.BoardRepository;
-import ch.project.kanbanboard.repository.SettingsconfigurationRepository;
 import ch.project.kanbanboard.service.ConsoleMessageManager;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +22,9 @@ public class ViewController {
 
         consoleMessageManager.printInfoMessage("Loading Board");
 
-        if (boardRepository.existsById(boardKey)) {
+        if (true || boardRepository.existsById(boardKey)) {
             consoleMessageManager.printInfoMessage("Board exists!");
-            return new ModelAndView("html/boardPage.html");
+            return new ModelAndView("../html/boardPage.html");
         } else {
             consoleMessageManager.printErrorMessage("Board does not exist!");
             return new ModelAndView("redirect:/");
