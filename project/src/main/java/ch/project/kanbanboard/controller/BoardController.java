@@ -2,9 +2,12 @@ package ch.project.kanbanboard.controller;
 
 import ch.project.kanbanboard.entity.Board;
 import ch.project.kanbanboard.entity.JSONFILE;
+import ch.project.kanbanboard.entity.Settingsconfiguration;
 import ch.project.kanbanboard.repository.BoardRepository;
+import ch.project.kanbanboard.repository.SettingsconfigurationRepository;
 import ch.project.kanbanboard.service.ConsoleMessageManager;
 import ch.project.kanbanboard.service.GenerateUUID;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -26,6 +29,9 @@ import java.time.LocalDate;
 public class BoardController {
 
     Board board;
+
+    @Autowired
+    SettingsconfigurationRepository settingsconfigurationRepository;
 
     @Autowired
     BoardRepository boardRepository;
@@ -88,12 +94,22 @@ public class BoardController {
 
     }
 
-    @GetMapping(value = "/viewBoard")
-    public @ResponseBody String viewBoard(JSONFILE file) throws UnknownHostException {
+    @GetMapping(value = "/getBoardData")
+    public @ResponseBody String viewBoard(String UUID, JSONFILE file) throws UnknownHostException {
 
-        //Get JSON + Save to DB
+        //Get Data from DB + Create JSON + Return
 
-        return "View";
+        Settingsconfiguration settingsconfiguration = settingsconfigurationRepository.findByBoardUUID_IdAndDefaultValue(UUID, true);
+
+        String jsonString = new JSONObject()
+                .put("JSON1", "Hello World!")
+                .put("JSON2", "Hello my World!")
+                .put("JSON3", new JSONObject().put("key1", "value1"))
+                .toString();
+
+        System.out.println(jsonString);
+
+        return jsonString;
 
     }
 }

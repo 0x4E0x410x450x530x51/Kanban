@@ -126,5 +126,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.13" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:8.0.27" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20220320" level="project" />
   </component>
 </module>

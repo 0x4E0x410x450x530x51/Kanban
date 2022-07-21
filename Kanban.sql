@@ -130,3 +130,14 @@ ALTER TABLE departmentSized ADD FOREIGN KEY (departmentID) REFERENCES department
 ALTER TABLE departmentSized ADD FOREIGN KEY (sizedSettings) REFERENCES sizedSettings(ID);
 
 ALTER TABLE departments ADD FOREIGN KEY (settingsID) REFERENCES settingsconfiguration(ID);
+
+
+DELIMITER &&
+CREATE EVENT deleteConfig
+ON SCHEDULE EVERY 1 HOUR
+ON COMPLETION PRESERVE
+DO
+BEGIN
+DELETE FROM SettingsConfiguration WHERE (SELECT creationDate FROM Board Where SettingsConfiguration.boardUUID = UUID) < DATE_SUB(NOW(), INTERVAL 3 DAY);
+END &&
+DELIMITER ;
