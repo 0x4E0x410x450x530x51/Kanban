@@ -21,7 +21,7 @@
         <a href="#" onclick="openSettings()">Settings</a>
         <a href="#">Dashbord</a>
         <a href="#">Statistics</a>
-        <a href="#">Sign out</a>
+        
     </div>
     <md-backdrop class="md-backdrop"></md-backdrop>
     
@@ -129,7 +129,6 @@
                             <div class="backlogTitle">Backlog</div>
                         </h2>
                     </strong>
-
                     <div class="task-button-block">
                         <button id="task-button" onclick="beginAll()">&#x2b;</button>
                         <button id="task-button" onclick="startSimulation()">P</button>
@@ -139,8 +138,26 @@
                     </div>
                     <!-- Demo Storys-->
                 </div>
+
+                <div class="kanban-group">
+                    <div class="kanban-block story-table" id="inprogress">
+                        <strong>
+                            <h2>
+                                <div class="inprogressTitle">in Progress</div>
+                            </h2>
+                        </strong>
+                    </div>
+                    <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
+                    ondragover="allowDrop(event)">
+                    <strong>
+                        <h2>
+                            <div class="doneTitle">Done</div>
+                        </h2>
+                    </strong>
+                </div>
+                </div>
                 <!-- In Progress-->
-                <div class="kanban-block story-table" id="inprogress" class="inProgress" ondrop="drop(event)"
+                <div class="kanban-block story-table" id="" class="inProgress" ondrop="drop(event)"
                     ondragover="allowDrop(event)">
                     <strong>
                         <h2>
@@ -149,14 +166,7 @@
                     </strong>
                 </div>
                 <!-- Done-->
-                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
-                    ondragover="allowDrop(event)">
-                    <strong>
-                        <h2>
-                            <div class="doneTitle">Done</div>
-                        </h2>
-                    </strong>
-                </div>
+                
             </div>
         </div>
     </main>

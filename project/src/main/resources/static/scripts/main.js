@@ -1,6 +1,3 @@
-
-
-
 const taskName = document.getElementById("storyNameForm")
 const taskDesc = document.getElementById("descritptionForm")
 const taskStat = document.getElementById("storyPriorityForm")
@@ -22,8 +19,9 @@ const configuration = {
     "YellowWorkers":5,
     "GreenWorkers":5,
     "BlueWorkers":5,
-    "PurpleWorkers":5
+    "PurpleWorkers":10,
 }
+
 
 
 var taskCount = 0
@@ -66,9 +64,9 @@ var blueTaskInterval = null;
 var purpleTaskInterval = null;
 
 var observerConfig = {
-    attributes: false,
-    childList: true,
-    subtree: false
+    "attributes": false,
+    "childList": true,
+    "subtree": false
 }
 
 var ip = document.getElementById("inprogress")
@@ -130,7 +128,10 @@ function closeSettings() {
 function saveSettings() {
     // another hideous piece of code, sorry...
     taskColors.forEach(col => {
-        configuration[(col.charAt(0)).toUpperCase()+col.substring(1)+"Workers"] = parseInt(document.getElementById(col+"Workers").value)
+        configuration[
+            (col.charAt(0)).toUpperCase() + 
+            col.substring(1 )+ "Workers"
+        ] = parseInt(document.getElementById(col+"Workers").value)
     })
     closeSettings()
 }
@@ -174,8 +175,10 @@ function getColor(el) {
         case "#8e7cc3":
             return "purple"
         default:
-            alert("Error in code, [GetColor Function]")
-            return "AAAAA";
+            alert("Error in app, this should not appear as the software should run seamlessly!\n\nCheck in the console!",)
+            simulationPaused = true
+            console.trace()
+            return "error";
     }
 }
 
@@ -243,14 +246,17 @@ function startProgress(el, elWorker) {
 // neccessary for waiting until progress-bar is full.
 function waitForProgress(el, elWorker) {
     let c_amt = parseInt((document.getElementById(el.id+"-progress").style.width).replace("%", "").replace(";", ""))
+   
     if (c_amt < 100) {
         setTimeout(waitForProgress.bind(null, el, elWorker), 150);
         return;
     }
+
     finalTaskComplete(el, elWorker)
 }
 
 function finalTaskComplete(el, elWorker) {
+    let color = getColor(el)
     let progEl = document.getElementById(el.id+"-progress")
 
     if (parseInt((progEl.style.width).replace("%", "").replace(";", "")) < 100) {
@@ -276,8 +282,8 @@ function finalTaskComplete(el, elWorker) {
                 }, 2 * ie)
             }
         },500)
-
-        switch (getColor(el)) {
+        
+        switch (color) {
             case "red":
                 removeFromArray(redTasksIp, el)
                 break;
@@ -293,6 +299,13 @@ function finalTaskComplete(el, elWorker) {
             case "purple":
                 removeFromArray(purpleTasksIp, el)
                 break;
+            default:
+                simulationPaused = true
+                console.error()
+                console.trace()
+                return color
+                break;
+
         }
     } else {
         waitForProgress(el, elWorker);
@@ -470,8 +483,13 @@ function startSimulation() {
     if (simulationPaused) {
         simulationPaused = false;
         incompleteTasks.forEach(t => {
+            if(simulationPaused)
+                return false
             moveTask(t.element)
+            return true
         })
+        if(simulationPaused)
+            return;
         progressTasks.forEach(t => {
             switch (getColor(t)) {
                 case "red":
@@ -497,9 +515,7 @@ function startSimulation() {
 
 }
 function pauseSimulation() {
-    if (!simulationPaused) {
-        simulationPaused = true;
-    }
+    simulationPaused = true;
 }
 
 // special vars here
@@ -599,6 +615,3 @@ var addedCallback = function(ml) {
         }
     }
 }
-
-
-
