@@ -66,8 +66,8 @@
 
 .kanban-block {
   padding: 0 0 1em 0;
-  width: 30.5%;
-  min-width: 14rem;
+  font-size: 150% !important;;
+
   min-height: 4.5rem;
   border-radius: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -178,19 +178,15 @@
 }
 
 h2 {
-  padding: 20px 20px 5px 5px;
+  padding: 20px 0 5px 0;
   background-color: #E60000 !important;
   color: #FFFFFF !important;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   /* text-align: center; */
-}
+} 
 
-.backlogTitle,
-.inProgressTitle,
-.doneTitle {
-  margin-left: 1em;
-}
+
 
 .kanbanBoardTitle {
   margin-bottom: 1em;
@@ -338,4 +334,9 @@ h2 {
 
 .kanban-group {
   display: flex;
+}
+
+
+.task-headers {
+  font-size: 1.2rem !important;
 }

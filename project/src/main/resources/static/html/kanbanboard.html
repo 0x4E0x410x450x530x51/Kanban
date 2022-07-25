@@ -120,54 +120,74 @@
                 <div class="kanbanBoardTitle">
                     <h1>Kanbanboard-Demo</h1>
                 </div>
-                <div class="kanban-board">
-                    <!-- Backlog-->
-                    <div class="kanban-block story-table" id="todo" class="backlog" ondrop="drop(event)"
-                        ondragover="allowDrop(event)">
-                        <strong>
-                            <h2>
-                                <div class="backlogTitle">Backlog</div>
-                            </h2>
-                        </strong>
-                        <div class="task-button-block">
-                            <button id="task-button" onclick="beginAll()">&#x2b;</button>
-                            <button id="task-button" onclick="startSimulation()">P</button>
-                            <button id="task-button" onclick="pauseSimulation()">II</button>
-                            <input oninput="changeTime()" id="sliderTime" type="range" min="1" max="100" value="1">
-                            <span id="sliderDiv">1</span>
-                        </div>
-                        <!-- Demo Storys-->
+                <div class="">
+                        <div class="task-button-block col">
+                                <button id="task-button" onclick="beginAll()">&#x2b;</button>
+                                <button id="task-button" onclick="startSimulation()">P</button>
+                                <button id="task-button" onclick="pauseSimulation()">II</button>
+                                <input oninput="changeTime()" id="sliderTime" type="range" min="1" max="100" value="1">
+                                <span id="sliderDiv">1</span>
+                            </div>
                     </div>
-
-                    <div class="kanban-group">
-                        <div class="kanban-block story-table" id="inprogress">
-                            <strong>
-                                <h2>
-                                    <div class="inprogressTitle">in Progress</div>
-                                </h2>
-                            </strong>
-                        </div>
-                        <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
-                        ondragover="allowDrop(event)">
-                        <strong>
-                            <h2>
-                                <div class="doneTitle">Done</div>
-                            </h2>
-                        </strong>
-                    </div>
-                    </div>
-                    <!-- In Progress-->
-                    <div class="kanban-block story-table" id="" class="inProgress" ondrop="drop(event)"
-                        ondragover="allowDrop(event)">
-                        <strong>
-                            <h2>
-                                <div class="inProgressTitle">In Progress</div>
-                            </h2>
-                        </strong>
-                    </div>
-                    <!-- Done-->
+                <table class="kanban-board">
                     
-                </div>
+                    <tr>
+                        
+                        
+                        <!-- Backlog-->
+                        <td>
+                            <div class="">
+                                <div class="kanban-block story-table" id="todo" class="backlog" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    <strong>
+                                        <h2 class="task-headers">
+                                            <div class="backlogTitle">Backlog</div>
+                                        </h2>
+                                    </strong>
+                                    <!-- Demo Storys-->
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="kanban-group ">
+                                <div class="kanban-block story-table  " id="inprogress">
+                                    <strong>
+                                        <h2 class="task-headers">
+                                            <div class="inprogressTitle">Doing</div>
+                                        </h2>
+                                    </strong>
+                                </div>
+                                <div class="kanban-block story-table  " id="done" class="done" ondrop="drop(event)"
+                                ondragover="allowDrop(event)">
+                                <strong>
+                                    <h2 class="task-headers">
+                                        <div class="doneTitle">Done</div>
+                                    </h2>
+                                </strong>
+                                </div>
+                            </div>
+                        </td>
+                        
+                        
+                        <!-- Done-->
+                        <td>
+                            <div class="col">
+                                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    <strong>
+                                        <h2 class="task-headers">
+                                            <div class="doneTitle">Done</div>
+                                        </h2>
+                                    </strong>
+                                </div>
+                            </div>
+                        </td>
+
+
+                        
+                    </tr>
+                </table>  
             </div>
         </main>
 
