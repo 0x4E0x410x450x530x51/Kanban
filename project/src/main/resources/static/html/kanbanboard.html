@@ -121,7 +121,7 @@
                     <h1>Kanbanboard-Demo</h1>
                 </div>
                 <div class="">
-                        <div class="task-button-block col">
+                        <div class="task-button-block ">
                                 <button id="task-button" onclick="beginAll()">&#x2b;</button>
                                 <button id="task-button" onclick="startSimulation()">P</button>
                                 <button id="task-button" onclick="pauseSimulation()">II</button>
@@ -132,7 +132,6 @@
                 <table class="kanban-board">
                     
                     <tr>
-                        
                         
                         <!-- Backlog-->
                         <td>
@@ -172,16 +171,16 @@
                         
                         <!-- Done-->
                         <td>
-                            <div class="col">
-                                <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
-                                    ondragover="allowDrop(event)">
-                                    <strong>
-                                        <h2 class="task-headers">
-                                            <div class="doneTitle">Done</div>
-                                        </h2>
-                                    </strong>
-                                </div>
+                           
+                            <div class="kanban-block story-table" id="done" class="done" ondrop="drop(event)"
+                                ondragover="allowDrop(event)">
+                                <strong>
+                                    <h2 class="task-headers">
+                                        <div class="doneTitle">Done</div>
+                                    </h2>
+                                </strong>
                             </div>
+                        
                         </td>
 
 
