@@ -69,8 +69,8 @@
   height:100%;
   font-size: 150% !important;;
   min-height: 4.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem 1rem 0 0;
+  
   /* Makes a shadow along the border*/
 }
 
@@ -178,11 +178,10 @@
 }
 
 h2 {
-  padding: 20px 0 5px 0;
+  padding: 20px 0 0px 0;
   background-color: #E60000 !important;
   color: #FFFFFF !important;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
+
   /* text-align: center; */
 } 
 
@@ -334,17 +333,39 @@ h2 {
 
 .kanban-group {
   display: flex;
-  height:100%;
+
 }
 
 .task-headers {
   font-size: 1.2rem !important;
+  margin-bottom: 0;
 }
 
 #board-table {
   display: table;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.5em 0.5em  0 0;
 }
 
-.done-doing-width{width: 50%;}
+.title {
+  text-align: center;
+}
 
-#board-table tr {height:100%}
+.done-doing-width{width: 100%;}
+
+
+table { height: 1px; } /* Will be ignored, don't worry. */
+tr { height: 100%; }
+td { 
+  height: 100%; 
+  padding: 0;
+}
+td > div { height: 100%; }
+
+.first-el {
+  border-top-left-radius: 0.5em;
+}
+
+.last-el {
+  border-top-right-radius: 0.5em;
+}

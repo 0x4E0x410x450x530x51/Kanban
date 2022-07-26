@@ -2,26 +2,60 @@ var table_row;
 var current_size;
 var last_table_el;
 
+
+
+function buildHeaders(){
+    let table_head = document.getElementById("board-table").children[0].children[0];7
+    //last element in the table row get removed for later usage
+    last_table_el = table_head.lastElementChild;
+
+    table_head.removeChild(table_head.lastChild);
+
+
+
+     for(let i = 0; i < departments.length; i++){
+        
+        let td = document.createElement("td");
+        let strong = document.createElement("strong");
+        let h2 = document.createElement("h2");
+        let div = document.createElement("div");
+
+        td.setAttribute("colspan","2"); 
+        h2.setAttribute("class","task-headers");
+        div.setAttribute("class", "title");
+        div.innerHTML = departments[i].depName;
+
+        h2.appendChild(div);
+        strong.appendChild(h2);
+        td.appendChild(strong);
+        table_head.appendChild(td);
+
+       
+        
+        
+        
+    }
+    table_head.appendChild(last_table_el);
+}
+
 function build(){
-    table_row = document.getElementById("board-table").children[0].children[0];
+    table_row = document.getElementById("board-table").children[0].children[1];
     current_size = table_row.childElementCount + departments.length;
     
-    //last element in the table row get removed for later usage
-    last_table_el = table_row.lastElementChild;
-
-    table_row.removeChild(table_row.lastChild)
-
-
+    
+   
+    buildHeaders();
 
     //iterate and create all needed collumns for the kanban table
     for(let i = 0; i < departments.length; i++){
-        let td = document.createElement("td");
+       
         let div_wrapper = document.createElement("div");
         
         
         let title;
         let case_el = 0
         do{
+            let td = document.createElement("td");
             switch(case_el){
                 case 0:
                     title = "Doing";
@@ -60,14 +94,15 @@ function build(){
             h2.appendChild(innerDiv);
             strong.appendChild(h2);
             div.appendChild(strong);
-            div_wrapper.appendChild(div)
-
+            
+            td.appendChild(div);
+            table_row.appendChild(td);
             case_el++;
         }while(case_el < 2);
-        td.appendChild(div_wrapper);
-        table_row.appendChild(td);
+        
+        
     }
-    table_row.appendChild(last_table_el);
+   
 }
 
 

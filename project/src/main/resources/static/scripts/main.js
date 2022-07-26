@@ -35,6 +35,69 @@ var departments = [
         "efficency":100,
         "doing_limit":5,
         "done_limit":10
+    },
+    {
+        "id": 5,
+        "depName":"test5",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 6,
+        "depName":"test4",
+        "members":6,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 7,
+        "depName":"test7",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 8,
+        "depName":"test8",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 9,
+        "depName":"test9",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 10,
+        "depName":"test10",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 4,
+        "depName":"test4",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
     }
 ]
 
@@ -583,7 +646,11 @@ function beginAll() {
             ["!", "•", "↓"][Math.floor(Math.random() * 3)],
             "Definition of done #"+(i_inc+1).toString(),
             ["#e60000", "#e6bf33", "#aacc33", "#6495ed", "#8e7cc3"][Math.floor(Math.random() * 5)],
-            "2022-0"+(Math.floor(Math.random()*8)+1).toString()+"-0"+(Math.floor(Math.random()*8)+1).toString()+"T"+(Math.floor(Math.random() * 23)+1).toString()+":"+(Math.floor(Math.random() * 59)+1).toString(), //2022-06-24T17:12"
+            "2022-0"+(Math.floor(Math.random()*8)+1)
+            .toString()+"-0"+(Math.floor(Math.random()*8)+1)
+            .toString()+"T"+(Math.floor(Math.random() * 23)+1)
+            .toString()+":"+(Math.floor(Math.random() * 59)+1)
+            .toString(), //2022-06-24T17:12"
             i_inc
         )
         i_inc++
@@ -601,7 +668,11 @@ function genOneTask() {
         ["!", "•", "↓"][Math.floor(Math.random() * 3)],
         "Definition of done #"+(i_inc+1).toString(),
         ["#e60000", "#e6bf33", "#aacc33", "#6495ed", "#8e7cc3"][Math.floor(Math.random() * 5)],
-        "2022-0"+(Math.floor(Math.random()*8)+1).toString()+"-0"+(Math.floor(Math.random()*8)+1).toString()+"T"+(Math.floor(Math.random() * 23)+1).toString()+":"+(Math.floor(Math.random() * 59)+1).toString(), //2022-06-24T17:12"
+        "2022-0"+(Math.floor(Math.random()*8)+1)
+        .toString()+"-0"+(Math.floor(Math.random()*8)+1)
+        .toString()+"T"+(Math.floor(Math.random() * 23)+1)
+        .toString()+":"+(Math.floor(Math.random() * 59)+1).
+        toString(). //2022-06-24T17:12"
         i_inc
     )
     
