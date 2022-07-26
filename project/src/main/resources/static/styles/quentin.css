@@ -66,6 +66,7 @@
 
 .kanban-block {
   padding: 0 0 1em 0;
+  height:100%;
   font-size: 150% !important;;
   min-height: 4.5rem;
   border-radius: 1rem;
@@ -333,6 +334,7 @@ h2 {
 
 .kanban-group {
   display: flex;
+  height:100%;
 }
 
 .task-headers {
@@ -344,3 +346,5 @@ h2 {
 }
 
 .done-doing-width{width: 50%;}
+
+#board-table tr {height:100%}

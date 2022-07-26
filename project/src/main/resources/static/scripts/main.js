@@ -1,17 +1,3 @@
-const taskName = document.getElementById("storyNameForm")
-const taskDesc = document.getElementById("descritptionForm")
-const taskStat = document.getElementById("storyPriorityForm")
-const taskDefod = document.getElementById("definitionOfDoneForm")
-const taskColor = document.getElementById("storyColorForm")
-const taskDate = document.getElementById("storyDueDate")
-
-const taskColors = ["red", "yellow", "green", "blue", "purple"]
-
-var timescale = 1000
-
-// cool workaround, thank you JavaScript!
-function getTimescale(){return timescale}
-
 //TODO make variable take data from database
 var departments = [
     {
@@ -52,6 +38,9 @@ var departments = [
     }
 ]
 
+//runs builder before any data gets loaded or selected from DOM
+build()
+
 const configuration = {
     "RedWorkers":5,
     "YellowWorkers":5,
@@ -59,6 +48,21 @@ const configuration = {
     "BlueWorkers":5,
     "PurpleWorkers":10,
 }
+
+const taskName = document.getElementById("storyNameForm")
+const taskDesc = document.getElementById("descritptionForm")
+const taskStat = document.getElementById("storyPriorityForm")
+const taskDefod = document.getElementById("definitionOfDoneForm")
+const taskColor = document.getElementById("storyColorForm")
+const taskDate = document.getElementById("storyDueDate")
+
+const taskColors = ["red", "yellow", "green", "blue", "purple"]
+
+var timescale = 1000
+
+// cool workaround, thank you JavaScript!
+function getTimescale(){return timescale}
+
 
 
 
@@ -108,6 +112,7 @@ var observerConfig = {
     "childList": true,
     "subtree": false
 }
+
 
 var ip = document.getElementById("inprogress")
 var don = document.getElementById("done")

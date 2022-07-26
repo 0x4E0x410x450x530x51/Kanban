@@ -2,10 +2,6 @@ var table_row;
 var current_size;
 var last_table_el;
 
-$(document).ready(function(){
-    build();
-});
-
 function build(){
     table_row = document.getElementById("board-table").children[0].children[0];
     current_size = table_row.childElementCount + departments.length;
@@ -46,6 +42,9 @@ function build(){
 
             //define wrapper
             div_wrapper.setAttribute("class", "kanban-group");
+
+            //define td
+            td.setAttribute("style", "height:inherit;")
 
             //define class and id
             //REMIND    ID is probably irrelevant in current state
