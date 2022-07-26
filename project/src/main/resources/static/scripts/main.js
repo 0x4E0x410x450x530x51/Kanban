@@ -12,7 +12,7 @@ var timescale = 1000
 // cool workaround, thank you JavaScript!
 function getTimescale(){return timescale}
 
-
+//TODO make variable take data from database
 var departments = [
     {
         "id": 1,
@@ -49,7 +49,7 @@ var departments = [
         "efficency":100,
         "doing_limit":5,
         "done_limit":10
-    },
+    }
 ]
 
 const configuration = {

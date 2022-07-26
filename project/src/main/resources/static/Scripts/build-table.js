@@ -1,13 +1,14 @@
 var table_row;
 var current_size;
-var last_table_el
-
-
+var last_table_el;
 
 $(document).ready(function(){
-    
+    build();
+});
+
+function build(){
     table_row = document.getElementById("board-table").children[0].children[0];
-    current_size = table_row.length;
+    current_size = table_row.childElementCount + departments.length;
     
     //last element in the table row get removed for later usage
     last_table_el = table_row.lastElementChild;
@@ -48,7 +49,7 @@ $(document).ready(function(){
 
             //define class and id
             //REMIND    ID is probably irrelevant in current state
-            div.setAttribute("class", "kanban-block story-table");
+            div.setAttribute("class", "kanban-block story-table done-doing-width");
             div.setAttribute("id", Boolean(case_el) ? "done":"inprogress" );
 
             //define inner elements inside the div
@@ -64,17 +65,14 @@ $(document).ready(function(){
 
             case_el++;
         }while(case_el < 2);
-        console.log("div_wrapper:", div_wrapper);
         td.appendChild(div_wrapper);
-        console.log(td)
         table_row.appendChild(td);
     }
     table_row.appendChild(last_table_el);
-    
-});
+}
 
 
-
+//REMIND This is just the structure of the generated Elements 
 /*
 <td>
     <div class="kanban-group ">
