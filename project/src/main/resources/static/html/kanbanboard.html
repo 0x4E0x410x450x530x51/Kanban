@@ -5,10 +5,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="..\styles\quentin.css">
+        <link rel="stylesheet" href="../styles/quentin.css">
         <!-- JavaScript -->
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script language="javascript" type="text/javascript" src="../scripts/kanbanboard.js"></script>
+            <script type="text/javascript" src="../Scripts/build-table.js"></script>
+
         <!-- CSS only Bootstrap-->
-        <script language="javascript" type="text/javascript" src="..\scripts\kanbanboard.js"></script>
+       
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -129,7 +133,7 @@
                                 <span id="sliderDiv">1</span>
                             </div>
                     </div>
-                <table class="kanban-board">
+                <table class="kanban-board" id="board-table">
                     
                     <tr>
                         
@@ -147,6 +151,9 @@
                                 </div>
                             </div>
                         </td>
+
+
+                    <!--
 
                         <td>
                             <div class="kanban-group ">
@@ -166,7 +173,8 @@
                                 </strong>
                                 </div>
                             </div>
-                        </td>
+                        </td>     
+                    -->
                         
                         
                         <!-- Done-->

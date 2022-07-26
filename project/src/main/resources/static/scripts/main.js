@@ -10,9 +10,47 @@ const taskColors = ["red", "yellow", "green", "blue", "purple"]
 var timescale = 1000
 
 // cool workaround, thank you JavaScript!
-function getTimescale() {
-    return timescale
-}
+function getTimescale(){return timescale}
+
+
+var departments = [
+    {
+        "id": 1,
+        "depName":"test",
+        "members":5,
+        "col_index": 1,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 2,
+        "depName":"test2",
+        "members":5,
+        "col_index": 2,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 3,
+        "depName":"test3",
+        "members":5,
+        "col_index": 3,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+    {
+        "id": 4,
+        "depName":"test4",
+        "members":5,
+        "col_index": 4,
+        "efficency":100,
+        "doing_limit":5,
+        "done_limit":10
+    },
+]
 
 const configuration = {
     "RedWorkers":5,
@@ -21,6 +59,8 @@ const configuration = {
     "BlueWorkers":5,
     "PurpleWorkers":10,
 }
+
+
 
 
 
@@ -93,12 +133,12 @@ function rgb2hex(rgbText) {
 
 function genCreateTask(name, desc, status, defod, color, date, i) {
 
-    taskName.value = name 
-    taskDesc.value = desc 
-    taskStat.value = status
-    taskDefod.value = defod
-    taskColor.value = color 
-    taskDate.value = date 
+    taskName.value = name; 
+    taskDesc.value = desc; 
+    taskStat.value = status;
+    taskDefod.value = defod;
+    taskColor.value = color;
+    taskDate.value = date;
 
     saveTask()  
 
@@ -107,19 +147,19 @@ function genCreateTask(name, desc, status, defod, color, date, i) {
         "color":color,
         "status":status,
         "date":date,
-    }
-    incompleteTasks.push(t_1)
+    };
+    incompleteTasks.push(t_1);
 }
 
 
 // open settings window
 function openSettings() {
     // make settingsPanel visible
-    document.getElementById("settingsblock").style.display = "block"
+    document.getElementById("settingsblock").style.display = "block";
 }
 function closeSettings() {
     // make settingsPanel invisible
-    document.getElementById("settingsblock").style.display = "none"
+    document.getElementById("settingsblock").style.display = "none";
 }
 
 // save configuration
@@ -131,9 +171,9 @@ function saveSettings() {
         configuration[
             (col.charAt(0)).toUpperCase() + 
             col.substring(1 )+ "Workers"
-        ] = parseInt(document.getElementById(col+"Workers").value)
+        ] = parseInt(document.getElementById(col+"Workers").value);
     })
-    closeSettings()
+    closeSettings();
 }
 
 
@@ -142,22 +182,22 @@ function sortTasks() {
     incompleteTasks.forEach( task => {
         switch(task.color) {
             case "#e60000":
-                redTasks.push(task)
+                redTasks.push(task);
                 break;
             case "#e6bf33":
-                yellowTasks.push(task)
+                yellowTasks.push(task);
                 break;
             case "#aacc33":
-                greenTasks.push(task)
+                greenTasks.push(task);
                 break;
             case "#6495ed":
-                blueTasks.push(task)
+                blueTasks.push(task);
                 break; 
             case "#8e7cc3":
-                purpleTasks.push(task)
+                purpleTasks.push(task);
                 break;
         }
-    })
+    });
 
 }
 
@@ -165,19 +205,19 @@ function getColor(el) {
     
     switch(rgb2hex(el.style.borderLeftColor)) {
         case "#e60000":
-            return "red"
+            return "red";
         case "#e6bf33":
-            return "yellow"
+            return "yellow";
         case "#aacc33":
-            return "green"
+            return "green";
         case "#6495ed":
-            return "blue"
+            return "blue";
         case "#8e7cc3":
-            return "purple"
+            return "purple";
         default:
-            alert("Error in app, this should not appear as the software should run seamlessly!\n\nCheck in the console!",)
-            simulationPaused = true
-            console.trace()
+            alert("Error in app, this should not appear as the software should run seamlessly!\n\nCheck in the console!",);
+            simulationPaused = true;
+            console.trace();
             return "error";
     }
 }
@@ -191,35 +231,35 @@ function removeFromArray(arr, el) {
         }
         if (a.hasOwnProperty("element")) {
             if (a.element != el) {
-                a_1.push(a)
+                a_1.push(a);
             } else {
-                console.log("Removed from array?")
+                console.log("Removed from array?");
             }
         } else if (a != el) {
             // console.log(a, el)
-            a_1.push(a)
+            a_1.push(a);
         } else {
-            console.log("Removed from array?")
+            console.log("Removed from array?");
         }
     })
     arr.splice(0)
     a_1.forEach(a => {
-        arr.push(a)
+        arr.push(a);
     })
     // arr = a_1
 }
 
 
 function findTask(el) {
-    return el
+    return el;
 }
 
 function startProgress(el, elWorker) {
     // find out how much progress is missing...
-    let progEl = document.getElementById(el.id+"-progress")
+    let progEl = document.getElementById(el.id+"-progress");
 
     if (isNaN(parseInt((progEl.style.width).replace("%", "").replace(";", "")))) {
-        progEl.style.width = "1%"
+        progEl.style.width = "1%";
     }
     
     for (let ie = parseInt((progEl.style.width).replace("%", "").replace(";", "")); ie < 101; ie++) {
@@ -231,10 +271,10 @@ function startProgress(el, elWorker) {
             
             document.getElementById(el.id+"-progress").style.width = (ie).toString()+"%"
             if (ie >= 100) {
-                finalTaskComplete(el, elWorker)
+                finalTaskComplete(el, elWorker);
                 return;
             }
-            console.log("Timescale:", getTimescale())
+            console.log("Timescale:", getTimescale());
         }, ((getTimescale() / elWorker) / 10 ) * ie )
     }
 
@@ -245,19 +285,19 @@ function startProgress(el, elWorker) {
 
 // neccessary for waiting until progress-bar is full.
 function waitForProgress(el, elWorker) {
-    let c_amt = parseInt((document.getElementById(el.id+"-progress").style.width).replace("%", "").replace(";", ""))
+    let c_amt = parseInt((document.getElementById(el.id+"-progress").style.width).replace("%", "").replace(";", ""));
    
     if (c_amt < 100) {
         setTimeout(waitForProgress.bind(null, el, elWorker), 150);
         return;
     }
 
-    finalTaskComplete(el, elWorker)
+    finalTaskComplete(el, elWorker);
 }
 
 function finalTaskComplete(el, elWorker) {
-    let color = getColor(el)
-    let progEl = document.getElementById(el.id+"-progress")
+    let color = getColor(el);
+    let progEl = document.getElementById(el.id+"-progress");
 
     if (parseInt((progEl.style.width).replace("%", "").replace(";", "")) < 100) {
         waitForProgress(el, elWorker);
@@ -267,43 +307,43 @@ function finalTaskComplete(el, elWorker) {
 
         for (let ie = 0; ie < 100; ie++) {
             setTimeout(function() {
-                el.style.opacity = (100-ie) / 100
-            }, 2 * ie)
+                el.style.opacity = (100-ie) / 100;
+            }, 2 * ie);
         }
 
         setTimeout(function() {
-                don.appendChild(el)
-        }, 300)
+                don.appendChild(el);
+        }, 300);
 
         setTimeout(function() {
             for (let ie = 0; ie < 100; ie++) {
                 setTimeout(function() {
-                    el.style.opacity = ie / 100
-                }, 2 * ie)
+                    el.style.opacity = ie / 100;
+                }, 2 * ie);
             }
-        },500)
+        },500);
         
         switch (color) {
             case "red":
-                removeFromArray(redTasksIp, el)
+                removeFromArray(redTasksIp, el);
                 break;
             case "yellow":
-                removeFromArray(yellowTasksIp, el)
+                removeFromArray(yellowTasksIp, el);
                 break;
             case "green":
-                removeFromArray(greenTasksIp, el)
+                removeFromArray(greenTasksIp, el);
                 break;
             case "blue":
-                removeFromArray(blueTasksIp, el)
+                removeFromArray(blueTasksIp, el);
                 break;
             case "purple":
-                removeFromArray(purpleTasksIp, el)
+                removeFromArray(purpleTasksIp, el);
                 break;
             default:
-                simulationPaused = true
-                console.error()
-                console.trace()
-                return color
+                simulationPaused = true;
+                console.error();
+                console.trace();
+                return color;
                 break;
 
         }
@@ -314,44 +354,43 @@ function finalTaskComplete(el, elWorker) {
 }
 
 function completeTask(el) {
-    let elWorker = null
-    let ipTaskVar = null
-    let dTaskVar = null
+    let elWorker = null;
+    let ipTaskVar = null;
+    let dTaskVar = null;
 
     switch (getColor(el)) {
         case "red":
-            elWorker = configuration.RedWorkers
-            redTasksDone.push(findTask(el))
-            ipTaskVar = redTasksDone
+            elWorker = configuration.RedWorkers;
+            redTasksDone.push(findTask(el));
+            ipTaskVar = redTasksDone;
             break;
         case "yellow":
-            elWorker = configuration.YellowWorkers
-            yellowTasksDone.push(findTask(el))
-            ipTaskVar = yellowTasksDone
+            elWorker = configuration.YellowWorkers;
+            yellowTasksDone.push(findTask(el));
+            ipTaskVar = yellowTasksDone;
             break;
         case "green":
-            elWorker = configuration.GreenWorkers
-            greenTasksDone.push(findTask(el))
-            ipTaskVar = greenTasksDone
+            elWorker = configuration.GreenWorkers;
+            greenTasksDone.push(findTask(el));
+            ipTaskVar = greenTasksDone;
             break;
         case "blue":
-            elWorker = configuration.BlueWorkers
-            blueTasksDone.push(findTask(el))
-            ipTaskVar = blueTasksDone
+            elWorker = configuration.BlueWorkers;
+            blueTasksDone.push(findTask(el));
+            ipTaskVar = blueTasksDone;
             break;
         case "purple":
-            elWorker = configuration.PurpleWorkers
-            purpleTasksDone.push(findTask(el))
-            ipTaskVar = purpleTasksDone
-            break;
+            elWorker = configuration.PurpleWorkers;
+            purpleTasksDone.push(findTask(el));
+            ipTaskVar = purpleTasksDone;
     }
 
 
-    removeFromArray(incompleteTasks, el)
+    removeFromArray(incompleteTasks, el);
     
 
     // have to make a function here to be able to pause/play the progress....
-    startProgress(el, elWorker)
+    startProgress(el, elWorker);
    
     
 }
@@ -400,71 +439,71 @@ function waitForTaskClear(el) {
 
 
 function moveTask(el) {
-    let elWorker = null
-    let ipTaskVar = null
+    let elWorker = null;
+    let ipTaskVar = null;
     switch (getColor(el)) {
         case "red":
             
             if (configuration.RedWorkers <= redTasksIp.length) {
-              waitForTaskClear(el)
+              waitForTaskClear(el);
               return;
             }
-            console.log("Done waiting "+configuration.RedWorkers + " "+ redTasksIp.length)
-            elWorker = configuration.RedWorkers
-            ipTaskVar = redTasksIp
-            ipTaskVar.push(findTask(el))
+            console.log("Done waiting "+configuration.RedWorkers + " "+ redTasksIp.length);
+            elWorker = configuration.RedWorkers;
+            ipTaskVar = redTasksIp;
+            ipTaskVar.push(findTask(el));
             break;
         case "yellow":
             if (configuration.YellowWorkers <= yellowTasksIp.length) {
-                waitForTaskClear(el)
+                waitForTaskClear(el);
                 return;
             }
-            elWorker = configuration.YellowWorkers
-            ipTaskVar = yellowTasksIp
-            ipTaskVar.push(findTask(el))
+            elWorker = configuration.YellowWorkers;
+            ipTaskVar = yellowTasksIp;
+            ipTaskVar.push(findTask(el));
             break;
         case "green":
             if (configuration.GreenWorkers <= greenTasksIp.length) {
-                waitForTaskClear(el)
+                waitForTaskClear(el);
                 return;
             }
             elWorker = configuration.GreenWorkers
-            ipTaskVar = greenTasksIp
-            ipTaskVar.push(findTask(el))
+            ipTaskVar = greenTasksIp;
+            ipTaskVar.push(findTask(el));
             break;
         case "blue":
             if (configuration.BlueWorkers <= blueTasksIp.length) {
-                waitForTaskClear(el)
+                waitForTaskClear(el);
                 return;
             }
-            elWorker = configuration.BlueWorkers
-            ipTaskVar = blueTasksIp
-            ipTaskVar.push(findTask(el))
+            elWorker = configuration.BlueWorkers;
+            ipTaskVar = blueTasksIp;
+            ipTaskVar.push(findTask(el));
             break;
         case "purple":
             if (configuration.PurpleWorkers <= purpleTasksIp.length) {
-                waitForTaskClear(el)
+                waitForTaskClear(el);
                 return;
             }
-            elWorker = configuration.PurpleWorkers
-            ipTaskVar = purpleTasksIp
-            ipTaskVar.push(findTask(el))
+            elWorker = configuration.PurpleWorkers;
+            ipTaskVar = purpleTasksIp;
+            ipTaskVar.push(findTask(el));
             break;
         default:
             return;
     }
 
     setTimeout(function() {
-        ip.appendChild(el)
+        ip.appendChild(el);
         el.style.opacity = 0;
         for (let i = 0; i < 100; i++) {
             setTimeout(function() {
-                el.style.opacity = i/100
+                el.style.opacity = i/100;
             }, i*2)
         }
-            progressTasks.push(findTask(el))
+            progressTasks.push(findTask(el));
 
-    })
+    });
 
     setTimeout(function() {
         bcklog.childNodes.forEach(cn => {
@@ -472,7 +511,7 @@ function moveTask(el) {
                 cn.remove();
             }
         })
-    },100)
+    },100);
 
 
 
@@ -484,28 +523,28 @@ function startSimulation() {
         simulationPaused = false;
         incompleteTasks.forEach(t => {
             if(simulationPaused)
-                return false
-            moveTask(t.element)
-            return true
+                return false;
+            moveTask(t.element);
+            return true;
         })
         if(simulationPaused)
             return;
         progressTasks.forEach(t => {
             switch (getColor(t)) {
                 case "red":
-                    startProgress(t, configuration.RedWorkers)
+                    startProgress(t, configuration.RedWorkers);
                     break;
                 case "yellow":
-                    startProgress(t, configuration.YellowWorkers)
+                    startProgress(t, configuration.YellowWorkers);
                     break;
                 case "green":
-                    startProgress(t, configuration.GreenWorkers)
+                    startProgress(t, configuration.GreenWorkers);
                     break;
                 case "blue":
-                    startProgress(t, configuration.BlueWorkers)
+                    startProgress(t, configuration.BlueWorkers);
                     break;
                 case "purple":
-                    startProgress(t, configuration.PurpleWorkers)
+                    startProgress(t, configuration.PurpleWorkers);
                     break;
             }
         
@@ -568,21 +607,21 @@ function genOneTask() {
 
 function changeTime() {
 
-    timescale = 1000 - (parseInt(document.getElementById("sliderTime").value) * 10)
-    document.getElementById("sliderDiv").innerHTML = Math.round(1000 / (100/ parseInt(document.getElementById("sliderTime").value)))
+    timescale = 1000 - (parseInt(document.getElementById("sliderTime").value) * 10);
+    document.getElementById("sliderDiv").innerHTML = Math.round(1000 / (100/ parseInt(document.getElementById("sliderTime").value)));
 
 }
 
 // goated optimization !!!
 
 window.onload = function() {
-    let obsProg = new MutationObserver(progressCallback)
-    let obsAdded = new MutationObserver(addedCallback)
+    let obsProg = new MutationObserver(progressCallback);
+    let obsAdded = new MutationObserver(addedCallback);
 
-    obsProg.observe(ip, observerConfig)
-    obsAdded.observe(bcklog, observerConfig)
-    nodeObserverProgress = obsProg
-    nodeObserverAdded = obsAdded
+    obsProg.observe(ip, observerConfig);
+    obsAdded.observe(bcklog, observerConfig);
+    nodeObserverProgress = obsProg;
+    nodeObserverAdded = obsAdded;
 }
 
 
@@ -591,9 +630,9 @@ window.onload = function() {
 var progressCallback = function(ml) {
     for (var mutation of ml) {
         if (mutation.type == "childList" && mutation.addedNodes.length > 0) {
-            console.log(mutation.addedNodes[0])
-            completeTask(mutation.addedNodes[0])
-            genOneTask()
+            console.log(mutation.addedNodes[0]);
+            completeTask(mutation.addedNodes[0]);
+            genOneTask();
             break;
         }
     }
@@ -607,7 +646,7 @@ var addedCallback = function(ml) {
             for (let i = mutation.addedNodes.length-1; i > 0; i--) {
                 if (mutation.addedNodes[i].tagName == "DIV" && mutation.addedNodes[i].getAttribute("class") == "task") {
                     if (!simulationPaused) {
-                        moveTask(mutation.addedNodes[i])
+                        moveTask(mutation.addedNodes[i]);
                     }
                     break;
                 }

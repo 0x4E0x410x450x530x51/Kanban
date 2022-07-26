@@ -340,3 +340,6 @@ h2 {
   font-size: 1.2rem !important;
 }
 
+#board-table {
+  display: table;
+}
