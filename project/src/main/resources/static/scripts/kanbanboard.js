@@ -129,72 +129,7 @@ function cancelCreateTask() {
 }
 
 
-function editTask(id) {
-  createTask()
 
-  let taskNameID = id + '-name'
-  let descriptionID = id + '-description'
-  let dueDateID = id + '-dueDate'
-  let prioID = id + '-prio'
-  let defOfDoID = id + '-defOfDo'
-
-  // get old values from the story
-  let taskName = document.getElementById(taskNameID).innerText
-  let description = document.getElementById(descriptionID).innerText
-  let dueDate = document.getElementById(dueDateID).innerText
-  let priority = document.getElementById(prioID).innerText
-  let defOfDo = document.getElementById(defOfDoID).innerText
-
-  // back to the original format
-  let dueDateFormated = dueDate.replace(/ /g, "T")
-
-  // get color of the story
-  let currentColorOfStory = document.getElementById(id).style.borderLeftColor
-
-  // set the color
-  var createNewTaskBlock = document.getElementById("create-new-task-block")
-  createNewTaskBlock.style.borderLeft = "solid " + currentColorOfStory + " 0.5em"
-
-  // put the values into the input fields
-  // priority
-  document.getElementById('storyPriorityForm').value = priority 
-  document.getElementById('storyPriority').innerHTML = priority
-  document.getElementById('storyNameForm').value = taskName // name
-  document.getElementById('descritptionForm').value = description // description
-  document.getElementById('storyDueDate').value = dueDateFormated // due date
-  document.getElementById('definitionOfDoneForm').value = defOfDo // definition of done
-
-
-  // convert rgb to hex:
-  let a = currentColorOfStory.split("(")[1].split(")")[0];
-  a = a.split(",");
-  var b = a.map(function (x) {
-    x = parseInt(x).toString(16);
-    return (x.length == 1) ? "0" + x : x;
-  })
-  currentColorOfStoryHex = "#" + b.join("")
-
-  document.getElementById('storyColorForm').value = currentColorOfStoryHex
- 
-
-  var updateButton = document.getElementById("delete-button")
-  var deleteButton = document.getElementById("update-button")
-  updateButton.style.display = "block"
-  deleteButton.style.display = "block"
-
-  var saveButton = document.getElementById("save-button")
-  saveButton.style.display = "none"
-
-  document.getElementById('delete-button').onclick = function () {
-    deleteTask(id)
-  };
-
-  document.getElementById('update-button').onclick = function () {
-    if (updateTask(id) == false) return
-    cancelCreateTask()
-  };
-
-}
 
 /* Update the task with the new values */
 /*
@@ -212,54 +147,8 @@ function updateTask(id) {
 }
 */
 // update version 2
-function updateTask(id) {
-  let taskNameID = id + '-name'
-  let descriptionID = id + '-description'
-  let dueDateID = id + '-dueDate'
-  let priorityID = id + '-prio'
-  let defOfDoID = id + '-defOfDo'
-
-  // get the new values
-  let newTaskName = document.getElementById("storyNameForm").value
-  let newDescription = document.getElementById("descritptionForm").value
-  let newColor = document.getElementById("storyColorForm").value
-  let newDueDate = document.getElementById("storyDueDate").value
-  let priority = document.getElementById("storyPriorityForm").value
-  let definitionOfDone = document.getElementById("definitionOfDoneForm").value
-
-  let newDueDateFormated = newDueDate.replace(/T/g, " ");
 
 
-  if (newTaskName == 0) {
-    alert('You have to name the story.') 
-    return false
-  }
-
-  deleteTaskInArray(id)
-  tasks.push(newTaskName) // save name of the task in the array
-
-  // Update values
-  document.getElementById(taskNameID).innerHTML = newTaskName
-  document.getElementById(descriptionID).innerHTML = newDescription
-  document.getElementById(dueDateID).innerHTML = newDueDateFormated
-  document.getElementById(id).style.borderLeft = "solid " + newColor + " 0.5em"
-  document.getElementById(priorityID).innerHTML = priority
-  document.getElementById(defOfDoID).innerHTML = definitionOfDone
-
-  var taskPrio = document.getElementById(id + "-prio");
-  if (taskPrio.innerText == "!") taskPrio.style.color = "#e60000"
-  else if (taskPrio.innerText == "•") taskPrio.style.color = "#8e7cc3"
-  else if (taskPrio.innerText == "↓") taskPrio.style.color = "#6495ed"
-}
-
-
-function deleteTask(id) {
-  var el = document.getElementById(id)
-  el.parentNode.removeChild(el) // delete task
-
-  deleteTaskInArray(id)
-  cancelCreateTask() // close the create-new-task-block
-}
 
 /* Saves the story in the Backlog */
 function saveTask() {
