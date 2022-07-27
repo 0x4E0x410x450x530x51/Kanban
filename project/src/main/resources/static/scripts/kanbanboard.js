@@ -55,7 +55,7 @@ function createTask() {
 /* Saves the story in the Backlog */
 function saveTask() {
   var todo = document.getElementById("backlog"); //changes string/id value to backlog, as it's more sensibel, but can't bother to change the variable name
-  var taskName = document.getElementById("storyNameForm").value
+  var taskName = taskName 
   var description = document.getElementById("descritptionForm").value
   var color = document.getElementById("storyColorForm").value
   let dueDate = document.getElementById("storyDueDate").value

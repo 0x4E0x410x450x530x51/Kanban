@@ -99,10 +99,10 @@ var departments = [
         "doing_limit":5,
         "done_limit":10
     }
-]
+];
 
 //runs builder before any data gets loaded or selected from DOM
-build()
+build();
 
 const configuration = {
     "RedWorkers":5,
@@ -110,18 +110,18 @@ const configuration = {
     "GreenWorkers":5,
     "BlueWorkers":5,
     "PurpleWorkers":10,
-}
+};
 
-const taskName = document.getElementById("storyNameForm")
-const taskDesc = document.getElementById("descritptionForm")
-const taskStat = document.getElementById("storyPriorityForm")
-const taskDefod = document.getElementById("definitionOfDoneForm")
-const taskColor = document.getElementById("storyColorForm")
-const taskDate = document.getElementById("storyDueDate")
+var taskName = "";
+var taskDesc = "";
+var taskStat = "";
+var taskDefod ="";
+var taskColor ="";
+var taskDate = "";
 
-const taskColors = ["red", "yellow", "green", "blue", "purple"]
+const taskColors = ["red", "yellow", "green", "blue", "purple"];
 
-var timescale = 1000
+var timescale = 1000;
 
 // cool workaround, thank you JavaScript!
 function getTimescale(){return timescale}
@@ -131,11 +131,11 @@ function getTimescale(){return timescale}
 
 
 
-var taskCount = 0
-var incompleteTasks = []
-var progressTasks = []
-var completeTasks = []
-var currentTaskIndex = 0
+var taskCount = 0;
+var incompleteTasks = [];
+var progressTasks = [];
+var completeTasks = [];
+var currentTaskIndex = 0;
 
 
 var nodeObserverProgress = null;
@@ -143,24 +143,24 @@ var nodeObserverAdded = null;
 
 // --- I hate my life --- //
 
-var redTasks = []
-var yellowTasks = []
-var greenTasks = []
-var blueTasks = []
-var purpleTasks = []
+var redTasks = [];
+var yellowTasks = [];
+var greenTasks = [];
+var blueTasks = [];
+var purpleTasks = [];
 
 
-var redTasksIp = []
-var yellowTasksIp = []
-var greenTasksIp = []
-var blueTasksIp = []
-var purpleTasksIp = []
+var redTasksIp = [];
+var yellowTasksIp = [];
+var greenTasksIp = [];
+var blueTasksIp = [];
+var purpleTasksIp = [];
 
-var redTasksDone = []
-var yellowTasksDone = []
-var greenTasksDone = []
-var blueTasksDone = []
-var purpleTasksDone = []
+var redTasksDone = [];
+var yellowTasksDone = [];
+var greenTasksDone = [];
+var blueTasksDone = [];
+var purpleTasksDone = [];
 
 
 
@@ -177,14 +177,14 @@ var observerConfig = {
 }
 
 
-var ip = document.getElementById("inprogress")
-var don = document.getElementById("done")
-var bcklog = document.getElementById("backlog")
+var ip = document.getElementById("inprogress");
+var don = document.getElementById("done");
+var bcklog = document.getElementById("backlog");
 
-var intervalPaused = false
-var intervalObject = null
+var intervalPaused = false;
+var intervalObject = null;
 
-var simulationPaused = true
+var simulationPaused = true;
 
 function rgb2hex(rgbText) {
 
@@ -194,19 +194,19 @@ function rgb2hex(rgbText) {
     x = parseInt(x).toString(16);
     return (x.length == 1) ? "0" + x : x;
     })
-   return "#" + b.join("")
+   return "#" + b.join("");
 }
 
 // generate task 
 
 function genCreateTask(name, desc, status, defod, color, date, i) {
-
-    taskName.value = name; 
-    taskDesc.value = desc; 
-    taskStat.value = status;
-    taskDefod.value = defod;
-    taskColor.value = color;
-    taskDate.value = date;
+    console.log(name)
+    taskName = name; 
+    taskDesc = desc; 
+    taskStat = status;
+    taskDefod = defod;
+    taskColor = color;
+    taskDate = date;
 
     saveTask(); 
     let t_1 = {
