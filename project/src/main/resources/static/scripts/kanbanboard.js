@@ -69,7 +69,7 @@ var index = 0;
 
 
 function createTask() {
-  clearInputs()
+
 
   document.getElementsByClassName("md-backdrop")[0].classList.add("backdrop-state")
 
@@ -131,25 +131,6 @@ function cancelCreateTask() {
 
 
 
-/* Update the task with the new values */
-/*
-Version 1
-function updateTask(id) {
-  saveTask()
-
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == id) {
-      tasks[i] = ''
-      return
-    }
-  }
-
-}
-*/
-// update version 2
-
-
-
 /* Saves the story in the Backlog */
 function saveTask() {
   var todo = document.getElementById("backlog"); //changes string/id value to backlog, as it's more sensibel, but can't bother to change the variable name
@@ -181,14 +162,7 @@ function saveTask() {
       <div style="height: 5px;background-color: #ccc;max-width: 90%;">
       <div id="${id}-progress" style="height: 5px;background-color: green;max-width: 100%;width: 0%"></div>
       </div>
-      <span class="storyInformation" id="${id + '-storyExtensionButton'}" data-hover="Show more" onclick="showMore('${id}')">»</span>
-      <span class="storyInformation closeButton" id="${id + '-storyCloseButton'}" data-hover="Close" onclick="showLess('${id}')">&#171;</span>
-      <div id="${id + "-showMoreBlock"}" class="showMoreBlock">
-          <div class="dueDateTitle">Due date:</div>
-          <small class="dueDate" id="${id + "-dueDate"}">${dueDateFormated}</small>
-          <div class="definitionOfDonetitle">Definition of done:</div>
-          <small class="definitionOfDone" id="${id + "-defOfDo"}">${definitionOfDone}</small>
-      </div>
+      `+/*[HERE]*/+`
   </div>
   `
   // set the color
@@ -199,69 +173,24 @@ function saveTask() {
   var task = document.getElementById(id)
   task.style.borderLeft = "solid " + color + " 0.5em"
 
-  cancelCreateTask() // close the create-new-task-block
   tasks.push(id) // save name of the task in the array
   index++;
 }
 
+//heres the rest of the generated task, incase we ever DO need it || put it to [HERE]
 
-function clearInputs() {
-  document.getElementById('storyNameForm').value = ""
-  document.getElementById('definitionOfDoneForm').value = ""
-  document.getElementById('descritptionForm').value = ""
-  document.getElementById('storyColorForm').value = "#e60000"
-  document.getElementById('storyDueDate').value = ""
-  document.getElementById('storyPriorityForm').value = "&#8226;"
-  document.getElementById('storyPriorityForm').selectedIndex = 1
-  document.getElementById('storyPriority').innerHTML = "&#8226;"
-  document.getElementById('storyPriority').style.color = "#8E7CC3"
-  document.getElementById('create-new-task-block').style.borderLeft = "solid #e60000 0.5em"
-}
-
-function deleteTaskInArray(taskName) {
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i] == taskName) {
-      tasks[i] = ''
-      return
-    }
-  }
-}
+/*
+<span class="storyInformation" id="${id + '-storyExtensionButton'}" data-hover="Show more" onclick="showMore('${id}')">»</span>
+<span class="storyInformation closeButton" id="${id + '-storyCloseButton'}" data-hover="Close" onclick="showLess('${id}')">&#171;</span>
+<div id="${id + "-showMoreBlock"}" class="showMoreBlock">
+    <div class="dueDateTitle">Due date:</div>
+    <small class="dueDate" id="${id + "-dueDate"}">${dueDateFormated}</small>
+    <div class="definitionOfDonetitle">Definition of done:</div>
+    <small class="definitionOfDone" id="${id + "-defOfDo"}">${definitionOfDone}</small>
+</div>
+*/
 
 
-
-function showMore(id) {
-  let blockID = id + '-showMoreBlock'
-  let showMoreBlock = document.getElementById(blockID)
-
-  let storyExtensionButtonID = id + '-storyExtensionButton'
-  let storyExtensionButton = document.getElementById(storyExtensionButtonID)
-
-  let storyCloseButtonID = id + '-storyCloseButton'
-  let storyCloseButton = document.getElementById(storyCloseButtonID)
-  
-
-  // show close button and the showMoreBlock and hide the showMoreButton
-  showMoreBlock.style.display = "block"
-  storyExtensionButton.style.display = "none"
-  storyCloseButton.style.display = "block"
-
-}
-
-function showLess(id) {
-  let blockID = id + '-showMoreBlock'
-  let showMoreBlock = document.getElementById(blockID)
-
-  let storyExtensionButtonID = id + '-storyExtensionButton'
-  let storyExtensionButton = document.getElementById(storyExtensionButtonID)
-
-  let storyCloseButtonID = id + '-storyCloseButton'
-  let storyCloseButton = document.getElementById(storyCloseButtonID)
-
-  // hide the showMoreBlock and close button and show the showMoreButton
-  showMoreBlock.style.display = "none"
-  storyExtensionButton.style.display = "block"
-  storyCloseButton.style.display = "none"
-}
 
 /*
 class Story {
