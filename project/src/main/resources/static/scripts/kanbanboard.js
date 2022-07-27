@@ -54,15 +54,15 @@ function createTask() {
 
 /* Saves the story in the Backlog */
 function saveTask() {
-  var todo = document.getElementById("backlog"); //changes string/id value to backlog, as it's more sensibel, but can't bother to change the variable name
-  var taskName = taskName 
-  var description = document.getElementById("descritptionForm").value
-  var color = document.getElementById("storyColorForm").value
-  let dueDate = document.getElementById("storyDueDate").value
-  let priority = document.getElementById("storyPriorityForm").value
+  var todo = document.getElementById("backlog"); //changed string/id value to backlog, as it's more sensibel, but can't be bothered to change the variable name
+  var taskNameQ = taskName 
+  var description = taskDesc
+  var color = taskColor
+  let dueDate = taskDate
+  let priority = taskStat
   //let definitionOfDone = document.getElementById("definitionOfDoneForm").value
 
-  let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
+  let id = taskNameQ.toLowerCase().split(" ").join("") + index // generate the taskID
 
   // format the dates
   //let dueDateFormated = dueDate.replace(/T/g, " ")
@@ -70,7 +70,7 @@ function saveTask() {
 
   todo.innerHTML += `
   <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
-      <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
+      <span  class="storyTitle" id="${id + "-name"}">${taskNameQ}</span>
       <div class="prio" id="${id + "-prio"}">${priority}</div>
       <div class="edit" onclick="editTask('${id}')"></div>
       <small class="description" id="${id + "-description"}" >${description}</small>

@@ -68,9 +68,9 @@
   padding: 0 0 1em 0;
   height:100%;
   font-size: 150% !important;;
-  min-height: 4.5rem;
+  background-color: #E60000;
   border-radius: 1rem 1rem 0 0;
-  
+  text-align: center;
   /* Makes a shadow along the border*/
 }
 
@@ -344,14 +344,17 @@ h2 {
 #board-table {
   display: table;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 0.5em 0.5em  0 0;
+  border-radius: 0.75em;
 }
 
 .title {
   text-align: center;
 }
 
-.done-doing-width{width: 100%;}
+.done-doing-width{
+  width: 100%;
+  text-align: center;
+}
 
 
 table { height: 1px; } /* Will be ignored, don't worry. */
@@ -364,8 +367,10 @@ td > div { height: 100%; }
 
 .first-el {
   border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 .last-el {
   border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
