@@ -25,64 +25,12 @@ function manageSidebar() {
   if (width == 250)  closeNav()
 }
 
-// ---------------------------------------------------------------------------------------
 
-/* Drag and drop storys in the Kanban Board */
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-  // makes a shadow around the board when a story gets draged
-  var elements = document.getElementsByClassName("story-table")
-  for (i = 0; i < elements.length; i++) {
-    elements[i].classList.add("story-border")
-  }
-}
-
-function allowDrop(ev) {
-  ev.preventDefault()
-}
-
-function drop(ev) {
-  ev.preventDefault()
-
-  var data = ev.dataTransfer.getData("text")
-  //ev.target.appendChild(document.getElementById(data))
-  ev.currentTarget.appendChild(document.getElementById(data)) // prevents the storys from droping in an other story
-  document.getElementById(data).style.opacity = 0;
-  for (let i = 0; i < 100; i++) {
-    setTimeout(function () {
-      document.getElementById(data).style.opacity = i / 100
-    }, i * 2)
-  }
-  var elements = document.getElementsByClassName("story-table")
-  for (i = 0; i < elements.length; i++) {
-    elements[i].classList.remove("story-border")
-  }
-}
-
-// ---------------------------------------------------------------------------------------
-// This code manages the tasks
-// delete, update, save
-
-var tasks = []; 
 var index = 0;
 
 
 function createTask() {
-
-
-  document.getElementsByClassName("md-backdrop")[0].classList.add("backdrop-state")
-
-  // makes that the user can't select anything in the background
-  let allConts = document.getElementsByClassName("task")
-  for (let i = 0; i < allConts.length; i++) {
-    allConts[i].style.webkitUserDrag = "none"
-  }
-
-  document.getElementsByClassName("container")[0].style.userSelect = "none"
-
-  var createNewTaskBlock = document.getElementById("create-new-task-block");
-  createNewTaskBlock.style.display = "block"; // shows the create-new-task-block"
 
   // set color of create-new-task-block
   document.querySelector('#storyColorForm').addEventListener("change", function() {
@@ -100,20 +48,7 @@ function createTask() {
     else if (selected == "↓") place.style.color = "#6495ed"
       
   });
-  
-  // shows save-button 
-  var saveButton = document.getElementById("save-button");
-  saveButton.style.display = "block";
-
-  // hide update and delete button
-  var updateButton = document.getElementById("update-button")
-  updateButton.style.display = "none"
-  var deleteButton = document.getElementById("delete-button")
-  deleteButton.style.display = "none"
 }
-
-
-
 
 
 
@@ -125,18 +60,12 @@ function saveTask() {
   var color = document.getElementById("storyColorForm").value
   let dueDate = document.getElementById("storyDueDate").value
   let priority = document.getElementById("storyPriorityForm").value
-  let definitionOfDone = document.getElementById("definitionOfDoneForm").value
+  //let definitionOfDone = document.getElementById("definitionOfDoneForm").value
 
   let id = taskName.toLowerCase().split(" ").join("") + index // generate the taskID
 
   // format the dates
-  let dueDateFormated = dueDate.replace(/T/g, " ")
-
-
-  if (id == 0) {
-    alert('You have to name the story.') 
-    return false;
-  }
+  //let dueDateFormated = dueDate.replace(/T/g, " ")
 
 
   todo.innerHTML += `
@@ -159,7 +88,6 @@ function saveTask() {
   var task = document.getElementById(id)
   task.style.borderLeft = "solid " + color + " 0.5em"
 
-  tasks.push(id) // save name of the task in the array
   index++;
 }
 
