@@ -1,12 +1,10 @@
-
-// Opens the sidebar on the Kanban Board site.
 function openNav() {
 
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
 }
 
-// Closes the sidebar on the Kanban Board site.
+
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
@@ -24,7 +22,7 @@ function manageSidebar() {
   // jQuery outerWidth()
   var width = element.offsetWidth;
 
-  if (width == 250) closeNav()
+  if (width == 250)  closeNav()
 }
 
 // ---------------------------------------------------------------------------------------
@@ -66,11 +64,10 @@ function drop(ev) {
 // This code manages the tasks
 // delete, update, save
 
-var tasks = []; // stores all task names
+var tasks = []; 
 var index = 0;
 
 
-/* Creates a new Story */
 function createTask() {
   clearInputs()
 
@@ -115,7 +112,7 @@ function createTask() {
   deleteButton.style.display = "none"
 }
 
-/* cloeses the  create-new-task-block */
+
 function cancelCreateTask() {
   // hide the create-new-task-block
   var z = document.getElementById("create-new-task-block");
@@ -131,9 +128,9 @@ function cancelCreateTask() {
   clearInputs()
 }
 
-/* edit the story */
+
 function editTask(id) {
-  createTask() // open the create-new-task-block
+  createTask()
 
   let taskNameID = id + '-name'
   let descriptionID = id + '-description'
@@ -177,26 +174,21 @@ function editTask(id) {
   })
   currentColorOfStoryHex = "#" + b.join("")
 
-  // set color option to current color of the story
   document.getElementById('storyColorForm').value = currentColorOfStoryHex
  
 
-  // show the delete and update button 
   var updateButton = document.getElementById("delete-button")
   var deleteButton = document.getElementById("update-button")
   updateButton.style.display = "block"
   deleteButton.style.display = "block"
 
-  // hide the save button
   var saveButton = document.getElementById("save-button")
   saveButton.style.display = "none"
 
-  // ckeck if the delete button got clicked 
   document.getElementById('delete-button').onclick = function () {
     deleteTask(id)
   };
 
-  // ckeck if the update button got clicked 
   document.getElementById('update-button').onclick = function () {
     if (updateTask(id) == false) return
     cancelCreateTask()
@@ -237,9 +229,9 @@ function updateTask(id) {
 
   let newDueDateFormated = newDueDate.replace(/T/g, " ");
 
-  // validation
+
   if (newTaskName == 0) {
-    alert('You have to name the story.') // checks if the story is named
+    alert('You have to name the story.') 
     return false
   }
 
@@ -260,7 +252,7 @@ function updateTask(id) {
   else if (taskPrio.innerText == "↓") taskPrio.style.color = "#6495ed"
 }
 
-/* deletes the story  */
+
 function deleteTask(id) {
   var el = document.getElementById(id)
   el.parentNode.removeChild(el) // delete task
@@ -284,13 +276,13 @@ function saveTask() {
   // format the dates
   let dueDateFormated = dueDate.replace(/T/g, " ")
 
-  // validation
+
   if (id == 0) {
-    alert('You have to name the story.') // checks if the story is named
+    alert('You have to name the story.') 
     return false;
   }
 
-  // genereate div
+
   todo.innerHTML += `
   <div class="task" id="${id}" draggable="true" ondragstart="drag(event)"">
       <span  class="storyTitle" id="${id + "-name"}">${taskName}</span>
@@ -323,7 +315,7 @@ function saveTask() {
   index++;
 }
 
-// clears the input fields 
+
 function clearInputs() {
   document.getElementById('storyNameForm').value = ""
   document.getElementById('definitionOfDoneForm').value = ""
@@ -347,7 +339,7 @@ function deleteTaskInArray(taskName) {
 }
 
 
-/* Show more details from a story */
+
 function showMore(id) {
   let blockID = id + '-showMoreBlock'
   let showMoreBlock = document.getElementById(blockID)
