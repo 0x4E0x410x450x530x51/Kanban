@@ -113,20 +113,6 @@ function createTask() {
 }
 
 
-function cancelCreateTask() {
-  // hide the create-new-task-block
-  var z = document.getElementById("create-new-task-block");
-  z.style.display = "none";
-  document.getElementsByClassName("md-backdrop")[0].classList.remove("backdrop-state")
-  let allConts = document.getElementsByClassName("task")
-  for (let i = 0; i < allConts.length; i++) {
-    allConts[i].style.webkitUserDrag = "element"
-  }
-
-  document.getElementsByClassName("container")[0].style.userSelect = "auto";
-
-  clearInputs()
-}
 
 
 
