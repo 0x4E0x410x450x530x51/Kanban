@@ -2,50 +2,8 @@ var table_row;
 var current_size;
 var last_table_el;
 
-
-
-function buildHeaders(){
-    let table_head = document.getElementById("board-table").children[0].children[0];7
-    //last element in the table row get removed for later usage
-    last_table_el = table_head.lastElementChild;
-
-    table_head.removeChild(table_head.lastChild);
-
-
-
-     for(let i = 0; i < departments.length; i++){
-        
-        let td = document.createElement("td");
-        let strong = document.createElement("strong");
-        let h2 = document.createElement("h2");
-        let div = document.createElement("div");
-
-        td.setAttribute("colspan","2"); 
-        h2.setAttribute("class","task-headers");
-        div.setAttribute("class", "title");
-        div.innerHTML = departments[i].depName;
-
-        h2.appendChild(div);
-        strong.appendChild(h2);
-        td.appendChild(strong);
-        table_head.appendChild(td);
-
-       
-        
-        
-        
-    }
-    table_head.appendChild(last_table_el);
-}
-
-function build(){
+function buildMain(){
     table_row = document.getElementById("board-table").children[0].children[1];
-    current_size = table_row.childElementCount + departments.length;
-    
-    
-   
-    buildHeaders();
-
     //iterate and create all needed collumns for the kanban table
     for(let i = 0; i < departments.length; i++){
        
@@ -83,7 +41,7 @@ function build(){
             //define class and id
             //REMIND    ID is probably irrelevant in current state
             div.setAttribute("class", "kanban-block story-table done-doing-width");
-            div.setAttribute("id", Boolean(case_el) ? "done":"inprogress" );
+            
 
             //define inner elements inside the div
             h2.setAttribute("class","task-headers");
@@ -102,7 +60,74 @@ function build(){
         
         
     }
-   
+}
+
+function buildHeaders(){
+   table_row = document.getElementById("board-table").children[0].children[0];
+    //last element in the table row get removed for later usage
+    last_table_el = table_row.lastElementChild;
+
+    table_row.removeChild(table_row.lastChild);
+
+     for(let i = 0; i < departments.length; i++){
+        
+        let td = document.createElement("td");
+        let strong = document.createElement("strong");
+        let h2 = document.createElement("h2");
+        let div = document.createElement("div");
+
+        td.setAttribute("colspan","2"); 
+        h2.setAttribute("class","task-headers");
+        div.setAttribute("class", "title");
+        div.innerHTML = departments[i].depName;
+
+        h2.appendChild(div);
+        strong.appendChild(h2);
+        td.appendChild(strong);
+        table_row.appendChild(td);
+    }
+    table_row.appendChild(last_table_el);
+}
+
+function buildCollumns(){
+    table_row = document.getElementById("board-table").children[0].children[2];
+    let j = 0, k = 0;
+    let td;
+    let div;
+    let swt = 0;
+    td = document.createElement("td");
+    div = document.createElement("div");
+    div.setAttribute("id","backlog");
+    td.appendChild(div)
+    table_row.appendChild(td);
+
+    for(let i = 0; i < departments.length*2; i++){
+        td = document.createElement("td");
+        div = document.createElement("div");
+
+        if(!swt){
+            div.setAttribute("id", "inprogress-"+(j+1));
+            div.setAttribute("group-name",departments[j].depName);
+            j++;
+            swt = 1;
+        }else {
+            div.setAttribute("id", "done-"+( k+1));
+            div.setAttribute("group-name",departments[k].depName);
+            k++;
+            swt = 0;
+        }
+        td.appendChild(div);
+        table_row.appendChild(td);
+    }
+
+
+}
+
+function build(){
+    current_size =  departments.length;
+    buildHeaders();
+    buildMain(); 
+    buildCollumns();
 }
 
 

@@ -179,7 +179,7 @@ var observerConfig = {
 
 var ip = document.getElementById("inprogress")
 var don = document.getElementById("done")
-var bcklog = document.getElementById("todo")
+var bcklog = document.getElementById("backlog")
 
 var intervalPaused = false
 var intervalObject = null
@@ -208,8 +208,7 @@ function genCreateTask(name, desc, status, defod, color, date, i) {
     taskColor.value = color;
     taskDate.value = date;
 
-    saveTask()  
-
+    saveTask(); 
     let t_1 = {
         "element":document.getElementById("task#"+(i+1).toString()+(i).toString()),
         "color":color,
@@ -562,15 +561,16 @@ function moveTask(el) {
     }
 
     setTimeout(function() {
-        ip.appendChild(el);
-        el.style.opacity = 0;
-        for (let i = 0; i < 100; i++) {
-            setTimeout(function() {
-                el.style.opacity = i/100;
-            }, i*2)
+        for(let i = 0; i < departments.length; i++){
+            getIpElement(i).appendChild(el);
+            el.style.opacity = 0;
+            for (let i = 0; i < 100; i++) {
+                setTimeout(function() {
+                    el.style.opacity = i/100;
+                }, i*2)
+            }
+                progressTasks.push(findTask(el));
         }
-            progressTasks.push(findTask(el));
-
     });
 
     setTimeout(function() {
@@ -672,7 +672,7 @@ function genOneTask() {
         .toString()+"-0"+(Math.floor(Math.random()*8)+1)
         .toString()+"T"+(Math.floor(Math.random() * 23)+1)
         .toString()+":"+(Math.floor(Math.random() * 59)+1).
-        toString(). //2022-06-24T17:12"
+        toString(), //2022-06-24T17:12"
         i_inc
     )
     
@@ -693,8 +693,10 @@ function changeTime() {
 window.onload = function() {
     let obsProg = new MutationObserver(progressCallback);
     let obsAdded = new MutationObserver(addedCallback);
+    for(let i = 0; i < departments.length; i++){
+        obsProg.observe(document.getElementById("inprogress-"+(i+1)), observerConfig);
+    }
 
-    obsProg.observe(ip, observerConfig);
     obsAdded.observe(bcklog, observerConfig);
     nodeObserverProgress = obsProg;
     nodeObserverAdded = obsAdded;
@@ -729,4 +731,12 @@ var addedCallback = function(ml) {
             }
         }
     }
+}
+
+function getIpElement(i){
+    return document.getElementById("inprogress-"+(i+1));
+}
+
+function getDoneElement(i){
+    return document.getElementById("done-"+(i+1));
 }
