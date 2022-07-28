@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Kanbansim.iml" filepath="$PROJECT_DIR$/Kanbansim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket.iml" filepath="$PROJECT_DIR$/websocket.iml" />
     </modules>
   </component>
 </project>

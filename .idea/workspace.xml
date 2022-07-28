@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="" />
+    <list default="true" id="35371b13-0fc2-4f03-aec3-6bf9c8240258" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/boardPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/createSimulation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/help.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/landingPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/static/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/ch/project/kanbanboard/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/createSimulationPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/createSimulationPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/helpPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/helpPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/html/landingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/static/html/landingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/scripts/landingPage_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/static/styles/landingPage_styles.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

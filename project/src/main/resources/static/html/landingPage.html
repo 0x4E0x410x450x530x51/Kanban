@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\styles\landingPage.css">
+    <link rel="stylesheet" href="..\styles\main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Kanbanboard-Simulation</h1>
+        <img id="ubs-logo" src="../pic/UBS_logo_logotype_emblem.png" alt="UBS-Logo"
+            height="40px" width="120px">
+    </header>
+    <main>
+        <div id="background-image">
+            <h2>Welcome to the kanbanboard-simulation!</h2>
+            <p>This tool will help you plan your project efficiently</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <article class="centered">
+                    <h3>What is a kanbanboard?</h3>
+                    <p>A kanban board is an agile project management tool designed to help visualize work, limit
+                        work-in-progress, and maximize efficiency (or flow). It can help both agile and DevOps teams
+                        establish order in their daily work. Kanban boards use cards, columns, and continuous
+                        improvement to help technology and service teams commit to the right amount of work, and get it
+                        done! One of the first things you’ll notice about a kanban board are the visual cards (stickies,
+                        tickets, or otherwise). Kanban teams write all of their projects and work items onto cards,
+                        usually one per card. For agile teams, each card could encapsulate one user story. Once on the
+                        board, these visual signals help teammates and stakeholders quickly understand what the team is
+                        working on.</p>
+                </article>
+            </div>
+            <div class="row">
+                <article class="col">
+                    <h3>Help</h3>
+                    <p class="left-aligned">Need help with the settings? We explain everything you need to know about the simulation-settings
+                        in our documentation.
+                        Just click on the button below. 
+                    </p>
+                    <button type="button" class="button" onclick="window.open('help','_blank')"><span>Help</span></button>
+                </article>
+                <article class="col">
+                    <h3>Simulation</h3>
+                    <p class="left-aligned">To start the simulation click on the 'Create Simulation' Button. You can
+                        make a simulation with the default settings and change them later or configurate it right here.
+                    </p>
+                    <button type="button" class="button" onclick="window.open('createSimulation','-self')"><span>Create Simulation</span></button>
+                </article>
+                <article class="col">
+                    <h3>About</h3>
+                    <p class="left-aligned">Non dolorem voluptatem qui. Non omnis itaque ex dignissimos tenetur et.
+                        Consectetur id fugiat sed nostrum et deleniti.
+                        Totam perspiciatis ipsum aut fuga. Id et distinctio nam ratione laboriosam ex enim accusamus.
+                        Atque quia qui repudiandae iusto. Labore fuga labore sunt et sed. Debitis dolorem voluptates
+                        molestias possimus. Est a quod est voluptatem.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <article class="col">
+                    <h3>Contact Information</h3>
+                    <div class="left-aligned">
+                        <p class="left-aligned contactInfo">
+                            Tel: 078 839 32 70<br>
+                            E-Mail: <a href="mailto:email@example.com, secondemail@example.com">quentin.schoenenberger@ubs.com</a>
+                        </p>
+                    </div>
+                </article>
+                <article class="col">
+                    <h3>Resources</h3>
+                    <li><a href="help">Documentation</a></li>
+                    <li><a href="createSimulation">Create Simulation</a></li>
+                </article>
+                <article class="col">
+                    <h3>About Us</h3>
+                    <p class="left-aligned">
+                        Non dolorem voluptatem qui. Non omnis itaque ex dignissimos tenetur et. Consectetur id fugiat sed
+                        nostrum et deleniti. Totam perspiciatis ipsum aut fuga. Id et distinctio nam ratione laboriosam ex
+                        enim accusamus.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </footer>
+    <script src="..\scripts\landingPage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
