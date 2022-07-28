@@ -178,7 +178,7 @@ var observerConfig = {
 
 
 var ip = document.getElementById("inprogress");
-var don = document.getElementById("done");
+var don = document.getElementById("done-ult");
 var bcklog = document.getElementById("backlog");
 
 var intervalPaused = false;

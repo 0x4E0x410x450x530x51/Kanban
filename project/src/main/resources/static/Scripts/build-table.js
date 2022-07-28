@@ -1,6 +1,7 @@
 var table_row;
 var current_size;
 var last_table_el;
+var table;
 
 function buildMain(){
     table_row = document.getElementById("board-table").children[0].children[1];
@@ -17,9 +18,11 @@ function buildMain(){
             switch(case_el){
                 case 0:
                     title = "Doing";
+                    td.setAttribute("class", "middle-row-border-left");
                     break;
                 case 1:
                     title = "Done";
+                    td.setAttribute("class", "middle-row-border-right");
                     break;
                 default:
                     console.error("something really messed up");
@@ -36,8 +39,7 @@ function buildMain(){
             div_wrapper.setAttribute("class", "kanban-group");
 
             //define td
-            td.setAttribute("style", "height:inherit;")
-
+            td.setAttribute("style", "height:inherit;");
             //define class and id
             //REMIND    ID is probably irrelevant in current state
             div.setAttribute("class", "kanban-block story-table done-doing-width");
@@ -77,6 +79,7 @@ function buildHeaders(){
         let div = document.createElement("div");
 
         td.setAttribute("colspan","2"); 
+        td.setAttribute("class", "top-row-border");
         h2.setAttribute("class","task-headers");
         div.setAttribute("class", "title");
         div.innerHTML = departments[i].depName;
@@ -96,6 +99,7 @@ function buildCollumns(){
     let div;
     let swt = 0;
     td = document.createElement("td");
+    td.setAttribute("class", "last-row-border");
     div = document.createElement("div");
     div.setAttribute("id","backlog");
     td.appendChild(div)
@@ -103,6 +107,7 @@ function buildCollumns(){
 
     for(let i = 0; i < departments.length*2; i++){
         td = document.createElement("td");
+        td.setAttribute("class", "last-row-border");
         div = document.createElement("div");
 
         if(!swt){
@@ -120,11 +125,48 @@ function buildCollumns(){
         table_row.appendChild(td);
     }
 
+    td = document.createElement("td");
+    td.setAttribute("class", "last-row-border");
+    div = document.createElement("div");
+    div.setAttribute("id","done-ult");
+    td.appendChild(div);
+    table_row.appendChild(td);
 
+
+}
+
+function removeCurrentTable(){
+    table = document.getElementById("board-table").children[0];
+    last_table_el = table.children[0].lastElementChild;
+    table.children[0].removeChild(table.children[0].lastElementChild)
+
+    console.log(table.children[0].children.length);
+    console.log(table.children[1].children.length);
+    console.log(table.children[2].children.length);
+    
+    if(table.children[0].children.length == 1
+        && table.children[1].children.length == 0 
+        && table.children[2].children.length == 0 ){
+        console.log("option one")
+        table.children[0].appendChild(last_table_el);
+        return;
+    }else{ 
+        while(table.children[0].children.length != 1){
+            table.children[0].removeChild(table.children[0].lastElementChild);
+        }
+        while(table.children[1].children.length != 0){
+            table.children[1].removeChild(table.children[1].lastElementChild);
+        }
+        while(table.children[2].children.length != 0){
+            table.children[2].removeChild(table.children[2].lastElementChild);
+        }
+        table.children[0].appendChild(last_table_el);
+    }
 }
 
 function build(){
     current_size =  departments.length;
+    removeCurrentTable();
     buildHeaders();
     buildMain(); 
     buildCollumns();

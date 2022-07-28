@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../styles/quentin.css">
+        <link rel="stylesheet" href="../styles/board-design.css">
         <!-- JavaScript -->
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script language="javascript" type="text/javascript" src="../scripts/kanbanboard.js"></script>
@@ -136,10 +136,10 @@
                 <table class="kanban-board" id="board-table">
                     <tr >
                         <!-- Backlog-->
-                        <td rowspan="2">
-                            <div class="first-el kanban-block story-table" id="backlog-header" class="backlog">
+                        <td rowspan="2" class="first-el">
+                            <div class="kanban-block story-table" id="backlog-header" class="backlog">
                                 <strong>
-                                    <h2 class="task-headers first-el">
+                                    <h2 class="task-headers">
                                         <div class="backlogTitle">Backlog</div>
                                     </h2>
                                 </strong>
@@ -148,10 +148,10 @@
                         </td>
                         
                         <!-- Done-->
-                        <td rowspan="2">                    
-                            <div class="kanban-block story-table last-el" id="done-header" class="done">
+                        <td rowspan="2" class="last-el">                    
+                            <div class="kanban-block story-table" id="done-header" class="done">
                                 <strong>
-                                    <h2 class="task-headers last-el">
+                                    <h2 class="task-headers ">
                                         <div class="doneTitle">Done</div>
                                     </h2>
                                 </strong>
