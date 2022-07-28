@@ -5,6 +5,8 @@ var table;
 
 function buildMain(){
     table_row = document.getElementById("board-table").children[0].children[1];
+   
+   
     //iterate and create all needed collumns for the kanban table
     for(let i = 0; i < departments.length; i++){
        
@@ -35,22 +37,16 @@ function buildMain(){
             let h2 = document.createElement("h2");
             let innerDiv = document.createElement("div");
 
-            //define wrapper
+            
             div_wrapper.setAttribute("class", "kanban-group");
 
-            //define td
             td.setAttribute("style", "height:inherit;");
-            //define class and id
-            //REMIND    ID is probably irrelevant in current state
             div.setAttribute("class", "kanban-block story-table done-doing-width");
             
-
-            //define inner elements inside the div
             h2.setAttribute("class","task-headers");
             innerDiv.setAttribute("class", Boolean(case_el) ? "doneTitle": "inprogressTitle");
             innerDiv.innerHTML = title;
             
-            //append everything
             h2.appendChild(innerDiv);
             strong.appendChild(h2);
             div.appendChild(strong);
