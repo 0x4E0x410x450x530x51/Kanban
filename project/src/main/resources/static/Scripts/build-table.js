@@ -78,7 +78,7 @@ function buildHeaders(){
         td.setAttribute("class", "top-row-border");
         h2.setAttribute("class","task-headers");
         div.setAttribute("class", "title");
-        div.innerHTML = departments[i].depName;
+        div.innerHTML = departments[i].departmentName;
 
         h2.appendChild(div);
         strong.appendChild(h2);
