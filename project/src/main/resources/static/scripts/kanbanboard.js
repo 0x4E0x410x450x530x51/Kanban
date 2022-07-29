@@ -1,30 +1,26 @@
+// Opens the sidebar on the Kanban Board site.
+var navState = 0
+
+function toggleNav() {
+    if (navState == 0) {
+        openNav()
+        navState = 1
+    } else {
+        closeNav()
+        navState = 0
+    }
+}
 function openNav() {
-
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("tlines").style.marginLeft = "250px";
 }
-
-
+// Closes the sidebar on the Kanban Board site.
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("tlines").style.marginLeft = "";
 }
-
-
-function manageSidebar() {
-  openNav()
-
-  var element = document.querySelector('.sidenav');
-
-  // width and height in pixels
-  // including padding + border
-
-  // jQuery outerWidth()
-  var width = element.offsetWidth;
-
-  if (width == 250)  closeNav()
-}
-
 
 
 var index = 0;

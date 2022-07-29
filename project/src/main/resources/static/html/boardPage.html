@@ -1,94 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Board Design</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link rel="stylesheet" href="..\styles\boardDesign_styles.css">
-        <script defer src="..\Scripts\boardDesign_script.js"></script>
+        <link rel="stylesheet" href="../styles/board-design.css">
+        <!-- JavaScript -->
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script language="javascript" type="text/javascript" src="../scripts/kanbanboard.js"></script>
+            <script type="text/javascript" src="../Scripts/build-table.js"></script>
+
+        <!-- CSS only Bootstrap-->
+       
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>Kanban-Board</title>
     </head>
+
     <body>
+        <!-- Sidebar navigation-->
         <div class="col">
             <div id="mySidenav" class="sidenav">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+                <a href="#" onclick="openSettings()">Settings</a>
+                <a href="#">Dashbord</a>
+                <a href="#">Statistics</a>
+            
             </div>
-            <!--The 3 Lines for Nav-->
+            <!-- button to open the sidebar-->
             <span id="tlines" style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
         </div>
-        <div id="main">
-            <!--Top part-->
-            <header>
-                <h1>Kanbanboard</h1>
-                <img src="..\pic\ubs_logo.png" alt="UBS_Logo" class="logo" height="40px" width="120px">
+        <md-backdrop class="md-backdrop"></md-backdrop>
+        
+
+        <main id="main">
+            <!-- Create a new Story -->
+             <header class="page-header">
+                <h1 class="page-title">Kanbanboard</h1>
+                <img src="..\pic\ubs_logo.png" alt="UBS_Logo" id="header-logo" height="40px" width="120px">
             </header>
 
-            <main class="container">
-                <!--<div class="top row">
-                   <div class="right-feld col-2">Backlog</div>
-                   <div class="feld col-2">Manager</div>
-                   <div class="feld col-2">Manager</div>
-                   <div class="feld col-2">Manager</div>
-                    <div class="feld col-2">Manager</div>
-                    <div class="feld col-2">Done</div>
-                </div> -->
-                <!--<table class="board-table">
-                    <tr class="top">
-                        <th class="right-feld col-2">Backlog</th>
-                        <th class="feld col-2">Manager</th>
-                        <th class="feld col-2">Manager</th>
-                        <th class="feld col-2">Manager</th>
-                        <th class="feld col-2">Manager</th>
-                        <th class="feld col-2">Done</th>
+
+            <div class="create-new-task-block" id="settingsblock">
+                <!-- cancel cross -->
+                <span style="font-size:25px;cursor:pointer" id="cancel-button" onclick="closeSettings()">&#10799;</span>
+                <span id="storyPriority"></span>
+                <div><br>
+                    <input type="text" id="redWorkers" placeholder="Red Workers" maxlength="50"></input><br>
+                    <input type="text" id="percRedTask" placeholder="Red Task %" maxlength="50" style="width: 10%" value="100"></input>
+                    <input type="text" id="percYellowTask" placeholder="Yellow Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percGreenTask" placeholder="Green Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percBlueTask" placeholder="Blue Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percPurpleTask" placeholder="Purple Task %" maxlength="50" style="width: 10%" value="0"></input>
+
+
+                    <input type="text" id="yellowWorkers" placeholder="Yellow Workers" maxlength="50"></input><br>
+                    <input type="text" id="percRedTask" placeholder="Red Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percYellowTask" placeholder="Yellow Task %" maxlength="50" style="width: 10%" value="100"></input>
+                    <input type="text" id="percGreenTask" placeholder="Green Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percBlueTask" placeholder="Blue Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percPurpleTask" placeholder="Purple Task %" maxlength="50" style="width: 10%" value="0"></input>
+
+
+
+                    <input type="text" id="greenWorkers" placeholder="Green Workers" maxlength="50"></input><br>
+                    <input type="text" id="percRedTask" placeholder="Red Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percYellowTask" placeholder="Yellow Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percGreenTask" placeholder="Green Task %" maxlength="50" style="width: 10%" value="100"></input>
+                    <input type="text" id="percBlueTask" placeholder="Blue Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percPurpleTask" placeholder="Purple Task %" maxlength="50" style="width: 10%" value="0"></input>
+
+
+
+                    <input type="text" id="blueWorkers" placeholder="Blue Workers" maxlength="50"></input><br>
+                    <input type="text" id="percRedTask" placeholder="Red Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percYellowTask" placeholder="Yellow Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percGreenTask" placeholder="Green Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percBlueTask" placeholder="Blue Task %" maxlength="50" style="width: 10%" value="100"></input>
+                    <input type="text" id="percPurpleTask" placeholder="Purple Task %" maxlength="50" style="width: 10%" value="0"></input>
+
+
+
+                    <input type="text" id="purpleWorkers" placeholder="Purple Workers" maxlength="50"></input><br>
+                    <input type="text" id="percRedTask" placeholder="Red Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percYellowTask" placeholder="Yellow Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percGreenTask" placeholder="Green Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percBlueTask" placeholder="Blue Task %" maxlength="50" style="width: 10%" value="0"></input>
+                    <input type="text" id="percPurpleTask" placeholder="Purple Task %" maxlength="50" style="width: 10%" value="100"></input>
+
+
+
+                </div>
+                <button type="button" class="btn btn-danger" onclick="saveSettings()">Save</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+
+            </div>
+
+            <div class="create-new-task-block" id="create-new-task-block">
+                <!-- cancel cross -->
+                <span style="font-size:25px;cursor:pointer" id="cancel-button" onclick="cancelCreateTask()">&#10799;</span>
+                <span id="storyPriority"></span>
+                <div>
+                    <input type="text" id="storyNameForm" placeholder="Name" maxlength="50"></input>
+                    <textarea id="descritptionForm" rows="3" placeholder="Description" maxlength="300"></textarea>
+                    <textarea id="definitionOfDoneForm" rows="2" placeholder="Definition of done" maxlength="300"></textarea>
+                    <!-- Priority -->
+                    <select id="storyPriorityForm">
+                        <option class="high" value="!">High</option>
+                        <option class="high" value="•">Medium</option>
+                        <option class="low" value="↓">Low</option>
+                    </select>
+                    <!-- Selection color -->
+                    <select id="storyColorForm">
+                        <option class="red" value="#e60000">red</option>
+                        <option class="yellow" value="#e6bf33">yellow</option>
+                        <option class="green" value="#aacc33">green</option>
+                        <option class="blue" value="#6495ed">blue</option>
+                        <option class="purple" value="#8e7cc3">purple</option>
+                    </select>
+                    <div class="storyDueDateFormTitle">Due date:</div>
+                    <input type="datetime-local" id="storyDueDate"></input>
+                    <button type="button" class="btn btn-danger" id="save-button" onclick="saveTask()">Save</button>
+                    <button type="button" class="btn btn-danger" id="delete-button">Delete</button>
+                    <button type="button" class="btn btn-danger" id="update-button">Save Changes</button>
+                </div>
+            </div>
+            
+            <!-- Kanban board -->
+            <div class="container">
+                
+                <div class="">
+                        <div class="task-button-block ">
+                                <button id="task-button" onclick="beginAll()">&#x2b;</button>
+                                <button id="task-button" onclick="startSimulation()">P</button>
+                                <button id="task-button" onclick="pauseSimulation()">II</button>
+                                <input oninput="changeTime()" id="sliderTime" type="range" min="1" max="100" value="1">
+                                <span id="sliderDiv">1</span>
+                            </div>
+                    </div>
+                <table class="kanban-board" id="board-table">
+                    <tr >
+                        <!-- Backlog-->
+                        <td rowspan="2" class="first-el">
+                            <div class="kanban-block story-table" id="backlog-header" class="backlog">
+                                <strong>
+                                    <h2 class="task-headers">
+                                        <div class="backlogTitle">Backlog</div>
+                                    </h2>
+                                </strong>
+                                <!-- Demo Storys-->
+                            </div>
+                        </td>
+                        
+                        <!-- Done-->
+                        <td rowspan="2" class="last-el">                    
+                            <div class="kanban-block story-table" id="done-header" class="done">
+                                <strong>
+                                    <h2 class="task-headers ">
+                                        <div class="doneTitle">Done</div>
+                                    </h2>
+                                </strong>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="right-feld col-1"></td>
-                        <td class="feld col-1"></td>
-                        <td class="feld"><div class="small-feld col-1">Doing</div><div class="small-feld col-1">Done</div></td>
-                        <td class="feld"><div class="small-feld col-1">Doing</div><div class="small-feld col-1">Done</div></td>
-                        <td class="feld"><div class="small-feld col-1">Doing</div><div class="small-feld col-1">Done</div></td>
-                        <td class="feld"><div class="small-feld col-1">Doing</div><div class="small-feld col-1">Done</div></td>
-                        <td class="feld col-1"></td>
-                        <td class="col-1"></td>
-                    </tr>
-                </table>-->
-                <div class="grid-container">
-                    <div class="grid-item i1 top-titles">Backlog</div>
-                    <div class="grid-item i2 top-titles">Manager</div>
-                    <div class="grid-item i3 top-titles">Manager</div>
-                    <div class="grid-item i4 top-titles">Manager</div>
-                    <div class="grid-item i5 top-titles">Manager</div>
-                    <div class="grid-item i6 top-titles">Done</div>
+                    <!-- table row for all done/doing <td> elemenets -->
+                    <tr></tr>
+                    
+                    <tr></tr>
+                </table>  
+            </div>
+        </main>
 
+        <script language="javascript" type="text/javascript" src="..\scripts\main.js"></script>
 
-                    <div class="grid-item m1 top-titles"></div>
-                    <div class="grid-item m2 top-titles">Doing</div>
-                    <div class="grid-item m3 top-titles">Done</div>
-                    <div class="grid-item m4 top-titles">Doing</div>
-                    <div class="grid-item m5 top-titles">Done</div>
-                    <div class="grid-item m6 top-titles">Doing</div>
-                    <div class="grid-item m7 top-titles">Done</div>
-                    <div class="grid-item m8 top-titles">Doing</div>
-                    <div class="grid-item m9 top-titles">Done</div>
-                    <div class="grid-item m10 top-titles"></div>
+        <!-- JavaScript Bundle with Popper Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
 
-                    <div class="grid-item p1">test</div>
-                    <div class="grid-item p2">test</div>
-                    <div class="grid-item p3">test</div>
-                    <div class="grid-item p4">test</div>
-                    <div class="grid-item p5">test</div>
-                    <div class="grid-item p6">test</div>
-                    <div class="grid-item p7">test</div>
-                    <div class="grid-item p8">test</div>
-                    <div class="grid-item p9">test</div>
-                    <div class="grid-item p10">test</div>
-
-                </div>    
-            </main>
-        </div>    
     </body>
 </html>
+
+

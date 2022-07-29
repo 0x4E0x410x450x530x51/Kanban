@@ -2,15 +2,17 @@
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #CCCCCC;
+  background-color: #CCC;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
+
+
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -35,7 +37,6 @@
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
 }
 
 @media screen and (max-height: 450px) {
@@ -342,8 +343,7 @@ h2 {
 
 #board-table {
   display: table;
-  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 4px 15px 8px rgba(0, 0, 0, 0.08);
 }
 
 .title {
@@ -397,4 +397,35 @@ td > div { height: 100%; }
   border-bottom: #CCCCCC solid 2px;
   border-right: #CCCCCC solid 2px;
   border-left: #CCCCCC solid 2px;
+}
+
+
+.page-header {
+  border-bottom: #CCCCCC solid 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 60px;
+}
+
+
+.page-title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 20px 0 20px 0;
+}
+
+#header-logo {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+
+#tlines {
+  float: left;
+  transition: 0.5s;
+  margin-left: 10px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
 }
