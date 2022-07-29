@@ -91,7 +91,7 @@ var Settings_Congi = {
                     //TODO work on this bitch
                 },
             ]
-    }
+    },
     "createStrat" : {
         "ID": 1,
         "constantSettings":{
