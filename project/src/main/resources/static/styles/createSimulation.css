@@ -105,11 +105,24 @@ th {
 #team-table tr {
     width: 50% !important;
 }
+#team-box{
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-right: 10em;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
 
 #team-settings,
 #rules-settings,
 #board-settings {
     display: none;
+}
+#board{
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-right: 5em;
+    padding-top: 20px;
+    margin-bottom: 50px;
 }
 
 .additional-settings {
@@ -143,14 +156,17 @@ th {
 }
 
 .table-btn {
-    color: black;
-    background: transparent;
+    color: white;
+    background: #e60000;
     border-color: red;
+    border-radius: 3px;
     margin-bottom: 3em; 
 }
 
 .table-btn:hover {
     background-color: rgba(211, 55, 55, 0.2);
+    border-color: rgba(211, 55, 55, 0.2);
+    color: black;
 }
 
 .smlxl {

@@ -135,7 +135,7 @@
         <div id="team-settings" class="tabcontent">
             <h2 class="underline">Team</h2>
             <div id="team" class="row">
-                <div class="col">
+                <div class="col" id="team-box">
                     <table id="team-table">
                         <tr id="team-titles">
                             <td><p class="team-title">Name</p></td>
@@ -178,17 +178,18 @@
         <div id="rules-settings" class="tabcontent">
             <h2 class="underline">Rules</h2>
             <div class="row">
-                <div class="col">
-                    <div class="input-section">
-                        Max WIP for a person <input class="rules-input" id="max-wip-person" type="number" value="2" />
-                    </div>
-                    <div class="input-section">
-                        Max people working on one task <input class="rules-input" id="max-person-task" type="number" value="2" />
-                    </div>
-                    <div class="input-section">
-                        Warmup time before Working <input class="rules-input" id="max-warmup" type="number" value="1" /> hours
-                    </div>
-                </div>
+            <div class="input-section">
+                Max WIP for a person 
+                <input class="rules-input" id="max-wip-person" type="number" value="2" />
+            </div>
+            <div class="input-section">
+                Max people working on one task 
+                <input class="rules-input" id="max-person-task" type="number" value="2" />
+            </div>
+            <div class="input-section">
+                Warmup time before Working 
+                <input class="rules-input" id="max-warmup" type="number" value="1" /> hours
+            </div>
             </div>
             
         </div>
@@ -224,11 +225,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <button class="temp">
-                <a href="board/temp">Board Temp</a>
-            </button>
         </div>
     </main>
     <script src="..\scripts\createSimulation.js"></script>
